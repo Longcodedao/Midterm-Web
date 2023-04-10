@@ -5,6 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="css/contact.css">
   </head>
-  <body></body>
+  <body>
+    <section class="section-white" id="Contact">
+      <div class="Container">
+        <div class="row">
+          <div class="colleft">
+            <h4>Contact Us</h4>
+            <form id="contact-form" class="contact" method="post">
+              <input
+                class="contact-input white-input"
+                required
+                name="contact_name "
+                placeholder="Full Name*"
+                type="text"
+              />
+              <input
+                class="contact-input white-input"
+                required
+                name="contact_email "
+                placeholder="Email Adress*"
+                type="email"
+              />
+              <input
+                class="contact-input white-input"
+                required
+                name="contact_phone "
+                placeholder="Phone Number*"
+                type="text"
+              />
+              <textarea
+                class="contact-comment white-input"
+                rows="2"
+                cols="20"
+                name="contact-message"
+                placeholder="Your message"
+              ></textarea>
+              <input
+                value="Send Message"
+                id="submit-button"
+                class="contact-submit"
+                type="submit"
+              />
+            </form>
+          </div>
+          <div class="colright">
+            <h4>How to find us</h4>
+            <iframe
+              class="contact-maps wow slideInRight"
+              data-wow-delay="0.25s"
+              style="
+                visibility: visible;
+                animation-delay: 0.25s;
+                animation-name: slideInRight;
+              "
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.9050207912896!2d-0.14675028449633118!3d51.514958479636384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ad554c335c1%3A0xda2164b934c67c1a!2sOxford+St%2C+London%2C+UK!5e0!3m2!1sen!2sro!4v1485889312335"
+              width="600"
+              height="370"
+              allowfullscreen=""
+            ></iframe>
+          </div>
+         
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
