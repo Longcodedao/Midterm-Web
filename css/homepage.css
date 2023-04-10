@@ -55,6 +55,7 @@
     justify-content: flex-start;
     width: 30vw;
     gap: 70px;
+    padding: 20px 0px;
 }
 
 .navbar a {
