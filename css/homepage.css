@@ -170,6 +170,7 @@ li {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin: 0 auto;
 }
 
 .we-do-col {
@@ -305,6 +306,13 @@ li {
   touch-action: pan-y !important;
 }
 
+.our-carousel-1,
+.our-carousel-2,
+.our-carousel-3 {
+  text-align: center;
+  align-items: center;
+}
+
 /* --------------------- Choose us ------------------------*/
 
 .choose-us {
@@ -337,6 +345,8 @@ li {
 
 #images-reason {
   border-radius: 1rem;
+  width: 600px;
+  max-width: 40vw;
 }
 .blockquote-left {
   border-radius: 10px;
@@ -353,16 +363,77 @@ li {
 
 .hamburger-icon i:hover {
   color: rgb(6, 236, 6);
-  /* transform: scale(1.4); */
   transition: color 0.5s ease-in-out, transform 0.5s;
 }
-@media only screen and (max-width: 800px) {
+
+@media only screen and (max-width: 940px) {
   .navbar a {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .we-do h1 {
+    font-size: 2rem;
+  }
+  .we-do-col {
+    margin: 5px;
+  }
+  .we-do-col h3 {
+    font-size: 1rem;
+  }
+  .we-do-col p {
+    font-size: 0.7rem;
+  }
+
   .logo {
     font-size: 1.2rem;
     margin-left: 5rem;
+  }
+
+  .text-carousel h1 {
+    font-size: 1.75rem;
+  }
+  .text-carousel p {
+    font-size: 0.75rem;
+  }
+
+  .choose-us {
+    padding: 50px 0px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .text-reasons {
+    float: left;
+    max-width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 30px;
+    padding-top: 60px;
+  }
+  .display-row {
+    max-width: 80%;
+  }
+  #images-reason {
+    max-width: 75%;
+    margin-top: 2rem;
+  }
+  .text-reasons h2 {
+    font-size: 25px;
+  }
+
+  .text-reasons p {
+    font-size: 0.8rem;
+  }
+
+  .blockquote-left {
+    border-radius: 10px;
+    border-left: 4px solid green;
+    padding: 20px 20px;
+    font-style: italic;
   }
 }
 /* --------------------- Responsive -----------------------*/
@@ -402,17 +473,16 @@ li {
   .display-row {
     flex-wrap: wrap;
     flex-direction: column;
+    align-items: center;
     gap: 42px;
   }
 
-  .display-row {
-    align-items: center;
-  }
   .we-do {
     padding: 20px 20px;
     margin-bottom: 50px;
   }
   .container {
+    margin-bottom: 50px;
     margin-top: 20px;
   }
   .container h1 {
@@ -433,5 +503,12 @@ li {
   .we-do-col p {
     font-size: 0.875rem;
     line-height: 20px;
+  }
+
+  .text-carousel h1 {
+    font-size: 1.25rem;
+  }
+  .text-carousel p {
+    font-size: 0.7rem;
   }
 }
