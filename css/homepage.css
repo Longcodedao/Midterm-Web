@@ -38,6 +38,12 @@
   box-shadow: 1px 1px 4px #949090;
 }
 
+.hamburger-icon i {
+  color: white;
+  font-size: 1.25rem;
+  display: none;
+}
+
 /* ---------------- Sticky section --------------------*/
 .sticky {
   position: fixed;
@@ -326,13 +332,15 @@ li {
 /* --------------------- Choose us ------------------------*/
 
 .choose-us {
-  background-color: #fafffa;
+  background-color: #dffae3;
   padding: 100px 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  margin: 0 5rem;
+  padding: 5rem 5rem;
+  margin-top: -10px;
+  width: 100vw;
 }
 
 .text-reasons {
@@ -362,21 +370,193 @@ li {
 }
 .blockquote-left {
   border-radius: 10px;
-  border-left: 4px solid green;
+  border-left: 4px solid #029602;
   padding: 20px 20px;
   font-style: italic;
 }
 
-.hamburger-icon i {
-  color: white;
-  font-size: 1.25rem;
-  display: none;
-}
+
 
 /* .hamburger-icon i:hover {
   color: rgb(6, 236, 6);
   transition: color 0.5s ease-in-out, transform 0.5s;
 } */
+
+
+/* ----------------- Our Advantages ------------------ */
+.our-advantages{
+  height: 27rem;
+  background-color: #fff;
+  margin-top : 50px;
+  padding: 1rem 5rem
+}
+
+.container > h1 {
+  font-size: 40px;
+}
+
+.container > p {
+  font-size: 16px;
+  color: gray
+}
+
+.advanges-flex {
+  margin-top: 10px;
+  padding: 0vw 0.5vw 0 1vw;
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  
+}
+
+.box {
+  width: 25vw;
+}
+
+.box > i {
+  float: left;
+  margin-right: 20px;
+  padding: 20px;
+}
+
+.advanges-flex .box:first-child > i{
+  background-color: orange;
+  color: rgb(241, 241, 241);
+  border-radius: 10px ;
+}
+
+.advanges-flex .box:nth-child(2) > i{
+  background-color: rgb(0, 0, 192);
+  color: rgb(241, 241, 241);
+  border-radius: 10px ;
+}
+
+.advanges-flex .box:last-child > i{
+  background-color: rgb(0, 170, 14);
+  color: rgb(241, 241, 241);
+  border-radius: 10px ;
+}
+
+
+.text{
+  padding-top: 10px;
+}
+
+.text h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.text p{
+  line-height: 28px;
+  font-size: 16px;
+}
+
+/* ------------ Footer -------------------------------*/
+
+.footer {
+  margin-top: -10vh;
+}
+
+.svg{
+  display: inline-block;
+  margin: 0;
+  z-index: 0;
+  height: 10rem;
+}
+
+.element{
+  background-color: #029602;
+  z-index: 100000000;
+  height: 30vh;
+  margin-top: -20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.element-logo{
+  
+  padding: 20px 0px;
+  margin: -10px 0px 0px 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  height: 27vh;
+  width: 25vw;
+  
+}
+
+
+.corn-icon {
+  height: 80px;
+  text-align: center;
+  width: 20vw;
+}
+.element-logo h1{
+  font-size: 1.5rem;
+  color: white;
+  letter-spacing: 6px;
+}
+
+.element-logo p {
+  color: white;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.navbar-sub{
+  margin-top:50px;
+  margin-right: 10vw;
+  height: 40px;
+  width: 40vw;
+  padding: 0px 20px 0px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+.navbar-sub a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+
+}
+
+.contact-via {
+  padding: 20px 0px 0px 0px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-via p{
+  color: white;
+}
+
+
+.icons {
+  margin-right: 10vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 8vw;
+}
+
+#created{
+  margin: 20px 0px -10px 0px;
+  width: 100%;
+  padding-right: 10vw;
+  text-align: right;
+  color: white;
+  font-size: 16px;
+  font-style: italic;
+  
+}
+
 
 /* --------------------- Responsive -----------------------*/
 
