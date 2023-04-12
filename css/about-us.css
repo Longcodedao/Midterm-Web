@@ -14,7 +14,7 @@
   background-image: linear-gradient(
       rgba(63, 100, 34, 0.5),
       rgba(63, 100, 34, 0.5)
-    ), url("images/karsten-wurth-UbGYPMbMYP8-unsplash.jpg");
+    ), url("/images/karsten-wurth-UbGYPMbMYP8-unsplash.jpg");
   /* background-image: url("../images/AgricultureHero.jpg"); */
   background-position: center;
   background-size: cover;
@@ -121,7 +121,7 @@ li {
     background-image: linear-gradient(
         rgba(189, 192, 187, 0.5),
         rgba(189, 192, 187, 0.5)
-      ), url("images/Human-Skills-Hero.png");
+      ), url("/images/Human-Skills-Hero.png");
     /* background-image: url("../images/AgricultureHero.jpg"); */
     background-position: center;
     background-size: cover;
