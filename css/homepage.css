@@ -57,7 +57,7 @@
   color: rgb(244, 244, 244);
   font-weight: bold;
   letter-spacing: 6px;
-  margin-left: 10rem;
+  margin-left: 8vw;
   text-decoration: none;
 }
 
@@ -74,7 +74,7 @@
   gap: 70px;
   max-width: 51vw;
   padding: 20px 0px;
-  margin-right: 10rem;
+  margin-right: 8vw;
   
 }
 
@@ -306,7 +306,7 @@ li {
 
 .owl-carousel {
   max-width: 100vw;
-  height: 50vh;
+  height: 60vh;
   overflow: hidden;
 }
 
