@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  color: #2e2d2d;
+  font-size: 18px;
+  overflow-x: hidden;
+}
+
+.hero {
+  background-image: linear-gradient(
+      rgba(63, 100, 34, 0.5),
+      rgba(63, 100, 34, 0.5)
+    ), url("images/karsten-wurth-UbGYPMbMYP8-unsplash.jpg");
+  /* background-image: url("../images/AgricultureHero.jpg"); */
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.topnav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  z-index: 9999;
+}
+
+/* ---------------- Sticky section --------------------*/
+.sticky {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  width: 100vw;
+  box-shadow: 1px 1px 2px #b9b9b9;
+}
+
+.logo.white-background,
+.navbar.white-background a {
+  color: rgb(0, 82, 0);
+}
+
+.logo {
+  font-size: 30px;
+  color: rgb(244, 244, 244);
+  font-weight: bold;
+  letter-spacing: 6px;
+  margin-left: 5rem;
+  text-decoration: none;
+}
+
+.logo:hover {
+  color: aquamarine;
+  transform: scale(1.1);
+  transition: transform 0.5s, color 0.5s;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 70px;
+  max-width: 51vw;
+  padding: 20px 0px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: rgb(244, 244, 244);
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  overflow: visible;
+}
+
+.navbar a:hover {
+  color: rgb(6, 236, 6);
+  transition: color 0.5s;
+}
+
+li {
+  list-style-type: none;
+}
+
+.row1 {
+  text-align: right;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -35%);
+  width: 70vw;
+  max-height: 60vh;
+  margin-left: 5rem;
+} 
+
+.row1 h1 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 60px;
+}
+
+.row1 p {
+  margin-top: 30px;
+  color: white;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.row2 {
+    background-image: linear-gradient(
+        rgba(189, 192, 187, 0.5),
+        rgba(189, 192, 187, 0.5)
+      ), url("images/Human-Skills-Hero.png");
+    /* background-image: url("../images/AgricultureHero.jpg"); */
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    padding: 90px 0 100px 0;
+  }
+  
+.row2 h2 {
+    width: 100%;
+    font-size: larger;
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 80px;
+    color: rgb(0, 82, 0);
+}
+
+.row2 ul {
+    width: 100%;
+    text-align: left;
+    margin-left: 100px;
+    color: rgb(0, 82, 0);
+    font-size: 200%;
+}
+
+.row2 li{
+    margin-bottom: 10px;
+}
+
+.row2-1 {
+    padding-left: 0%;
+}
+
+.row3 {
+    background-color: #fff;
+    padding: 90px 0 100px 0;
+    width: 100vw;
+}
+  
+.row3 p {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+    color: rgb(0, 82, 0);
+    font-size: larger;
+}
+  
