@@ -40,3 +40,7 @@ console.log(screenWidth);
 $("#hamburger-icon").on('click', function() {
     $listNav.toggle(200);
 })
+
+if ($("window").width() > 600){
+    $listNav.show();
+}
