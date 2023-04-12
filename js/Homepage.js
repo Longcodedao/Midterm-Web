@@ -30,3 +30,13 @@ $(window).scroll(function() {
         navigate_options.classList.remove("white-background")
     }
 })
+
+
+$listNav = $("li.nav-opt")
+
+const screenWidth = $(window).width();
+console.log(screenWidth);
+
+$("#hamburger-icon").on('click', function() {
+    $listNav.toggle(200);
+})

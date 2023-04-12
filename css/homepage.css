@@ -49,7 +49,7 @@
 
 .logo.white-background,
 .navbar.white-background a {
-  color: rgb(0, 82, 0);
+  color: rgb(17, 30, 112);
 }
 
 .logo {
@@ -74,6 +74,8 @@
   gap: 70px;
   max-width: 51vw;
   padding: 20px 0px;
+  margin-right: 10rem;
+  
 }
 
 .navbar a {
@@ -371,10 +373,10 @@ li {
   display: none;
 }
 
-.hamburger-icon i:hover {
+/* .hamburger-icon i:hover {
   color: rgb(6, 236, 6);
   transition: color 0.5s ease-in-out, transform 0.5s;
-}
+} */
 
 /* --------------------- Responsive -----------------------*/
 
@@ -382,6 +384,56 @@ li {
   .navbar a {
     font-size: 0.7rem;
   }
+
+  .navbar li {
+    /* display: none; */
+    padding: 5px 0px;
+
+  }
+  .navbar a{
+    color: black;
+    font-size: 16px;
+  }
+  
+  .topnav{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 28px 0px 10px 0px;
+  }
+
+  .topnav .logo {
+    color:rgb(18, 32, 124);
+    letter-spacing: 3px;
+    font-size: 22px;
+
+  }
+  
+  .navbar {
+    flex-direction: column;
+    gap: 0px;
+    max-width: 100vw;
+    width: 100vw;
+    padding: 10px 12vw;
+  }
+
+  .hamburger-icon i {
+    display: inline-block;
+    margin-right: 8vw;
+    color:rgb(18, 32, 124);
+    padding: 10px 10px;
+    font-size: 1rem;
+    border: 1px solid rgb(18, 32, 124);
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 20px;
+  }
+
+
 
   .hero h1 {
     font-size: 3rem;
@@ -491,7 +543,7 @@ li {
   }
 
   .we-do {
-    padding: 20px 20px;
+    padding: 20px 30px;
     margin-bottom: 50px;
   }
   .container {
@@ -503,7 +555,7 @@ li {
   }
 
   .container p {
-    font-size: 0.875rem;
+    font-size: 0.85rem;
   }
   .we-do-col i {
     font-size: 40px;
@@ -514,20 +566,37 @@ li {
   }
 
   .we-do-col p {
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     line-height: 20px;
+  }
+
+  /* ------------ Our Mission ------------------*/
+
+  .owl-carousel{
+    height: 55vh;
+  }
+  
+  .text-carousel {
+    position: absolute;
+    top: 17%
   }
 
   .text-carousel h1 {
     font-size: 1.25rem;
+    padding: 0px 0px;
+    margin-bottom: 10px;
   }
   .text-carousel p {
     font-size: 0.7rem;
+    line-height: 22px;
   }
+
+  /* ------------- Reasons To choose us ------------- */
 
   .choose-us {
     flex-direction: column;
     align-items: center;
+    margin: 0 3.5rem;
   }
   .text-reasons {
     float: left;
@@ -546,7 +615,7 @@ li {
     margin-top: 2rem;
   }
   .text-reasons h2 {
-    font-size: 25px;
+    font-size: 1.75rem;
   }
 
   .text-reasons p {
