@@ -374,20 +374,17 @@ li {
   font-style: italic;
 }
 
-
-
 /* .hamburger-icon i:hover {
   color: rgb(6, 236, 6);
   transition: color 0.5s ease-in-out, transform 0.5s;
 } */
 
-
 /* ----------------- Our Advantages ------------------ */
-.our-advantages{
-  height: 27rem;
+.our-advantages {
   background-color: #fff;
-  margin-top : 50px;
-  padding: 1rem 5rem
+  margin-top: 50px;
+  padding: 1rem 5rem;
+  margin-bottom: 100px;
 }
 
 .container > h1 {
@@ -396,20 +393,17 @@ li {
 
 .container > p {
   font-size: 16px;
-  color: gray
-}
-
-.advanges-flex {
-  margin-top: 10px;
-  padding: 0vw 0.5vw 0 1vw;
-  display: flex;
-  flex-direction: row; 
-  justify-content: space-between;
-  
+  color: gray;
 }
 
 .box {
-  width: 25vw;
+  max-width: 30vw;
+  margin: 1rem;
+}
+
+.box:hover {
+  transform: scale(1.02);
+  transition: transform 0.5s ease-in-out;
 }
 
 .box > i {
@@ -418,26 +412,52 @@ li {
   padding: 20px;
 }
 
-.advanges-flex .box:first-child > i{
+.advanges-flex {
+  margin-top: 10px;
+  padding: 0vw 0.5vw 0 1vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.advanges-flex .box:first-child > i {
   background-color: orange;
   color: rgb(241, 241, 241);
-  border-radius: 10px ;
+  border-radius: 10px;
 }
 
-.advanges-flex .box:nth-child(2) > i{
+#box-icon-1 {
+  background-color: rgb(9, 184, 96);
+  color: rgb(241, 241, 241);
+  border-radius: 10px;
+}
+
+#box-icon-2 {
+  background-color: rgb(69, 135, 189);
+  color: rgb(241, 241, 241);
+  border-radius: 10px;
+}
+
+#box-icon-3 {
+  background-color: rgb(131, 69, 189);
+  color: rgb(241, 241, 241);
+  border-radius: 10px;
+}
+
+.advanges-flex .box:nth-child(2) > i {
   background-color: rgb(0, 0, 192);
   color: rgb(241, 241, 241);
-  border-radius: 10px ;
+  border-radius: 10px;
 }
 
-.advanges-flex .box:last-child > i{
-  background-color: rgb(0, 170, 14);
+.advanges-flex .box:last-child > i {
+  background-color: rgb(170, 40, 0);
   color: rgb(241, 241, 241);
-  border-radius: 10px ;
+  border-radius: 10px;
 }
 
-
-.text{
+.text {
   padding-top: 10px;
 }
 
@@ -446,7 +466,7 @@ li {
   font-size: 20px;
 }
 
-.text p{
+.text p {
   line-height: 28px;
   font-size: 16px;
 }
@@ -457,106 +477,94 @@ li {
   margin-top: -10vh;
 }
 
-.svg{
+.svg {
   display: inline-block;
   margin: 0;
   z-index: 0;
   height: 10rem;
 }
 
-.element{
-  background-color: #029602;
-  z-index: 100000000;
-  height: 30vh;
+.footer-wrapper {
   margin-top: -20px;
+  background-color: #029602;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.element-logo{
-  
-  padding: 20px 0px;
-  margin: -10px 0px 0px 10vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  z-index: 100000000;
   align-items: center;
-  gap: 15px;
-  height: 27vh;
-  width: 25vw;
-  
-}
-
-
-.corn-icon {
-  height: 80px;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
-  width: 20vw;
+  padding-bottom: 1rem;
 }
-.element-logo h1{
-  font-size: 1.5rem;
+.footer-wrapper h2 {
+  font-size: 2.1rem;
   color: white;
-  letter-spacing: 6px;
+  letter-spacing: 0.3rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 3rem;
 }
-
-.element-logo p {
-  color: white;
-  font-size: 16px;
-  letter-spacing: 2px;
-}
-
-.navbar-sub{
-  margin-top:50px;
-  margin-right: 10vw;
-  height: 40px;
-  width: 40vw;
-  padding: 0px 20px 0px 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border-bottom: 1px solid rgb(226, 226, 226);
-}
-
-.navbar-sub a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-
-}
-
-.contact-via {
-  padding: 20px 0px 0px 0px;
-  overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-}
-
-.contact-via p{
+.footer-wrapper h3 {
+  font-weight: 500;
+  letter-spacing: 0.4rem;
+  margin-top: 10px;
   color: white;
 }
-
+.footer-wrapper p {
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+  color: #d7d9dd;
+  max-width: 65vw;
+  margin-bottom: 15px;
+}
 
 .icons {
-  margin-right: 10vw;
+  list-style: none;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 8vw;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 1rem 0;
+}
+.icons i {
+  color: #e9e9e9;
+}
+.icons li {
+  background-color: #2bac70;
+  padding: 7px;
+  border-radius: 10px;
+}
+.fa-facebook:hover {
+  color: #146cdf;
+}
+.fa-github:hover {
+  color: #502068;
+}
+.fa-youtube:hover {
+  color: #fc0102;
+}
+.fa-twitter:hover {
+  color: #6dc5fc;
+}
+.icons li {
+  margin: 0 15px;
 }
 
-#created{
-  margin: 20px 0px -10px 0px;
-  width: 100%;
-  padding-right: 10vw;
-  text-align: right;
-  color: white;
+.icons a i {
+  font-size: 1.5rem;
+  transition: color 0.5s;
+}
+
+.footer-bottom p {
+  float: left;
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+.footer-bottom p a {
+  color: #4042ad;
   font-size: 16px;
-  font-style: italic;
-  
+  text-decoration: none;
 }
-
-
 /* --------------------- Responsive -----------------------*/
 
 @media only screen and (max-width: 960px) {
@@ -628,6 +636,12 @@ li {
     font-size: 0.7rem;
   }
 
+  .we-do-col {
+    max-width: 90vw;
+    height: auto;
+    margin: 7px;
+  }
+
   .logo {
     font-size: 1.2rem;
     margin-left: 5rem;
@@ -674,6 +688,25 @@ li {
     border-left: 4px solid green;
     padding: 20px 20px;
     font-style: italic;
+  }
+
+  .advanges-flex {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0px;
+  }
+
+  .box {
+    max-width: 90%;
+    margin: 1.25rem;
+  }
+
+  .our-advantages {
+    margin-bottom: 100px;
+  }
+
+  .our-advantages .container {
+    margin-bottom: 20px;
   }
 }
 /* --------------------- Responsive -----------------------*/
@@ -768,12 +801,15 @@ li {
   }
 
   /* ------------- Reasons To choose us ------------- */
-
   .choose-us {
+    padding: 3rem;
+
     flex-direction: column;
     align-items: center;
-    margin: 0 3.5rem;
+    margin: 0 0;
+    padding-top: 1.5rem;
   }
+
   .text-reasons {
     float: left;
     max-width: 100%;
@@ -795,6 +831,18 @@ li {
   }
 
   .text-reasons p {
+    font-size: 0.8rem;
+  }
+
+  .our-advantages {
+    padding: 0 1.5rem;
+  }
+
+  .box h2 {
+    font-size: 1rem;
+  }
+
+  .box p {
     font-size: 0.8rem;
   }
 }
