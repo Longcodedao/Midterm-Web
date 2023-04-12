@@ -1,12 +1,4 @@
 /* style contact*/
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
-
 .ContactContainer{
     position: relative;
 }
@@ -198,3 +190,20 @@ p {
     transform: translateY(-5px);
 }
 /* media*/
+
+
+@media only screen and (max-width: 740px) { 
+    .holder{
+        display: block;
+    }
+    .Contactinfo{
+        align-items: center;
+    }
+    .informationContact{
+        text-align: center;
+    }
+    .titlecontact{
+        text-align: center;
+    }
+    
+}
