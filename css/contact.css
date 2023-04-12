@@ -1,0 +1,193 @@
+/* style contact*/
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.ContactContainer{
+    position: relative;
+}
+.Contact {
+    word-break: break-word;
+    width: 100%;
+    padding: 80px 0px;
+    background: rgb(24, 25, 29);
+}
+
+.titlecontact{
+    color: rgb(255, 255, 255);
+    margin-bottom: 30px;
+    text-align: left;
+    width: 100%;
+    padding-top: 20px;
+    font-size: 32px;
+}
+.informationContact{
+    color: rgb(255, 255, 255);
+    text-align: left;
+    width: 100%;
+    margin: 0px;
+    line-height: 1.4;
+    font-size: 18px;
+
+}
+.phonemail{
+    color: rgb(255, 255, 255);
+    text-align: left;
+    width: 100%;
+    margin: 0px;
+    line-height: 1.4;
+    font-size: 18px;
+
+    
+}
+.Contacticon{
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto 0px 0px;
+    max-width: 250px;
+}
+.contactp{
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    width: 100%;
+    font-family: Merriweather;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.4;
+}
+.Contacticon1{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    transform: translateX(-12px);
+    margin: 10px 0px 0px;
+    
+}
+.link-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    
+}
+
+.link{
+    width: 26px;
+    height: 26px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 5px;
+    color: blue;
+}
+.Contactinfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+}
+
+.ContactInput{
+    width: 90%;
+    max-width: 400px;
+    min-width: 400px;
+    margin: 0px 0px 0px 16vw;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+}
+.holder{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-top: 0px;
+    padding-right: 15%;
+    padding-left: 10%;
+
+}
+.inputt{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0px 45px 0px 25px;
+    height: 50px;
+    margin: 20px 0px 0px;
+    font-size: 16px;
+    appearance: none;
+    border-radius: 50px;
+    border: 1px solid rgba(24, 25, 29, 0.3);
+    color: rgb(24, 25, 29);
+}
+.buttcover{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.buttsubmit{
+    max-width: 300px;
+    border: none;
+    border-radius: 50px;
+    white-space: nowrap;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(-180deg, rgb(88, 152, 159) 0%, rgb(37, 76, 79) 96%) no-repeat;
+    box-shadow: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 50px;
+    line-height: 50px;
+    box-sizing: border-box;
+    text-decoration: none;
+    padding: 0px 40px;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    word-break: initial;
+    outline: none;
+}
+
+.buttsubmit:hover {
+    color: rgb(255, 255, 255);
+    background: rgb(37, 76, 79);
+    box-shadow: none;
+}
+.textarea{
+    width: 100%;
+    resize: none;
+    padding: 25px;
+    margin: 20px 0px 30px;
+    color: rgb(24, 25, 29);
+    font-size: 16px;
+    box-sizing: border-box;
+    appearance: none;
+    border-radius: 25px;
+    max-height: 200px;
+    border: 1px solid rgba(24, 25, 29, 0.3);
+}
+.namecontainer{
+    position: relative;
+    width: 100%;
+}
+.if{
+    width: 100%;
+    height: 360px;
+
+}
+
+/* media*/
