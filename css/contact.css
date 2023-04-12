@@ -193,4 +193,8 @@ p {
     justify-items: left;
 
 }
+.icon i:hover{
+    color: #4d9559;
+    transform: translateY(-5px);
+}
 /* media*/
