@@ -1,3 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+ul{
+  list-style: none;
+}
+a{
+  list-style: none;
+  text-decoration: none;
+}
+#main{
+  width: 100%;
+  background-color: black;
+  height: 700px;
+}
+
+.navigation{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  width: 90%;
+  padding: 30px;
+}
 /* style contact*/
 .ContactContainer {
   position: relative;
@@ -210,4 +237,131 @@
 #map {
   width: 80%;
   height: 600px;
+}
+
+
+/*service*/
+#our-services{
+  width: 100%;
+  margin: 0px auto 0px auto;
+  background-color: black;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.services-heading{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+.services-heading strong{
+  color: #8d94b4 ;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.services-heading h2{
+  font-size: 2.2rem;
+  color: #ffffff;
+  max-width: 600px;
+  font-weight: 700;
+}
+
+
+
+.services-box-container{
+  max-width: 1200px;
+  width: 90%;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+
+
+}
+
+.services-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 100%;
+  width: 100%;
+  border: 1px solid #242424;
+  padding: 30px;
+  background-color: #1a1a1a;
+
+
+}
+
+.services-box i{
+  color: #ffffff;
+  font-size: 2rem;
+  width : 60px;
+  height: 60px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8d94b43b;
+
+}
+.services-box strong{
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-top: 20px;
+  font-weight: 600;
+
+
+}
+.services-box p {
+  color: #e7e7e7;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.services-box a{
+  height: 45px;
+  background-color: #8d94b43b;
+  color:#ffffff ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 5px;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.services-box:hover{
+  border: 1px solid #8d94b4;
+}
+
+.services-btn{
+  color: #c9c9c9;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  text-align: center;
+  padding: 0 10px;
+
+}
+
+.service-btn {
+  color: #8d94b4;
+  text-decoration: underline;
+  font-weight: 600;
+
 }
