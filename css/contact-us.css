@@ -88,7 +88,7 @@ li {
 /* --------------------------- Contact Us ---------------------------------------*/
 
 .contact-us {
-    margin: 50px 0px 0px 0px;
+    margin: 90px 0px 0px 0px;
     height: 55vh;
     background-image: linear-gradient(
         rgba(255, 255, 255, 0.5),
@@ -102,15 +102,15 @@ li {
 }
 
 .contact-us .text-main  {
-    position:relative;
-    top: 2%;
+    position: relative;
+    top: 0%;
     left: 25%;
     text-align: center;
     width: 50vw;
 
 }
 
-.text-main >h1 {
+.text-main > h1 {
     margin-bottom: 10px;
     font-size: 30px;
     letter-spacing: 2px;
@@ -120,4 +120,66 @@ li {
 .text-main> p {
     font-size: 15px;
     
+}
+
+
+/* --------------------------- Contact Us Form ---------------------------------------*/
+
+.form {
+    padding: 50px 55px;
+    width: 45vw;
+    height: auto;
+    background-color: white;
+    box-shadow: 0px 0px 5px rgb(182, 182, 182);
+    border-radius: 15px;
+    position: absolute;
+    top: 48%;
+    left: 27%; 
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid rgb(177, 177, 177);
+    padding: 5px 10px;
+    width: 15vw;
+    letter-spacing: 1px;
+    font-size: 16px;
+    border-radius: 10px 10px 0px 0px;
+    
+}
+
+input:focus {
+    
+    outline: none;
+}
+
+.input-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+#email {
+    margin-bottom: 50px;
+}
+
+#phone {
+    margin-bottom: 50px;
+}
+
+#infor {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+textarea{
+    resize: none;
+    width: 38vw;
+    height: 20vh;
+    border-radius: 10px;
+}
+
+label {
+    padding: 10px 5px;
 }
