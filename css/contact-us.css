@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@500;800&family=Pacifico&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: #2e2d2d;
+    font-size: 18px;
+    overflow-x: hidden;
+}
+
+/* ----------------- Navigation Bar --------------- */
+.navigation-bar{ 
+    background-color: white;
+    width: 100vw;
+    border-bottom: 1px solid #dbd8d8;
+}
+
+.topnav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    z-index: 9999;
+}
+
+.hamburger-icon i {
+    color: black;
+    font-size: 1.25rem;
+    display: none;
+}
+
+
+.logo {
+    font-size: 35px;
+    color: rgb(17, 30, 112);
+    font-weight: bold;
+    letter-spacing: 7px;
+    margin-left: 8vw;
+    text-decoration: none;
+    font-family: "Space Grotesk";
+}
+
+.logo:hover {
+    color: rgb(3, 0, 46);
+    transform: scale(1.1);
+    transition: transform 0.5s, color 0.5s;
+  }
+
+
+
+li {
+    list-style-type: none;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 70px;
+    max-width: 51vw;
+    padding: 20px 0px;
+    margin-right: 8vw;
+  }
+
+.navbar a {
+    text-decoration: none;
+    color: rgb(18, 32, 124);
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: visible;
+}
+  
+.navbar a:hover {
+    color: rgb(3, 0, 46);
+    transition: color 0.5s;
+  }
+
+
+
+
+/* --------------------------- Contact Us ---------------------------------------*/
+
+.contact-us {
+    margin: 50px 0px 0px 0px;
+    height: 55vh;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.685)
+      ),url("../images/Agriculture3.png");
+    
+    background-position: center ;
+    background-size: cover;
+    
+
+}
+
+.contact-us .text-main  {
+    position:relative;
+    top: 2%;
+    left: 25%;
+    text-align: center;
+    width: 50vw;
+
+}
+
+.text-main >h1 {
+    margin-bottom: 10px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.text-main> p {
+    font-size: 15px;
+    
+}
