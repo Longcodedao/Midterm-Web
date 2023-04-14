@@ -1,55 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact-US</title>
-    <link rel="stylesheet" href="./css/contact-us.css">
-    <script src="https://kit.fontawesome.com/57d08e8260.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="./css/contact-us.css" />
+    <script
+      src="https://kit.fontawesome.com/57d08e8260.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./js/contact-us.js"></script>
+  </head>
+  <body>
     <div class="navigation-bar">
-        <nav id="topnav" class="topnav">
-          <a href="#" class="logo" id="logo">SmartAgri</a>
-  
-          <ul class="navbar" id="nav-option">
-            <li><a href="#">Home</a></li>
-  
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Contact</a></li>
-            
-          </ul>
-        </nav>
-        <a href="" class="hamburger-icon"><i class="fa-solid fa-bars"></i></a>
-        
+      <nav id="topnav" class="topnav">
+        <a href="#" class="logo" id="logo">SmartAgri</a>
+
+        <ul class="navbar" id="nav-option">
+          <li><a href="#">Home</a></li>
+
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="" class="hamburger-icon"><i class="fa-solid fa-bars"></i></a>
     </div>
 
     <div class="contact-us">
-        <div class="text-main">
-            <h1>Contact Us</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing e
-                lit. Officiis neque illum odit vitae praesentium ex?</p>
-        </div>
-
+      <div class="text-main">
+        <h1>Contact Us</h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing e lit. Officiis
+          neque illum odit vitae praesentium ex?
+        </p>
+      </div>
     </div>
 
     <form action="" class="form">
-        <div class="input-name">
-            <input type="text" id="last-name" name="last-name" placeholder="First Name">
-            <input type="text" id="first-name" name="first-name" placeholder="Last Name">
-        </div>
-        
-        <input type="email" id="email" name="email" placeholder="Email"> <br>
+      <div class="input-name">
+        <input
+          type="text"
+          id="last-name"
+          name="last-name"
+          placeholder="First Name"
+        />
+        <input
+          type="text"
+          id="first-name"
+          name="first-name"
+          placeholder="Last Name"
+        />
+      </div>
 
-        <input type="text" id="phone" name="phone" placeholder="Phone number"> <br>
+      <input type="email" id="email" name="email" placeholder="Email" /> <br />
 
-        <label for="infor" id="infor">Things said to Us</label><br>
-        <textarea name="infor" id="infor" cols="30" rows="10"></textarea><br>
+      <input type="text" id="phone" name="phone" placeholder="Phone number" />
+      <br />
 
-        <input type="submit" value="Gửi"><br>
+      <label for="infor" id="infor">Things said to Us</label><br />
+      <textarea name="infor" id="infor" cols="30" rows="10"></textarea><br />
 
-        
+      <!-- <div data-modal-target="#modal" id="open-modal">Submit</div> -->
+
+      <input
+        type="submit"
+        value="Submit"
+        data-modal-target="#modal"
+        id="open-modal"
+      /><br />
     </form>
-</body>
+
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="title">Thank you</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body">
+        <i class="fa-solid fa-circle-check"></i>
+        <h2>You did it!</h2>
+        <p>
+          Your information has been successfully submitted. Thanks a lot!. We
+          love you for contributing to our CEO's pocket. Thanks a lot dude!
+        </p>
+        <button type="button">Back to homepage</button>
+      </div>
+    </div>
+
+    <div id="overlay"></div>
+  </body>
 </html>

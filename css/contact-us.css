@@ -1,185 +1,270 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@500;800&family=Pacifico&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    color: #2e2d2d;
-    font-size: 18px;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: #2e2d2d;
+  font-size: 18px;
+  overflow-x: hidden;
 }
 
 /* ----------------- Navigation Bar --------------- */
-.navigation-bar{ 
-    background-color: white;
-    width: 100vw;
-    border-bottom: 1px solid #dbd8d8;
+.navigation-bar {
+  background-color: white;
+  width: 100vw;
+  border-bottom: 1px solid #dbd8d8;
 }
 
 .topnav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 20px 0;
-    z-index: 9999;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  z-index: 9999;
 }
 
 .hamburger-icon i {
-    color: black;
-    font-size: 1.25rem;
-    display: none;
+  color: black;
+  font-size: 1.25rem;
+  display: none;
 }
 
-
 .logo {
-    font-size: 35px;
-    color: rgb(17, 30, 112);
-    font-weight: bold;
-    letter-spacing: 7px;
-    margin-left: 8vw;
-    text-decoration: none;
-    font-family: "Space Grotesk";
+  font-size: 35px;
+  color: rgb(17, 30, 112);
+  font-weight: bold;
+  letter-spacing: 7px;
+  margin-left: 8vw;
+  text-decoration: none;
+  font-family: "Space Grotesk";
 }
 
 .logo:hover {
-    color: rgb(3, 0, 46);
-    transform: scale(1.1);
-    transition: transform 0.5s, color 0.5s;
-  }
-
-
+  color: rgb(3, 0, 46);
+  transform: scale(1.1);
+  transition: transform 0.5s, color 0.5s;
+}
 
 li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 70px;
-    max-width: 51vw;
-    padding: 20px 0px;
-    margin-right: 8vw;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 70px;
+  max-width: 51vw;
+  padding: 20px 0px;
+  margin-right: 8vw;
+}
 
 .navbar a {
-    text-decoration: none;
-    color: rgb(18, 32, 124);
-    font-weight: 600;
-    font-size: 1rem;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: visible;
+  text-decoration: none;
+  color: rgb(18, 32, 124);
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: visible;
 }
-  
+
 .navbar a:hover {
-    color: rgb(3, 0, 46);
-    transition: color 0.5s;
-  }
-
-
-
+  color: rgb(3, 0, 46);
+  transition: color 0.5s;
+}
 
 /* --------------------------- Contact Us ---------------------------------------*/
 
 .contact-us {
-    margin: 90px 0px 0px 0px;
-    height: 55vh;
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0.685)
-      ),url("../images/Agriculture3.png");
-    
-    background-position: center ;
-    background-size: cover;
-    
+  margin: 90px 0px 0px 0px;
+  height: 55vh;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.685)
+    ),
+    url("../images/Agriculture3.png");
 
+  background-position: center;
+  background-size: cover;
 }
 
-.contact-us .text-main  {
-    position: relative;
-    top: 0%;
-    left: 25%;
-    text-align: center;
-    width: 50vw;
-
+.contact-us .text-main {
+  position: relative;
+  top: 0%;
+  left: 25%;
+  text-align: center;
+  width: 50vw;
 }
 
 .text-main > h1 {
-    margin-bottom: 10px;
-    font-size: 30px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+  margin-bottom: 10px;
+  font-size: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-.text-main> p {
-    font-size: 15px;
-    
+.text-main > p {
+  font-size: 15px;
 }
-
 
 /* --------------------------- Contact Us Form ---------------------------------------*/
 
 .form {
-    padding: 50px 55px;
-    width: 45vw;
-    height: auto;
-    background-color: white;
-    box-shadow: 0px 0px 5px rgb(182, 182, 182);
-    border-radius: 15px;
-    position: absolute;
-    top: 48%;
-    left: 27%; 
+  padding: 50px 55px;
+  width: 45vw;
+  height: auto;
+  background-color: white;
+  box-shadow: 0px 0px 5px rgb(182, 182, 182);
+  border-radius: 15px;
+  position: absolute;
+  top: 48%;
+  left: 27%;
 }
 
 input {
-    border: none;
-    border-bottom: 1px solid rgb(177, 177, 177);
-    padding: 5px 10px;
-    width: 15vw;
-    letter-spacing: 1px;
-    font-size: 16px;
-    border-radius: 10px 10px 0px 0px;
-    
+  border: none;
+  border-bottom: 1px solid rgb(177, 177, 177);
+  padding: 5px 10px;
+  width: 15vw;
+  letter-spacing: 1px;
+  font-size: 16px;
+  border-radius: 10px 10px 0px 0px;
 }
 
 input:focus {
-    
-    outline: none;
+  outline: none;
 }
 
 .input-name {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 50px;
 }
 
 #email {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 #phone {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 #infor {
-    margin-top: 20px;
-    margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
-textarea{
-    resize: none;
-    width: 38vw;
-    height: 20vh;
-    border-radius: 10px;
+textarea {
+  resize: none;
+  width: 38vw;
+  height: 20vh;
+  border-radius: 10px;
 }
 
 label {
-    padding: 10px 5px;
+  padding: 10px 5px;
+}
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: black 1px solid;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: rgb(214, 214, 214);
+  width: 500px;
+  max-width: 80%;
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+.modal-header {
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal-header .close-button {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.modal-header .title {
+  font-size: 1.75rem;
+}
+
+.fa-circle-check {
+  color: green;
+  font-size: 6rem;
+}
+
+.modal-body {
+  padding: 12px 18px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+#overlay.active {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.modal-body button {
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.modal-body button:hover {
+  background-color: rgb(0, 168, 0);
+  transform: scale(1.04);
+  transition: 300ms ease-in-out;
+}
+.modal-body h2 {
+  color: rgb(13, 102, 13);
+  font-size: 1.5rem;
+  margin-bottom: -0.25rem;
+}
+.modal-body p {
+  color: rgb(99, 99, 99);
+  margin-bottom: 1rem;
 }
