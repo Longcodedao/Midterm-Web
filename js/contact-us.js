@@ -41,21 +41,47 @@ overlay.addEventListener("click", () => {
   });
 });
 
+// const form = document.querySelector(".form");
+// form.addEventListener("submit", (event) => {
+//   event.preventDefault(); // prevent default form submission behavior
+//   const modal = document.querySelector("#modal");
+//   openModal(modal);
+//   // Submit the form using JavaScript
+//   // You can use Fetch or XMLHttpRequest to submit the form data to the server
+//   fetch(form.action, {
+//     method: form.method,
+//     body: new FormData(form),
+//   })
+//     .then((response) => {
+//       // handle response here, if necessary
+//     })
+//     .catch((error) => {
+//       // handle error here, if necessary
+//     });
+// });
+
 const form = document.querySelector(".form");
-form.addEventListener("submit", (event) => {
-  event.preventDefault(); // prevent default form submission behavior
-  const modal = document.querySelector("#modal");
-  openModal(modal);
-  // Submit the form using JavaScript
-  // You can use Fetch or XMLHttpRequest to submit the form data to the server
-  fetch(form.action, {
-    method: form.method,
-    body: new FormData(form),
-  })
-    .then((response) => {
-      // handle response here, if necessary
-    })
-    .catch((error) => {
-      // handle error here, if necessary
-    });
+const submitButton = form.querySelector('input[type="submit"]');
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault(); // prevent the default form submission behavior
+
+  const formData = new FormData(form); // get the form data
+
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", form.action);
+  xhr.send(formData); // submit the form data asynchronously
+
+  console.log({
+    firstName: formData.get("first-name"),
+    lastName: formData.get("last-name"),
+    email: formData.get("email"),
+    phone: formData.get("phone"),
+    information: formData.get("infor"),
+  });
+
+  const modal = document.querySelector(submitButton.dataset.modalTarget);
+  openModal(modal); // open the modal
+
+  form.reset(); // reset the form inputs
 });
