@@ -55,7 +55,15 @@ function validateForm() {
     document.forms["contactForm"]["email"].classList.add("error");
     error = true;
   } else {
-    document.forms["contactForm"]["email"].classList.remove("error");
+    // Kiểm tra định dạng email hợp lệ
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      console.log("Địa chỉ email không hợp lệ!");
+      document.forms["contactForm"]["email"].classList.add("error");
+      error = true;
+    } else {
+      document.forms["contactForm"]["email"].classList.remove("error");
+    }
   }
 
   if (subject == "") {
