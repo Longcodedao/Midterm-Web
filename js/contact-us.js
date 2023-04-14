@@ -3,12 +3,13 @@ const closeModalButtons = document.querySelectorAll("[data-close-button]");
 
 const overlay = document.getElementById("overlay");
 
-openModalButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const modal = document.querySelector(button.dataset.modalTarget);
-    openModal(modal);
-  });
-});
+// openModalButtons.forEach((button) => {
+//   button.addEventListener("click", () => {
+//     const modal = document.querySelector(button.dataset.modalTarget);
+//     openModal(modal);
+//   });
+// });
+
 closeModalButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const modal = button.closest(".modal");
@@ -41,43 +42,69 @@ overlay.addEventListener("click", () => {
   });
 });
 
-// const form = document.querySelector(".form");
-// form.addEventListener("submit", (event) => {
-//   event.preventDefault(); // prevent default form submission behavior
-//   const modal = document.querySelector("#modal");
-//   openModal(modal);
-//   // Submit the form using JavaScript
-//   // You can use Fetch or XMLHttpRequest to submit the form data to the server
-//   fetch(form.action, {
-//     method: form.method,
-//     body: new FormData(form),
-//   })
-//     .then((response) => {
-//       // handle response here, if necessary
-//     })
-//     .catch((error) => {
-//       // handle error here, if necessary
-//     });
-// });
-
 const form = document.querySelector(".form");
 const submitButton = form.querySelector('input[type="submit"]');
 
-form.addEventListener("submit", function (e) {
+submitButton.addEventListener("click", function (e) {
   e.preventDefault(); // prevent the default form submission behavior
 
-  const formData = new FormData(form); // get the form data
+  const firstName = form.querySelector('input[name="first-name"]').value.trim();
+  const lastName = form.querySelector('input[name="last-name"]').value.trim();
+  const email = form.querySelector('input[name="email"]').value.trim();
+  const phone = form.querySelector('input[name="phone"]').value.trim();
+  const infor = form.querySelector('textarea[name="infor"]').value.trim();
+
+  // Validate first name
+  if (firstName === "") {
+    alert("Please enter your first name.");
+    return;
+  }
+
+  // Validate last name
+  if (lastName === "") {
+    alert("Please enter your last name.");
+    return;
+  }
+
+  // Validate email
+  if (email === "") {
+    alert("Please enter your email address.");
+    return;
+  } else if (!/\S+@\S+\.\S+/.test(email)) {
+    alert(
+      "Please enter a valid email address (for example: imSoStupidIcantFillAnEmail@gmail.com)."
+    );
+    return;
+  }
+
+  // Validate phone number
+  if (phone === "") {
+    alert("Please enter your phone number.");
+    return;
+  } else if (!/^\d{10,11}$/.test(phone)) {
+    alert("Please enter a valid 10 or 11-digit phone number.");
+    return;
+  }
+
+  // Validate information
+  if (infor === "") {
+    alert("Please enter some information (So that we can make fun of you <3).");
+    return;
+  }
+
+  // If all inputs are valid, submit the form
+  const formData = new FormData(form);
 
   const xhr = new XMLHttpRequest();
   xhr.open("POST", form.action);
   xhr.send(formData); // submit the form data asynchronously
 
   console.log({
-    firstName: formData.get("first-name"),
-    lastName: formData.get("last-name"),
-    email: formData.get("email"),
-    phone: formData.get("phone"),
-    information: formData.get("infor"),
+    firstName,
+    lastName,
+    email,
+    phone,
+    infor,
   });
 
   const modal = document.querySelector(submitButton.dataset.modalTarget);
