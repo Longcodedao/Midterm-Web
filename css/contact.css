@@ -363,5 +363,20 @@ a{
   color: #8d94b4;
   text-decoration: underline;
   font-weight: 600;
+}
 
+/* media */
+
+@media(max-width:850px){
+  .services-box-container{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:724px) {
+  .services-heading h2{
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+  
 }
