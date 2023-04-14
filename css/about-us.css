@@ -12,9 +12,15 @@
 
 .hero {
   background-image: linear-gradient(
+<<<<<<< Updated upstream
       rgba(63, 100, 34, 0.5),
       rgba(63, 100, 34, 0.5)
     ), url("../images/AgricultureHero.jpg");
+=======
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ), url("../images/HeroSectionAboutUs.jpg");
+>>>>>>> Stashed changes
   /* background-image: url("../images/AgricultureHero.jpg"); */
   background-position: center;
   background-size: cover;
