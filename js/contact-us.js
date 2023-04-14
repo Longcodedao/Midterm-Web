@@ -1,6 +1,3 @@
-// Google Map Api
-// Initialize and add the map
-
 // Modal PopUp
 const openModalButtons = document.querySelectorAll("[data-modal-target]");
 const closeModalButtons = document.querySelectorAll("[data-close-button]");
