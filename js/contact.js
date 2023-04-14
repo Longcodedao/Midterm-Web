@@ -34,3 +34,50 @@ async function initMap() {
 }
 
 initMap();
+
+function validateForm() {
+  var name = document.forms["contactForm"]["name"].value;
+  var email = document.forms["contactForm"]["email"].value;
+  var subject = document.forms["contactForm"]["subject"].value;
+  var message = document.forms["contactForm"]["message"].value;
+  var error = false;
+
+  if (name == "") {
+    alert("Vui lòng nhập họ và tên của bạn!");
+    document.forms["contactForm"]["name"].classList.add("error");
+    error = true;
+  } else {
+    document.forms["contactForm"]["name"].classList.remove("error");
+  }
+
+  if (email == "") {
+    alert("Vui lòng nhập địa chỉ email của bạn!");
+    document.forms["contactForm"]["email"].classList.add("error");
+    error = true;
+  } else {
+    document.forms["contactForm"]["email"].classList.remove("error");
+  }
+
+  if (subject == "") {
+    alert("Vui lòng nhập tiêu đề!");
+    document.forms["contactForm"]["subject"].classList.add("error");
+    error = true;
+  } else {
+    document.forms["contactForm"]["subject"].classList.remove("error");
+  }
+
+  if (message == "") {
+    alert("Vui lòng nhập nội dung tin nhắn!");
+    document.forms["contactForm"]["message"].classList.add("error");
+    error = true;
+  } else {
+    document.forms["contactForm"]["message"].classList.remove("error");
+  }
+
+  if (error) {
+    return false;
+  }
+
+  alert("Cảm ơn bạn đã liên hệ với chúng tôi!");
+  return true;
+}

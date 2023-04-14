@@ -110,34 +110,21 @@
 
             <div class="ContactInput">
               <div class="namecontainer">
-                <form name="form1" action="#">
-                  <ul>
-                    <li>
-                      <input
-                        type="text"
-                        placeholder="Name*"
-                        class="inputt"
-                        name="text1"
-                      />
-                    </li>
-                    <li>
-                      <input placeholder="Email*" class="inputt" id="Name1" />
-                    </li>
-                    <textarea
-                      rows="8"
-                      placeholder="Type your message here…"
-                      class="textarea"
-                    ></textarea>
-                    <li>
-                      <input
-                        type="submit"
-                        name="submit"
-                        value="Submit"
-                        class="buttsubmit"
-                        onclick="allLetter(document.form1.text1)"
-                      />
-                    </li>
-                  </ul>
+                <form name="contactForm" action="submit_form.php" method="post" onsubmit="return validateForm()">
+                  <label for="name">Họ và tên:</label>
+                  <input type="text" id="name" name="name" required><br><br>
+              
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required><br><br>
+              
+                  <label for="subject">Tiêu đề:</label>
+                  <input type="text" id="subject" name="subject" required><br><br>
+              
+                  <label for="message">Nội dung:</label>
+                  <textarea id="message" name="message" rows="5" required></textarea><br><br>
+              
+                  <input type="submit" value="Gửi">
+                  <input type="reset" value="Xóa">
                 </form>
               </div>
             </div>
