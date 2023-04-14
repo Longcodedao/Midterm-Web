@@ -115,6 +115,7 @@ li {
   width: 70vw;
   max-height: 60vh;
   padding: 20px 0px;
+  overflow: hidden;
 }
 
 .text-hero h1 {
@@ -570,6 +571,52 @@ li {
 }
 /* --------------------- Responsive -----------------------*/
 
+@media only screen and (max-width: 1280px) {
+
+  .hero {
+    height: 120vh;
+  }
+
+  .text-hero {
+    max-height: 80vh;
+    top: 40%;
+  }
+
+  .text-hero > h1 {
+    font-size: 55px;
+  }
+
+  .text-hero > p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .we-do {
+    padding: 90px 40px 100px 40px;
+  }
+
+  .container > h1 {
+    font-size: 36px;
+  }
+  .container > p {
+    font-size: 16px;
+  }
+
+  .container {
+    margin-bottom: 60px;
+  }
+
+  .we-do-col > p{
+    font-size: 14px;
+  }
+
+  .we-do-col {
+    max-width: 16rem;
+  }
+}
+
+
+
 @media only screen and (max-width: 960px) {
   .navbar a {
     font-size: 0.7rem;
@@ -592,6 +639,8 @@ li {
     justify-content: flex-start;
     align-items: flex-start;
     padding: 28px 0px 10px 0px;
+    position: fixed;
+    top: 0;
   }
 
   .topnav .logo {
@@ -616,10 +665,11 @@ li {
     font-size: 1rem;
     border: 1px solid rgb(18, 32, 124);
     border-radius: 10px;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     margin-top: 20px;
+    z-index: 100000000;
   }
 
   .hero h1 {
@@ -717,10 +767,7 @@ li {
 }
 /* --------------------- Responsive -----------------------*/
 @media only screen and (max-width: 600px) {
-  .sticky {
-    position: relative;
-  }
-
+  
   .navbar li {
     display: none;
   }
@@ -732,6 +779,11 @@ li {
   .hamburger-icon i {
     display: inline-block;
     margin-right: 10vw;
+  }
+
+  .topnav{
+    position: fixed;
+    top: 0;
   }
 
   .hero h1 {
@@ -853,6 +905,10 @@ li {
   }
   .box {
     width: 80vw;
+  }
+
+  .footer-wrapper > h3 {
+    letter-spacing: 3px;
   }
 }
 
