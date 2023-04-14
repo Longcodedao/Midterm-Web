@@ -7,9 +7,11 @@
   font-family: "Poppins", sans-serif;
   color: #2e2d2d;
   font-size: 18px;
-  overflow-x: hidden;
 }
 
+body {
+  overflow-x: hidden;
+}
 /* ----------------- Navigation Bar --------------- */
 .navigation-bar {
   background-color: white;
@@ -271,6 +273,8 @@ label {
 }
 
 #map {
-  width: 80vw;
+  width: 60vw;
   height: 500px;
+  margin-top: 30rem;
+  margin: 0 auto;
 }
