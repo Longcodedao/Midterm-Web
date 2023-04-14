@@ -1,14 +1,35 @@
+// Google Map Api
+let map;
+
+async function initMap() {
+  //@ts-ignore
+  const { Map } = await google.maps.importLibrary("maps");
+  let ourPlace = { lat: 16.07109753993075, lng: 108.22024833862913 };
+
+  map = new Map(document.getElementById("map"), {
+    center: { lat: 16.071044494159715, lng: 108.22024246791646 },
+    zoom: 10,
+    center: ourPlace,
+  });
+
+  const locationButton = document.createElement("button");
+  locationButton.textContent = "Current Location";
+  locationButton.classList.add("custom-map-control-button");
+
+  let marker = new google.maps.Marker({
+    position: ourPlace,
+    map: map,
+    title: "OUR PLACE, HALLELUJAH",
+  });
+}
+
+initMap();
+
+// Modal PopUp
 const openModalButtons = document.querySelectorAll("[data-modal-target]");
 const closeModalButtons = document.querySelectorAll("[data-close-button]");
 
 const overlay = document.getElementById("overlay");
-
-// openModalButtons.forEach((button) => {
-//   button.addEventListener("click", () => {
-//     const modal = document.querySelector(button.dataset.modalTarget);
-//     openModal(modal);
-//   });
-// });
 
 closeModalButtons.forEach((button) => {
   button.addEventListener("click", () => {

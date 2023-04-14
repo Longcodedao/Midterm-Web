@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact-US</title>
     <link rel="stylesheet" href="./css/contact-us.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
     <script
       src="https://kit.fontawesome.com/57d08e8260.js"
       crossorigin="anonymous"
@@ -77,8 +79,6 @@
       <textarea name="infor" id="infor" cols="30" rows="10" required></textarea
       ><br />
 
-      <!-- <div data-modal-target="#modal" id="open-modal">Submit</div> -->
-
       <input
         type="submit"
         value="Submit"
@@ -104,5 +104,17 @@
     </div>
 
     <div id="overlay"></div>
+
+    <div class="our-location">
+      <h1>Our location</h1>
+    </div>
+
+    <div id="map"></div>
+
+    <script
+      defer
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_VWSw6-7cgodk7LVei0DtPjs2viEdIdA&callback=initMap"
+    ></script>
   </body>
 </html>
