@@ -14,7 +14,7 @@
     <script
       defer
       async
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNBFWJzpmPRynMVPSY2k29ruzjdN4CxsM&callback=Initialize"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNBFWJzpmPRynMVPSY2k29ruzjdN4CxsM&libraries=places&callback=Initialize"
       onload="console.log('Google Maps API loaded.');"
     ></script>
 
@@ -115,8 +115,7 @@
 
     <div class="our-location">
       <h1>Our location</h1>
-      <div></div>
+      <div id="map"></div>
     </div>
-    <div id="map"></div>
   </body>
 </html>

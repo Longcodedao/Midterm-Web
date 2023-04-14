@@ -272,9 +272,13 @@ label {
   margin-bottom: 1rem;
 }
 
+.our-location {
+  margin-top: 10rem;
+}
 #map {
   width: 60vw;
   height: 500px;
   margin-top: 30rem;
   margin: 0 auto;
+  border-radius: 10px;
 }

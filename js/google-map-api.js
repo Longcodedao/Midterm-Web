@@ -1,24 +1,28 @@
 let map;
 
 async function Initialize() {
-  // The location of Uluru
-  const position = { lat: -25.344, lng: 131.031 };
+  // The location of our business(its VNUK because i am homeless)
+
+  const position = { lat: 16.071137280035177, lng: 108.2202210102441 };
   // Request needed libraries.
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
 
-  // The map, centered at Uluru
+  const infowindow = new google.maps.InfoWindow();
+  const service = new google.maps.places.PlacesService(map);
+
+  // The map, centered at VNUK
   map = new Map(document.getElementById("map"), {
-    zoom: 4,
+    zoom: 12,
     center: position,
-    mapId: "DEMO_MAP_ID",
   });
 
-  // The marker, positioned at Uluru
+  // The marker, positioned at VNUK
+
   const marker = new google.maps.Marker({
     map: map,
     position: position,
-    title: "Uluru",
+    title: "VNUK or something idk",
   });
 }
 
