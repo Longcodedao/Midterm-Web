@@ -378,22 +378,13 @@ li {
 
 .product-wrapper {
   background-color: #fafafa;
-<<<<<<< Updated upstream
-  border-top: 1px solid #cacaca;
-  background-color: #fefefe ;
-  background-color: #fafafa;
-  padding: 6rem 0;
-=======
-
   border-top: 1px solid #cacaca;
   background-color: #fefefe;
-
   background-color: #fafafa;
-
-  padding: 5rem 0;
->>>>>>> Stashed changes
+  padding: 6rem 0;
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center;
 }
 
@@ -466,9 +457,9 @@ li {
 
 .row2 {
   background-image: linear-gradient(
-    rgba(63, 100, 34, 0.5),
-    rgba(63, 100, 34, 0.5)
-  ),
+      rgba(63, 100, 34, 0.5),
+      rgba(63, 100, 34, 0.5)
+    ),
     url("../images/wheatfield.jpg");
   /* background-image: url("../images/AgricultureHero.jpg"); */
   background-repeat: no-repeat;
@@ -511,10 +502,14 @@ li {
   font-size: 20px;
 }
 .row2 li > i {
-  padding: 7.5px;
-  border: 1px solid grey;
-  border-radius: 10px;
+  font-size: 1.25rem;
+  margin-right: 1rem;
+}
+
+.icon-wrapper {
+  padding: 5px;
   margin-right: 15px;
+  border-radius: 8px;
 }
 
 .row2-1 {
@@ -636,7 +631,6 @@ li {
 
   .list-mem {
     height: 75vh;
-    
   }
 
   .intro-mem {
@@ -646,14 +640,10 @@ li {
   .intro-mem h3 {
     overflow: hidden;
   }
-<<<<<<< Updated upstream
 
   .product-wrapper {
     padding: 4rem 0;
   }
-
-=======
->>>>>>> Stashed changes
 }
 
 @media only screen and (max-width: 960px) {
@@ -901,11 +891,6 @@ li {
   .product-content > p {
     font-size: 0.7rem;
   }
-<<<<<<< Updated upstream
-
-  
-=======
->>>>>>> Stashed changes
 }
 
 @media only screen and (max-width: 500px) {
@@ -992,7 +977,6 @@ li {
     font-size: 0.85rem;
   }
 
-
   .row2 ul {
     width: 70vw;
     z-index: 1000000000000;
@@ -1040,7 +1024,7 @@ li {
 }
 
 @media only screen and (min-width: 980px) {
-  .product-wrapper.slideright {
+  .product-keyframe-wrapper.slideright {
     animation-name: slideright;
     animation-duration: 1s;
     overflow: hidden;
