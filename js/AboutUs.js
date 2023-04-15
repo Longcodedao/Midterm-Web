@@ -67,7 +67,7 @@ if ($("window").width() > 600) {
 
 // --working with keyframes--
 
-const productWrapper = document.querySelector(".product-wrapper");
+const productWrapper = document.querySelector(".product-keyframe-wrapper");
 const ourTeam = document.querySelector(".our-team");
 
 // define a function that checks if the element is in view
