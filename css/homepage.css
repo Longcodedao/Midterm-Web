@@ -916,6 +916,13 @@ li {
   .hero {
     text-align: center;
   }
+  .box {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .our-advantages {
+    margin-top: 2rem;
+  }
 }
 
 @keyframes slideleft {
