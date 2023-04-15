@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@500;800&family=Pacifico&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap");
 
-
 * {
   margin: 0;
   padding: 0;
@@ -574,7 +573,6 @@ li {
 /* --------------------- Responsive -----------------------*/
 
 @media only screen and (max-width: 1280px) {
-
   .hero {
     height: 120vh;
   }
@@ -608,7 +606,7 @@ li {
     margin-bottom: 60px;
   }
 
-  .we-do-col > p{
+  .we-do-col > p {
     font-size: 14px;
   }
 
@@ -616,8 +614,6 @@ li {
     max-width: 16rem;
   }
 }
-
-
 
 @media only screen and (max-width: 960px) {
   .navbar a {
@@ -770,7 +766,6 @@ li {
 }
 /* --------------------- Responsive -----------------------*/
 @media only screen and (max-width: 650px) {
-  
   .navbar li {
     display: none;
   }
@@ -784,7 +779,7 @@ li {
     margin-right: 10vw;
   }
 
-  .topnav{
+  .topnav {
     position: fixed;
     top: 0;
   }
@@ -912,6 +907,14 @@ li {
 
   .footer-wrapper > h3 {
     letter-spacing: 3px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+  .hero {
+    text-align: center;
   }
 }
 
