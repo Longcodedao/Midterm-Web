@@ -453,6 +453,7 @@ li {
   transition: 500ms ease-in-out;
   background-size: 125% 125%;
 }
+
 /* --------------------Technologies Include------------------------------- */
 
 .row2 {
@@ -461,34 +462,33 @@ li {
       rgba(63, 100, 34, 0.5)
     ),
     url("../images/wheatfield.jpg");
-  /* background-image: url("../images/AgricultureHero.jpg"); */
+
   background-repeat: no-repeat;
   background-position: 20%;
   background-size: cover;
-  position: relative;
-  height: 40rem;
+
+  display: flex;
+  flex-direction: column;
   width: 100vw;
-  padding: 40px 0 100px 0;
-  overflow: hidden;
+
+  align-items: center;
+  justify-content: center;
+  padding-top: 7%;
+  padding-bottom: 7%;
 }
 
 .row2 h2 {
-  font-size: 35px;
-  margin-top: 30px;
+  font-size: 3rem;
   margin-bottom: 40px;
-  margin-left: 80px;
   color: #ffffff;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 .row2 ul {
-  width: 35vw;
+  max-width: 80vw;
   text-align: left;
-  margin-left: 100px;
-  color: rgb(0, 82, 0);
-  font-size: 200%;
-  padding: 20px 20px;
+  padding: 20px;
   background-color: white;
   border: 1px solid rgb(185, 185, 185);
   border-radius: 10px;
@@ -498,22 +498,11 @@ li {
   padding: 7px;
   margin-bottom: 5px;
   display: flex;
-  align-items: center;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .row2 li > i {
   font-size: 1.25rem;
   margin-right: 1rem;
-}
-
-.icon-wrapper {
-  padding: 5px;
-  margin-right: 15px;
-  border-radius: 8px;
-}
-
-.row2-1 {
-  padding-left: 0%;
 }
 
 /* --------------------------- Footer ---------------------------------------- */
@@ -759,17 +748,8 @@ li {
     background-position: 34%;
   }
 
-  .row2 > h2 {
-    font-size: 30px;
-    color: #ffffff;
-    text-transform: uppercase;
-    margin-left: 70px;
-  }
-
-  .row2 > ul {
-    width: 50vw;
-    padding: 20px 10px;
-    margin-left: 70px;
+  .row2 h2 {
+    font-size: 2rem;
   }
 
   .product-wrapper {
@@ -797,6 +777,9 @@ li {
     padding-left: 16vw;
     overflow: hidden;
   }
+  .row2 ul li {
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (max-width: 670px) {
@@ -805,8 +788,10 @@ li {
   }
 
   .row2 {
-    height: 85vh;
-    background-position: 38%;
+    background-position: 50%;
+  }
+  .row2 > ul {
+    width: 70%;
   }
 
   .row2 > ul li {
@@ -815,6 +800,10 @@ li {
 
   .row2 li > i {
     font-size: 15px;
+  }
+
+  .row2 h2 {
+    font-size: 1.5rem;
   }
 
   .list-mem {
@@ -952,7 +941,7 @@ li {
     line-height: 28px;
   }
 
-  .product-wrapper > h1 {
+  .product-wrapper h1 {
     font-size: 1.5rem;
     letter-spacing: 1.5px;
   }
@@ -968,18 +957,17 @@ li {
     height: 12rem;
   }
 
-  .product-content > h2 {
+  .product-content h2 {
     font-size: 1.35rem;
     margin-bottom: 3.5px;
   }
 
-  .product-content > p {
+  .product-content p {
     font-size: 0.85rem;
   }
 
-  .row2 ul {
-    width: 70vw;
-    z-index: 1000000000000;
+  .row2 h2 {
+    font-size: 1.5rem;
   }
 }
 
@@ -991,16 +979,13 @@ li {
     margin: 0 0rem;
   }
 
-  .row2 {
-    padding: 25px 0 100px 0;
-  }
-
   .row2 h2 {
-    font-size: 30px;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
   }
-
-  .row2 {
-    height: 115vh;
+  .row2 ul {
+    width: 90vw;
+    font-size: 0.75rem;
   }
 }
 
