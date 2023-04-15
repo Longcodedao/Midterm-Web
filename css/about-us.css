@@ -372,18 +372,19 @@ li {
 /* --------------PRODUCT---------------------- */
 
 .product-wrapper {
-  margin: 2rem 0;
-  padding-right: 4rem;
-  padding-left: 4rem;
+  background-color: #fafafa ;
+  padding: 5rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 5rem;
+
 }
 
 .product-wrapper h1 {
   font-size: 2.5rem;
   margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 .product-row {
   display: flex;
@@ -417,27 +418,27 @@ li {
 
 #product1 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/climatemonitoring.jpg");
+    url("../images/climatemonitoring.jpg");
 }
 #product2 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/agriculture\ drone.jpg");
+    url("../images/agriculture\ drone.jpg");
 }
 #product3 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/cattlemonitoring.jpg");
+    url("../images/cattlemonitoring.jpg");
 }
 #product4 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/robotharvester.jpg");
+    url("../images/robotharvester.jpg");
 }
 #product5 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/predictivefarming.PNG");
+    url("../images/predictivefarming.PNG");
 }
 #product6 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/precisionfarming.png");
+    url("../images/precisionfarming.png");
 }
 
 .product-box:hover {
@@ -678,7 +679,7 @@ li {
 
   .our-team {
     padding: 2.5rem 3rem;
-    height: 120vh;
+    height: 140vh;
   }
 
   .text-intro > h1 {
@@ -737,6 +738,27 @@ li {
     padding: 20px 10px;
     margin-left: 70px;
   }
+
+
+  .product-wrapper {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .product-box {
+    width: 12rem;
+    height: 14rem;
+  }
+
+  .product-content > h2{
+    font-size: 1.15rem;
+    margin-bottom: 3px;
+  }
+
+  .product-content > p {
+    font-size: 0.85rem;
+  }
+
 }
 
 @media only screen and (max-width: 800px) {
@@ -746,7 +768,7 @@ li {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
   .row2 {
     height: 85vh;
     background-position: 38%;
@@ -779,4 +801,6 @@ li {
     font-size: 18px;
     overflow: hidden;
   }
+
+  
 }
