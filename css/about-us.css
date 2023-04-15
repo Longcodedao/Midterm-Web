@@ -10,6 +10,10 @@
   font-size: 18px;
   overflow-x: hidden;
 }
+html {
+  /* TO FIX OFFSET ANCHOR LINK */
+  scroll-padding-top: 5vw;
+}
 
 .hero {
   background-image: linear-gradient(
@@ -372,12 +376,11 @@ li {
 /* --------------PRODUCT---------------------- */
 
 .product-wrapper {
-  background-color: #fafafa ;
+  background-color: #fafafa;
   padding: 5rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
 .product-wrapper h1 {
@@ -739,7 +742,6 @@ li {
     margin-left: 70px;
   }
 
-
   .product-wrapper {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -750,7 +752,7 @@ li {
     height: 14rem;
   }
 
-  .product-content > h2{
+  .product-content > h2 {
     font-size: 1.15rem;
     margin-bottom: 3px;
   }
@@ -758,7 +760,6 @@ li {
   .product-content > p {
     font-size: 0.85rem;
   }
-
 }
 
 @media only screen and (max-width: 800px) {
@@ -801,8 +802,6 @@ li {
     font-size: 18px;
     overflow: hidden;
   }
-
-  
 }
 
 /* -----KeyFrames------ */
