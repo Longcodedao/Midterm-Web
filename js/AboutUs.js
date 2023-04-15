@@ -25,7 +25,7 @@ if($(window).width() > 870) {
         margin:10,
         nav:false,
         responsive:{
-            300 :{
+            200 :{
                 items: 1
             },
             
