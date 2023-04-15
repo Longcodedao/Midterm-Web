@@ -804,3 +804,56 @@ li {
 
   
 }
+
+/* -----KeyFrames------ */
+@keyframes slideleft {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes slideright {
+  from {
+    margin-left: 50%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+@keyframes slideup {
+  from {
+    transform: translateY(250px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slidedown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(250px);
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  .product-wrapper.slideright {
+    animation-name: slideright;
+    animation-duration: 1s;
+    overflow: hidden;
+    animation-play-state: running;
+  }
+
+  .our-team.slideleft {
+    animation-name: slideleft;
+    animation-duration: 1s;
+    overflow: hidden;
+    animation-play-state: running;
+  }
+}

@@ -369,7 +369,8 @@ label {
 }
 
 .further-info-wrapper:hover {
-  transform: scale(1.03);
+  transform: scale(1.04);
+  transition: 200ms ease-in-out;
 }
 .further-info-wrapper i {
   font-size: 2rem;
