@@ -19,7 +19,7 @@ var logo = document.getElementById("logo");
 var navigate_options = document.getElementById("nav-option");
 var sticky = NavBar.offsetTop;
 
-if ($(window).width() > 960){
+if ($(window).width() > 960) {
   $(window).scroll(function () {
     if ($(window).scrollTop() > sticky + 100) {
       NavBar.classList.add("sticky");
@@ -31,18 +31,17 @@ if ($(window).width() > 960){
       navigate_options.classList.remove("white-background");
     }
   });
-} 
-
+}
 
 $listNav = $("li.nav-opt");
 
 $("#hamburger-icon").on("click", function () {
-  var scrollPosition = $(window).scrollTop()
-  localStorage.setItem('scrollPosition', scrollPosition) 
+  var scrollPosition = $(window).scrollTop();
+  localStorage.setItem("scrollPosition", scrollPosition);
   $listNav.slideToggle(200);
-  var storedScrollPosition = localStorage.getItem('scrollPosition');
+  var storedScrollPosition = localStorage.getItem("scrollPosition");
   $(window).scrollTop(storedScrollPosition);
-  console.log($(window).scrollTop())
+  console.log($(window).scrollTop());
 });
 
 if ($("window").width() > 600) {
