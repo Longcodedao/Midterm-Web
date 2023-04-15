@@ -134,7 +134,7 @@ li {
 /* --------------- Our Team -------------------------------*/
 
 .our-team {
-  padding: 2.5rem 0rem;
+  padding: 3rem 0rem;
   background-color: #fefefe;
 }
 
@@ -373,20 +373,15 @@ li {
   height: 54vh;
   overflow: hidden;
 }
+
 /* --------------PRODUCT---------------------- */
 
 .product-wrapper {
-<<<<<<< Updated upstream
   background-color: #fafafa;
-=======
-<<<<<<< HEAD
   border-top: 1px solid #cacaca;
   background-color: #fefefe ;
-=======
   background-color: #fafafa;
->>>>>>> 8f07a6f3b084001b5d66b64d8d57600b1c7b553f
->>>>>>> Stashed changes
-  padding: 5rem 0;
+  padding: 6rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -461,10 +456,10 @@ li {
 
 .row2 {
   background-image: linear-gradient(
-      rgba(221, 221, 221, 0.5),
-      rgba(209, 209, 209, 0.5)
-    ),
-    url("../images/Human-Skills-Hero.png");
+    rgba(63, 100, 34, 0.5),
+    rgba(63, 100, 34, 0.5)
+  ),
+    url("../images/wheatfield.jpg");
   /* background-image: url("../images/AgricultureHero.jpg"); */
   background-repeat: no-repeat;
   background-position: 20%;
@@ -479,10 +474,11 @@ li {
 .row2 h2 {
   font-size: 35px;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   margin-left: 80px;
-  color: #776fc2;
+  color: #ffffff;
   letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .row2 ul {
@@ -493,7 +489,7 @@ li {
   font-size: 200%;
   padding: 20px 20px;
   background-color: white;
-  border: 1px solid rgb(112, 112, 112);
+  border: 1px solid rgb(185, 185, 185);
   border-radius: 10px;
 }
 
@@ -505,10 +501,10 @@ li {
   font-size: 20px;
 }
 .row2 li > i {
-  padding: 5px;
+  padding: 7.5px;
   border: 1px solid grey;
   border-radius: 10px;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .row2-1 {
@@ -632,14 +628,19 @@ li {
 
   .list-mem {
     height: 75vh;
+    
   }
 
   .intro-mem {
-    height: 70vh;
+    height: 80vh;
   }
 
   .intro-mem h3{ 
     overflow: hidden;
+  }
+
+  .product-wrapper {
+    padding: 4rem 0;
   }
 
 }
@@ -759,7 +760,7 @@ li {
 
   .row2 > h2 {
     font-size: 30px;
-    color: rgb(18, 32, 124);
+    color: #ffffff;
     text-transform: uppercase;
     margin-left: 70px;
   }
@@ -895,9 +896,6 @@ li {
   }
 
   
-=======
->>>>>>> 8f07a6f3b084001b5d66b64d8d57600b1c7b553f
->>>>>>> Stashed changes
 }
 
 @media only screen and (max-width: 500px) {
@@ -988,6 +986,12 @@ li {
   .product-content > p {
     font-size: 0.85rem;
   }
+
+
+  .row2 ul {
+    width: 70vw;
+    z-index: 1000000000000;
+  }
 }
 
 
@@ -997,6 +1001,18 @@ li {
     max-width: 70vw;
     height: 80vh;
     margin: 0 0rem;
+  }
+
+  .row2 {
+    padding: 25px 0 100px 0;
+  }
+
+  .row2 h2 {
+    font-size: 30px;
+  }
+
+  .row2 {
+    height: 115vh;
   }
 }
 
