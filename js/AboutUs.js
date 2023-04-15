@@ -68,7 +68,7 @@ if ($("window").width() > 600) {
 // --working with keyframes--
 
 const productWrapper = document.querySelector(".product-wrapper");
-const textIntro = document.querySelector(".text-intro");
+const ourTeam = document.querySelector(".our-team");
 
 // define a function that checks if the element is in view
 function isElementInViewport(element) {
@@ -88,10 +88,10 @@ function toggleAnimationClass() {
   } else {
     productWrapper.classList.remove("slideright");
   }
-  if (isElementInViewport(textIntro)) {
-    textIntro.classList.add("slideleft");
+  if (isElementInViewport(ourTeam)) {
+    ourTeam.classList.add("slideleft");
   } else {
-    textIntro.classList.remove("slideleft");
+    ourTeam.classList.remove("slideleft");
   }
 }
 

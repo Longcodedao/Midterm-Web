@@ -826,7 +826,7 @@ li {
     animation-play-state: running;
   }
 
-  .text-intro.slideleft {
+  .our-team.slideleft {
     animation-name: slideleft;
     animation-duration: 1s;
     overflow: hidden;
