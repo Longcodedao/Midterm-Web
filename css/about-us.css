@@ -202,7 +202,7 @@ li {
 }
 
 /* ------------------ Hover ----------------------- */
-.intro-mem.first:hover {
+#first:hover {
   border: none;
   cursor: pointer;
   background-image: linear-gradient(
@@ -227,22 +227,22 @@ li {
     opacity: 1;
   }
 }
-.intro-mem.first:hover img {
+#first:hover img {
   display: none;
 }
-.intro-mem.first:hover h3 {
+#first:hover h3 {
   margin-top: -10px;
   color: white;
   font-size: 26px;
 }
-.intro-mem.first:hover p {
+#first:hover p {
   margin-top: -2px;
   color: white;
 }
 
 /* ---------------------- Second  ---------------- */
 
-.intro-mem.second:hover {
+#second:hover {
   border: none;
   cursor: pointer;
   background-image: linear-gradient(
@@ -254,22 +254,22 @@ li {
   animation: backgroundIMG 0.5s linear;
 }
 
-.intro-mem.second:hover img {
+#second:hover img {
   display: none;
 }
-.intro-mem.second:hover h3 {
+#second:hover h3 {
   margin-top: -10px;
   color: white;
   font-size: 26px;
 }
-.intro-mem.second:hover p {
+#second:hover p {
   margin-top: -2px;
   color: white;
 }
 
 /* ---------------------- Third  ---------------- */
 
-.intro-mem.third:hover {
+#third:hover {
   border: none;
   cursor: pointer;
   background-image: linear-gradient(
@@ -281,22 +281,22 @@ li {
   animation: backgroundIMG 0.5s linear;
 }
 
-.intro-mem.third:hover img {
+#third:hover img {
   display: none;
 }
-.intro-mem.third:hover h3 {
+#third:hover h3 {
   margin-top: -10px;
   color: white;
   font-size: 26px;
 }
-.intro-mem.third:hover p {
+#third:hover p {
   margin-top: -2px;
   color: white;
 }
 
 /* ------------------------ Fourth ------------------ */
 
-.intro-mem.fourth:hover {
+#fourth:hover {
   border: none;
   cursor: pointer;
   background-image: linear-gradient(
@@ -308,15 +308,15 @@ li {
   animation: backgroundIMG 0.5s linear;
 }
 
-.intro-mem.fourth:hover img {
+#fourth:hover img {
   display: none;
 }
-.intro-mem.fourth:hover h3 {
+#fourth:hover h3 {
   margin-top: -10px;
   color: white;
   font-size: 26px;
 }
-.intro-mem.fourth:hover p {
+#fourth:hover p {
   margin-top: -2px;
   color: white;
 }
@@ -376,7 +376,16 @@ li {
 /* --------------PRODUCT---------------------- */
 
 .product-wrapper {
+<<<<<<< Updated upstream
   background-color: #fafafa;
+=======
+<<<<<<< HEAD
+  border-top: 1px solid #cacaca;
+  background-color: #fefefe ;
+=======
+  background-color: #fafafa;
+>>>>>>> 8f07a6f3b084001b5d66b64d8d57600b1c7b553f
+>>>>>>> Stashed changes
   padding: 5rem 0;
   display: flex;
   flex-direction: column;
@@ -606,6 +615,11 @@ li {
 /* --------------------------------- Responsive ---------------------------------- */
 
 @media only screen and (max-width: 1100px) {
+
+  .our-team{
+    height: 140vh;
+  }
+
   .text-intro > h1 {
     font-size: 40px;
   }
@@ -614,6 +628,20 @@ li {
     font-size: 18px;
     padding: 0px 20px;
   }
+
+
+  .list-mem {
+    height: 75vh;
+  }
+
+  .intro-mem {
+    height: 70vh;
+  }
+
+  .intro-mem h3{ 
+    overflow: hidden;
+  }
+
 }
 
 @media only screen and (max-width: 960px) {
@@ -769,7 +797,12 @@ li {
   }
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 670px) {
+
+  .owl-carousel {
+    padding-left: 12vw;
+  }
+
   .row2 {
     height: 85vh;
     background-position: 38%;
@@ -799,10 +832,174 @@ li {
   }
 
   .intro-mem > h3 {
-    font-size: 18px;
+    font-size: 30px;
     overflow: hidden;
   }
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+
+  .intro-mem > p {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  /* -------- First  ------------*/
+  #first:hover h3 {
+    font-size: 37px;
+  }
+  #first:hover p {
+    font-size: 22.5px;
+    line-height: 32px;
+  }
+
+  /* -------- Second  ------------*/
+  #second:hover h3 {
+    font-size: 37px;
+  }
+  #second:hover p {
+    font-size: 22.5px;
+    line-height: 32px;
+  }
+
+  /* -------- Third  ------------*/
+  #third:hover h3 {
+    font-size: 37px;
+  }
+  #third:hover p {
+    font-size: 22.5px;
+    line-height: 32px;
+  }
+
+  /* -------- Fourth  ------------*/
+  #fourth:hover h3 {
+    font-size: 37px;
+  }
+  #fourth:hover p {
+    font-size: 22.5px;
+    line-height: 32px;
+  }
+
+  .product-box {
+    width: 10rem;
+    height: 12rem;
+  }
+
+  .product-content > h2{
+    font-size: 1rem;
+    margin-bottom: 3px;
+  }
+
+  .product-content > p {
+    font-size: 0.7rem;
+  }
+
+  
+=======
+>>>>>>> 8f07a6f3b084001b5d66b64d8d57600b1c7b553f
+>>>>>>> Stashed changes
 }
+
+@media only screen and (max-width: 500px) {
+
+  .our-team{
+    padding: 3rem 0rem;
+  }
+  .owl-carousel {
+    padding-left: 18vw;
+  }
+
+
+  .intro-mem {
+    width: 70vw;
+    max-width: 70vw;
+    height: 70vh;
+    margin: 0 0rem;
+  }
+
+  .intro-mem h3 {
+    font-size: 22px;
+  }
+
+  .intro-mem p {
+    font-size: 18px;
+  }
+
+   /* -------- First  ------------*/
+   #first:hover h3 {
+    font-size: 28px;
+  }
+  #first:hover p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  /* -------- Second  ------------*/
+  #second:hover h3 {
+    font-size: 28px;
+  }
+  #second:hover p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  /* -------- Third  ------------*/
+  #third:hover h3 {
+    font-size: 28px;
+  }
+  #third:hover p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  /* -------- Fourth  ------------*/
+  #fourth:hover h3 {
+    font-size: 28px;
+  }
+  #fourth:hover p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .product-wrapper > h1{
+    font-size: 1.5rem;
+    letter-spacing: 1.5px;
+  }
+
+
+  .product-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .product-box {
+    width: 100vw;
+    height: 12rem;
+  }
+
+  
+
+  .product-content > h2{
+    font-size: 1.35rem;
+    margin-bottom: 3.5px;
+  }
+
+  .product-content > p {
+    font-size: 0.85rem;
+  }
+}
+
+
+@media only screen and (max-width: 400px) { 
+  .intro-mem {
+    width: 70vw;
+    max-width: 70vw;
+    height: 80vh;
+    margin: 0 0rem;
+  }
+}
+
 
 /* -----KeyFrames------ */
 @keyframes slideleft {
