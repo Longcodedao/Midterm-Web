@@ -508,39 +508,70 @@ label {
   font-size: 16px;
   text-decoration: none;
 }
-@media screen and (max-width:600px) {
-
-  .further-info-body{
+@media screen and (max-width: 600px) {
+  .further-info-body {
     display: flex;
     flex-direction: column;
   }
 
-  .our-location{
+  .our-location {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
-  .location-text-wrapper{
+  .location-text-wrapper {
     display: flex;
     flex-direction: column;
     max-width: 100%;
-   
   }
-  .location-text-wrapper h1{
+  .location-text-wrapper h1 {
     white-space: nowrap;
-   font-size: 2.5rem;
-   padding-bottom: 20px;
+    font-size: 2.5rem;
+    padding-bottom: 20px;
   }
-  .location-text-wrapper p{
+  .location-text-wrapper p {
     width: 300px;
     padding-bottom: 30px;
     line-height: 30px;
-
-
   }
-  #map{
+  #map {
     width: 300px;
-    height: 300px ;
+    height: 300px;
   }
-  
+}
+
+/* --------------------KEYFRAMES----------------------- */
+
+@keyframes slideleft {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes slideright {
+  from {
+    margin-left: 50%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  .our-location.animate {
+    animation-name: slideright;
+    animation-duration: 2s;
+    overflow: hidden;
+    animation-play-state: running;
+  }
+
+  .further-info.animate {
+    animation-name: slideleft;
+    animation-duration: 2s;
+    overflow: hidden;
+    animation-play-state: running;
+  }
 }

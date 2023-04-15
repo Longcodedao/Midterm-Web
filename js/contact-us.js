@@ -140,3 +140,35 @@ $("#hamburger-icon").on("click", function () {
 if ($("window").width() > 600) {
   $listNav.show();
 }
+
+const ourLocation = document.querySelector(".our-location");
+const furtherInfo = document.querySelector(".further-info");
+
+// define a function that checks if the element is in view
+
+function isElementInViewport(element) {
+  const windowHeight = window.innerHeight;
+  let elementTop = element.getBoundingClientRect().top;
+  let elementVisible = 150;
+
+  if (elementTop < windowHeight - elementVisible) {
+    return true;
+  }
+}
+
+// define a function that toggles the animation class based on the scroll position
+function toggleAnimationClass() {
+  if (isElementInViewport(ourLocation)) {
+    ourLocation.classList.add("animate");
+  } else {
+    ourLocation.classList.remove("animate");
+  }
+  if (isElementInViewport(furtherInfo)) {
+    furtherInfo.classList.add("animate");
+  } else {
+    furtherInfo.classList.remove("animate");
+  }
+}
+
+// add an event listener that calls the toggleAnimationClass function on scroll
+window.addEventListener("scroll", toggleAnimationClass);

@@ -950,6 +950,7 @@ li {
     overflow: hidden;
     animation-play-state: running;
   }
+
   .advantages-flex-wrapper.animate {
     animation-name: slideleft;
     animation-duration: 2s;
