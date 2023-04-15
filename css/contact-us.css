@@ -540,7 +540,7 @@ label {
   }
 }
 
-/* --------------------KEYFRAMES----------------------- */
+/* -----------------------------KEYFRAMES----------------------------- */
 
 @keyframes slideleft {
   from {
@@ -551,12 +551,13 @@ label {
     transform: translateX(0%);
   }
 }
+
 @keyframes slideright {
   from {
-    margin-left: 50%;
+    transform: translateX(50%);
   }
   to {
-    margin-left: 0%;
+    transform: translateX(0%);
   }
 }
 
