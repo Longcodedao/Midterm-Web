@@ -69,6 +69,7 @@ html {
   text-decoration: none;
   font-family: "Space Grotesk";
 }
+
 .logo:hover {
   color: aquamarine;
   transform: scale(1.1);
@@ -825,6 +826,10 @@ li {
     font-size: 30px;
     overflow: hidden;
   }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
   .intro-mem > p {
     font-size: 20px;
@@ -971,14 +976,36 @@ li {
   }
 }
 
+<<<<<<< Updated upstream
 @media only screen and (max-width: 400px) {
+=======
+
+@media only screen and (max-width: 400px) { 
+
+  .list-mem {
+    margin-top: 40px;
+  }
+
+>>>>>>> Stashed changes
   .intro-mem {
     width: 70vw;
     max-width: 70vw;
-    height: 80vh;
+    height: 60vh;
     margin: 0 0rem;
   }
 
+<<<<<<< Updated upstream
+=======
+  .product-wrapper {
+    margin-top: -200px;
+  }
+
+
+  .row2 {
+    padding: 25px 0 100px 0;
+  }
+
+>>>>>>> Stashed changes
   .row2 h2 {
     font-size: 1.25rem;
     margin-bottom: 1rem;
@@ -986,6 +1013,11 @@ li {
   .row2 ul {
     width: 90vw;
     font-size: 0.75rem;
+  }
+
+  .intro-mem p{ 
+    margin-top: 13px;
+    font-size: 15px;
   }
 }
 

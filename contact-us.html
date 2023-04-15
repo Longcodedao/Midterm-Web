@@ -24,19 +24,25 @@
 
     <script defer src="./js/google-map-api.js"></script>
   </head>
+
+
   <body>
     <div class="navigation-bar">
       <nav id="topnav" class="topnav">
         <a href="#" class="logo" id="logo">SmartAgri</a>
 
         <ul class="navbar" id="nav-option">
-          <li><a href="Homepage.html">Home</a></li>
-
-          <li><a href="about-us.html">About us</a></li>
-          <li><a href="contact-us.html">Contact</a></li>
+          <li class="nav-opt"><a href="Homepage.html">Home</a></li>
+          <li class="nav-opt"><a href="about-us.html">About us</a></li>
+          <li class="nav-opt"><a href="contact-us.html">Contact</a></li>
+          <li class="nav-opt">
+            <a href="#product-wrapper" class="anchor">Product</a>
+          </li>
         </ul>
       </nav>
-      <a href="" class="hamburger-icon"><i class="fa-solid fa-bars"></i></a>
+      <a href="javascript:void(0);" class="hamburger-icon" id="hamburger-icon"
+        ><i class="fa-solid fa-bars"></i
+      ></a>
     </div>
 
     <div class="contact-us">
@@ -318,5 +324,8 @@
         </div>
       </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+
   </body>
 </html>
