@@ -11,13 +11,12 @@
   overflow-x: hidden;
 }
 
-
 .hero {
   background-image: linear-gradient(
-
       rgba(63, 100, 34, 0.5),
       rgba(63, 100, 34, 0.5)
-    ), url("../images/AgricultureHero.jpg");
+    ),
+    url("../images/AgricultureHero.jpg");
 
   /* background-image: url("../images/AgricultureHero.jpg"); */
   background-position: center;
@@ -129,7 +128,6 @@ li {
   line-height: 1.4;
 }
 
-
 /* --------------- Our Team -------------------------------*/
 
 .our-team {
@@ -137,11 +135,9 @@ li {
   background-color: #fefefe;
 }
 
-
 .text-intro {
-
   text-align: center;
-  margin-bottom: -70px;
+  margin-bottom: 80px;
   margin-top: 20px;
 }
 
@@ -149,6 +145,7 @@ li {
   font-size: 50px;
   text-transform: uppercase;
   margin-bottom: 10px;
+  letter-spacing: 8px;
   color: rgb(18, 32, 124);
 }
 
@@ -159,28 +156,12 @@ li {
 }
 
 .list-mem {
-  /* position: absolute; */
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   padding: 0px 8vw;
-  margin-left: 2vw;
   margin-top: 100px;
 }
-
-.intro-mem {
-  padding: 80px 20px 40px 20px;
-  border: 1px solid rgb(214, 214, 214);
-  width: 20vw;
-  height: 300px;
-  border-radius: 10px;
-  text-align: center;
-  background-color: #fff;
-  
-}
-
-
-
 
 .owl-carousel .owl-item .circle {
   width: 110px;
@@ -195,29 +176,63 @@ li {
   margin-top: 0rem;
 }
 
-.owl-carousel .owl-item .member  > img {
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-  position: relative;
-  top: 15%;
-  left: 35%;
-  z-index: 10;
-  margin-top: -1.55rem;
+.intro-mem {
+  padding: 40px;
+  border: 1px solid rgb(214, 214, 214);
+  max-width: 30vw;
+  margin: 0 1rem;
+  height: 340px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #fff;
 }
 
-.intro-mem > h3{
+.img-intro-container {
+  display: flex;
+  justify-content: center;
+}
+
+.img-intro-container img {
+  width: auto;
+
+  max-width: 100px;
+  height: auto;
+  max-height: 100px;
+  height: auto;
+
+  border-radius: 100%;
+}
+
+.intro-mem img {
+  width: auto;
+
+  max-width: 100px;
+  height: auto;
+  max-height: 100px;
+  height: auto;
+  margin-top: -10rem;
+
+  border-radius: 100%;
+}
+
+.intro-mem > h3 {
   margin-bottom: 10px;
   font-size: 22px;
 }
 
-.intro-mem > p{
+.intro-mem > p {
   line-height: 25px;
   color: grey;
   font-size: 18px;
   margin-top: 25px;
   overflow: hidden;
 }
+
 .owl-carousel .owl-item {
   display: flex;
   flex-direction: row;
@@ -227,50 +242,49 @@ li {
 .owl-carousel {
   height: 54vh;
   overflow: hidden;
-   
 }
-
 
 /* --------------------Technologies Include------------------------------- */
 
 .row2 {
-    background-image: linear-gradient(
-        rgba(221, 221, 221, 0.5),
-        rgba(209, 209, 209, 0.5)
-      ), url("../images/Human-Skills-Hero.png");
-    /* background-image: url("../images/AgricultureHero.jpg"); */
-    background-repeat: no-repeat;
-    background-position: 20%;
-    background-size: cover;
-    position: relative;
-    height: 40rem;
-    width: 100vw;
-    padding: 40px 0 100px 0;
-    overflow: hidden;
-  }
-  
+  background-image: linear-gradient(
+      rgba(221, 221, 221, 0.5),
+      rgba(209, 209, 209, 0.5)
+    ),
+    url("../images/Human-Skills-Hero.png");
+  /* background-image: url("../images/AgricultureHero.jpg"); */
+  background-repeat: no-repeat;
+  background-position: 20%;
+  background-size: cover;
+  position: relative;
+  height: 40rem;
+  width: 100vw;
+  padding: 40px 0 100px 0;
+  overflow: hidden;
+}
+
 .row2 h2 {
-    font-size: 35px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: 80px;
-    color: rgb(0, 82, 0);
-    letter-spacing: 2px;
+  font-size: 35px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 80px;
+  color: #776fc2;
+  letter-spacing: 2px;
 }
 
 .row2 ul {
-    width: 35vw;
-    text-align: left;
-    margin-left: 100px;
-    color: rgb(0, 82, 0);
-    font-size: 200%;
-    padding: 20px 20px;
-    background-color: white;
-    border: 1px solid rgb(112, 112, 112);
-    border-radius: 10px;
+  width: 35vw;
+  text-align: left;
+  margin-left: 100px;
+  color: rgb(0, 82, 0);
+  font-size: 200%;
+  padding: 20px 20px;
+  background-color: white;
+  border: 1px solid rgb(112, 112, 112);
+  border-radius: 10px;
 }
 
-.row2 li{
+.row2 li {
   padding: 7px;
   margin-bottom: 5px;
   display: flex;
@@ -281,12 +295,11 @@ li {
   padding: 5px;
   border: 1px solid grey;
   border-radius: 10px;
-  margin-right: 10px;;
+  margin-right: 10px;
 }
 
-
 .row2-1 {
-    padding-left: 0%;
+  padding-left: 0%;
 }
 
 /* --------------------------- Footer ---------------------------------------- */
@@ -388,9 +401,8 @@ li {
 
 /* --------------------------------- Responsive ---------------------------------- */
 
-@media only screen and (max-width: 1100px){
-
-  .text-intro > h1{
+@media only screen and (max-width: 1100px) {
+  .text-intro > h1 {
     font-size: 40px;
   }
 
@@ -401,7 +413,6 @@ li {
 }
 
 @media only screen and (max-width: 960px) {
-
   .navbar a {
     font-size: 0.7rem;
   }
@@ -456,7 +467,7 @@ li {
     z-index: 100000000;
   }
 
-  .text-hero > h1{
+  .text-hero > h1 {
     font-size: 45px;
   }
 
@@ -478,7 +489,7 @@ li {
     font-size: 16px;
   }
 
-  .list-mem{
+  .list-mem {
     padding: 0px 0px;
     margin-left: 0px;
   }
@@ -498,7 +509,7 @@ li {
     padding-left: 18vw;
     overflow: hidden;
   }
-  
+
   .owl-item {
     margin-right: 50px;
   }
@@ -508,12 +519,11 @@ li {
 
   .row2 {
     background-position: 34%;
-    
   }
 
-  .row2 >h2 {
+  .row2 > h2 {
     font-size: 30px;
-    color:rgb(18, 32, 124);
+    color: rgb(18, 32, 124);
     text-transform: uppercase;
     margin-left: 70px;
   }
@@ -524,9 +534,6 @@ li {
     margin-left: 70px;
   }
 }
-
-
-
 
 @media only screen and (max-width: 800px) {
   .intro-mem {
@@ -539,7 +546,7 @@ li {
 }
 
 @media only screen and (max-width: 600px) {
-  .row2{
+  .row2 {
     height: 85vh;
     background-position: 38%;
   }
@@ -548,7 +555,7 @@ li {
     font-size: 16px;
   }
 
-  .row2 li> i{
+  .row2 li > i {
     font-size: 15px;
   }
 }
