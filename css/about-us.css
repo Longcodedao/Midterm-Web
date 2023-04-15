@@ -181,16 +181,154 @@ li {
   border: 1px solid rgb(214, 214, 214);
   max-width: 30vw;
   margin: 0 1rem;
-  height: 340px;
+  height: 420px;
   border-radius: 10px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   background-color: #fff;
+  /* transition: all 1s linear; */
+  /* -webkit-transition: background-image 1s ease-in-out;
+  transition: background-image 1s ease-in-out; */
+  
 }
+
+.intro-mem.first{
+  transition: background-image 0.5s;
+}
+
+/* ------------------ Hover ----------------------- */
+.intro-mem.first:hover {
+  border: none;
+  cursor: pointer;
+  background-image: linear-gradient(
+    rgba(63, 100, 34, 0.5),
+      rgba(63, 100, 34, 0.5)
+  ), url("../images/louiswain1.jpg");
+  background-size: cover;
+  animation: backgroundIMG 0.5s linear;
+  
+}
+
+@keyframes backgroundIMG{
+  0%{
+    opacity: 0;
+  }
+
+  50%{
+    opacity: 0.5;
+    
+  }
+
+  100% { 
+    opacity: 1;
+  };
+}
+.intro-mem.first:hover img {display: none; }
+.intro-mem.first:hover h3 {
+  margin-top: -10px;
+  color: white;
+  font-size: 26px;
+ 
+  
+}
+.intro-mem.first:hover p {
+  margin-top: -2px;
+  color: white;
+
+}
+
+/* ---------------------- Second  ---------------- */
+
+.intro-mem.second:hover {
+  border: none;
+  cursor: pointer;
+  background-image: linear-gradient(
+    rgba(63, 100, 34, 0.5),
+      rgba(63, 100, 34, 0.5)
+  ), url("../images/louiswain2.jpg");
+  background-size: cover;
+  animation: backgroundIMG 0.5s linear;
+  
+}
+
+
+.intro-mem.second:hover img {display: none; }
+.intro-mem.second:hover h3 {
+  margin-top: -10px;
+  color: white;
+  font-size: 26px;
+ 
+  
+}
+.intro-mem.second:hover p {
+  margin-top: -2px;
+  color: white;
+
+}
+
+/* ---------------------- Third  ---------------- */
+
+.intro-mem.third:hover {
+  border: none;
+  cursor: pointer;
+  background-image: linear-gradient(
+    rgba(63, 100, 34, 0.5),
+      rgba(63, 100, 34, 0.5)
+  ), url("../images/louiswain3.jpg");
+  background-size: cover;
+  animation: backgroundIMG 0.5s linear;
+  
+}
+
+
+.intro-mem.third:hover img {display: none; }
+.intro-mem.third:hover h3 {
+  margin-top: -10px;
+  color: white;
+  font-size: 26px;
+ 
+  
+}
+.intro-mem.third:hover p {
+  margin-top: -2px;
+  color: white;
+
+}
+
+/* ------------------------ Fourth ------------------ */
+
+.intro-mem.fourth:hover {
+  border: none;
+  cursor: pointer;
+  background-image: linear-gradient(
+    rgba(63, 100, 34, 0.5),
+      rgba(63, 100, 34, 0.5)
+  ), url("../images/louiswain4.jpg");
+  background-size: cover;
+  animation: backgroundIMG 0.5s linear;
+  
+}
+
+
+.intro-mem.fourth:hover img {display: none; }
+.intro-mem.fourth:hover h3 {
+  margin-top: -10px;
+  color: white;
+  font-size: 26px;
+ 
+  
+}
+.intro-mem.fourth:hover p {
+  margin-top: -2px;
+  color: white;
+
+}
+
+
+/* ------------------ Hover ----------------------- */
 
 .img-intro-container {
   display: flex;
@@ -215,12 +353,11 @@ li {
   height: auto;
   max-height: 100px;
   height: auto;
-  margin-top: -10rem;
-
   border-radius: 100%;
 }
 
 .intro-mem > h3 {
+  margin-top: 20px;
   margin-bottom: 10px;
   font-size: 22px;
 }
@@ -478,7 +615,7 @@ li {
 
   .our-team {
     padding: 2.5rem 3rem;
-    height: 90vh;
+    height: 120vh;
   }
 
   .text-intro > h1 {
@@ -492,21 +629,26 @@ li {
   .list-mem {
     padding: 0px 0px;
     margin-left: 0px;
+    height: 90vh;
   }
 
   .intro-mem {
-    width: 50vw;
+    max-width: 80rem;
+    width: 80rem;
+    height: 70vh;
+    overflow: hidden;
   }
 
   .intro-mem > h1 {
-    font-size: 20px;
+    font-size: 18px;
+    
   }
   .intro-mem > p {
     font-size: 16px;
   }
 
   .owl-carousel {
-    padding-left: 18vw;
+    padding-left: 14vw;
     overflow: hidden;
   }
 
@@ -536,9 +678,7 @@ li {
 }
 
 @media only screen and (max-width: 800px) {
-  .intro-mem {
-    width: 55vw;
-  }
+  
   .owl-carousel {
     padding-left: 16vw;
     overflow: hidden;
@@ -557,5 +697,25 @@ li {
 
   .row2 li > i {
     font-size: 15px;
+  }
+
+  .list-mem {
+    height: 85vh;
+    overflow: hidden;
+  }
+
+  .our-team {
+    height: 150vh;
+  }
+
+  .intro-mem {
+    width: 70rem;
+    max-width: 70rem;
+    margin: 0 0rem;
+  }
+
+  .intro-mem > h3 {
+    font-size: 18px;
+    overflow: hidden;
   }
 }
