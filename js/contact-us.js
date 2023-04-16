@@ -1,4 +1,3 @@
-
 // -----------------WORKING WITH KEYFRAMES----------------------
 
 const furtherInfo = document.querySelector(".further-info");
@@ -31,10 +30,6 @@ function toggleAnimationClass() {
 
 // add an event listener that calls the toggleAnimationClass function on scroll
 window.addEventListener("scroll", toggleAnimationClass);
-
-
-
-
 
 // Modal PopUp
 const openModalButtons = document.querySelectorAll("[data-modal-target]");
@@ -104,7 +99,7 @@ submitButton.addEventListener("click", function (e) {
     return;
   } else if (!/\S+@\S+\.\S+/.test(email)) {
     alert(
-      "Please enter a valid email address (for example: imSoStupidIcantFillAnEmail@gmail.com)."
+      "Please enter a valid email address (for example: imSoStupidIcantTypeMyEmail@gmail.com)."
     );
     return;
   }
@@ -144,7 +139,6 @@ submitButton.addEventListener("click", function (e) {
 
   form.reset(); // reset the form inputs
 });
-
 
 var NavBar = document.getElementById("topnav");
 var logo = document.getElementById("logo");
