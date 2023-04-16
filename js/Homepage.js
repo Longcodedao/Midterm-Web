@@ -5,8 +5,10 @@ $(document).ready(function () {
     lazyLoad: false,
     loop: true,
     autoplay: true,
+    autoplayTimeout: 3000,
     smartSpeed: 1500,
     navigation: true,
+    center: true,
     margin: 0,
     responsive: {
       0: {
