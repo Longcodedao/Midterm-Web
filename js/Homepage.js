@@ -8,6 +8,7 @@ $(document).ready(function () {
     center: true,
     nav: true,
     margin: 0,
+    rewind: false,
     responsive: {
       0: {
         items: 1,
