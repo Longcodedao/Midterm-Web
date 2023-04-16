@@ -45,7 +45,7 @@
   display: none;
 }
 
-/* ---------------- Sticky section --------------------*/
+/* ---------------- Sticky section navbar --------------------*/
 .sticky {
   position: fixed;
   top: 0;
@@ -154,7 +154,7 @@ li {
   transition: transform 0.5s, color 0.5s;
 }
 
-/* -------------------- What We Do ------------------------------*/
+/* -------------------- What We Do SECTION ------------------------------*/
 
 .we-do {
   background-color: #fff;
@@ -217,7 +217,7 @@ li {
   box-shadow: 1px 1px 4px #949090;
 }
 
-/* --------------------  Our Mission ---------------------*/
+/* --------------------  Our Mission CAROUSEL ---------------------*/
 .our-carousel-1 {
   height: 50rem;
   background-image: linear-gradient(
