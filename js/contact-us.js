@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
 // -----------------WORKING WITH KEYFRAMES----------------------
 
 const furtherInfo = document.querySelector(".further-info");
@@ -31,11 +31,10 @@ function toggleAnimationClass() {
 
 // add an event listener that calls the toggleAnimationClass function on scroll
 window.addEventListener("scroll", toggleAnimationClass);
-=======
 
 
 
->>>>>>> Stashed changes
+
 
 // Modal PopUp
 const openModalButtons = document.querySelectorAll("[data-modal-target]");
