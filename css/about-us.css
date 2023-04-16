@@ -976,9 +976,9 @@ li {
   }
 }
 
-<<<<<<< Updated upstream
+
 @media only screen and (max-width: 400px) {
-=======
+
 
 @media only screen and (max-width: 400px) { 
 
@@ -986,7 +986,7 @@ li {
     margin-top: 40px;
   }
 
->>>>>>> Stashed changes
+
   .intro-mem {
     width: 70vw;
     max-width: 70vw;
@@ -994,8 +994,8 @@ li {
     margin: 0 0rem;
   }
 
-<<<<<<< Updated upstream
-=======
+
+
   .product-wrapper {
     margin-top: -200px;
   }
@@ -1005,7 +1005,7 @@ li {
     padding: 25px 0 100px 0;
   }
 
->>>>>>> Stashed changes
+
   .row2 h2 {
     font-size: 1.25rem;
     margin-bottom: 1rem;
