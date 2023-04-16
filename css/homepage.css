@@ -219,7 +219,7 @@ li {
 
 /* --------------------  Our Mission ---------------------*/
 .our-carousel-1 {
-  height: 60vh;
+  height: 50rem;
   background-image: linear-gradient(
       rgba(63, 63, 63, 0.5),
       rgba(63, 63, 24, 0.5)
@@ -227,13 +227,10 @@ li {
     url("../images/OurMission.jpg");
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
   position: relative;
+  background-repeat: no-repeat;
   text-align: center;
   padding: 0rem 10rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 }
 
 .text-carousel {
@@ -242,7 +239,6 @@ li {
   justify-content: center;
   align-items: center;
   height: 60vh;
-  
 }
 
 .our-carousel-1 h1 {
@@ -258,7 +254,6 @@ li {
   position: relative;
   color: white;
   line-height: 27px;
-
 }
 
 .our-carousel-2 {
@@ -708,15 +703,15 @@ li {
     margin-left: 5rem;
   }
 
-  .our-carousel-1{
+  .our-carousel-1 {
     padding: 0 4rem;
   }
 
-  .our-carousel-2{
+  .our-carousel-2 {
     padding: 0 4rem;
   }
 
-  .our-carousel-3{
+  .our-carousel-3 {
     padding: 0 4rem;
   }
   .text-carousel {
@@ -724,10 +719,10 @@ li {
   }
 
   .text-carousel h1 {
-    font-size: 1.75rem;
+    font-size: 2.5rem;
   }
   .text-carousel p {
-    font-size: 0.75rem;
+    font-size: 1rem;
   }
 
   .choose-us {
@@ -868,15 +863,14 @@ li {
   .text-carousel {
     padding: 7rem 0;
   }
-  
 
   .text-carousel h1 {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
     padding: 0px 0px;
     margin-bottom: 10px;
   }
   .text-carousel p {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     line-height: 22px;
   }
 
