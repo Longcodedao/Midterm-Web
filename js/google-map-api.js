@@ -7,6 +7,7 @@ async function Initialize() {
     zoom: 15,
   });
   const request = {
+    // got the id by using reverse geolocation
     placeId: "ChIJvcaESTEYQjERy7hqJD8EOrU",
     fields: ["name", "formatted_address", "geometry"],
   };
@@ -39,6 +40,7 @@ async function Initialize() {
 
         const placeIdElement = document.createElement("p");
 
+        // sending funny text cuz im bored
         const placeDescription = document.createElement("p");
         placeDescription.textContent = "It's VNUK because I am homeless";
         placeDescription.style.color = "green";

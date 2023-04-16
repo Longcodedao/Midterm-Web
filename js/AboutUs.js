@@ -1,4 +1,5 @@
-if ($(window).width() <= 1100 && ($(window).width() > 750)) {
+// ------------- WORKING WITH OWL CAROUSSEL AND RESPONSIVE ----------------
+if ($(window).width() <= 1100 && $(window).width() > 750) {
   $(".owl-carousel").owlCarousel({
     loop: true,
     margin: 10,
@@ -12,7 +13,6 @@ if ($(window).width() <= 1100 && ($(window).width() > 750)) {
       600: {
         items: 2,
       },
-      
     },
   });
 } else if ($(window).width() > 1100) {
@@ -33,7 +33,7 @@ if ($(window).width() <= 1100 && ($(window).width() > 750)) {
       },
     },
   });
-} else if ($(window).width() <=  750) {
+} else if ($(window).width() <= 750) {
   console.log("Helll");
   $(".owl-carousel").owlCarousel({
     center: true,
@@ -50,6 +50,7 @@ if ($(window).width() <= 1100 && ($(window).width() > 750)) {
   });
 }
 
+// -------------- WORKING WITH FIXED NAVBAR -------------------
 var NavBar = document.getElementById("topnav");
 var logo = document.getElementById("logo");
 var navigate_options = document.getElementById("nav-option");
@@ -68,6 +69,8 @@ if ($(window).width() > 960) {
     }
   });
 }
+
+// -------------- WORKING WITH HAMBURGER NAVBAR -------------------
 
 $listNav = $("li.nav-opt");
 console.log("Hello World");

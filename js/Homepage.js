@@ -1,3 +1,5 @@
+// --------------WORKING WITH OWL CAROUSEL-------------
+
 $(document).ready(function () {
   $(".owl-carousel").owlCarousel({
     lazyLoad: false,
@@ -13,6 +15,7 @@ $(document).ready(function () {
     },
   });
 });
+// --------------WORKING WITH FIXED NAVBAR-------------
 
 var NavBar = document.getElementById("topnav");
 var logo = document.getElementById("logo");
@@ -32,6 +35,7 @@ if ($(window).width() > 960) {
     }
   });
 }
+// --------------WORKING WITH HAMBURGER NAVBAR-------------
 
 $listNav = $("li.nav-opt");
 
@@ -47,6 +51,8 @@ $("#hamburger-icon").on("click", function () {
 if ($("window").width() > 600) {
   $listNav.show();
 }
+
+// --------------WORKING WITH KEYFRAMES-------------
 
 const textReasons = document.querySelector(".text-reasons");
 const advantagesFlexWrapper = document.querySelector(

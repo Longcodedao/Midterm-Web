@@ -31,7 +31,7 @@ function toggleAnimationClass() {
 // add an event listener that calls the toggleAnimationClass function on scroll
 window.addEventListener("scroll", toggleAnimationClass);
 
-// Modal PopUp
+// ------------------------------------------Modal PopUp------------------------------------------
 const openModalButtons = document.querySelectorAll("[data-modal-target]");
 const closeModalButtons = document.querySelectorAll("[data-close-button]");
 
@@ -69,11 +69,13 @@ overlay.addEventListener("click", () => {
   });
 });
 
+// ------------------------ FORM VALIDATION AND OPEN UP MODAL POP UP --------------------------
+
 const form = document.querySelector(".form");
 const submitButton = form.querySelector('input[type="submit"]');
 
 submitButton.addEventListener("click", function (e) {
-  e.preventDefault(); // prevent the default form submission behavior
+  e.preventDefault(); // prevent the default form submission behavior so that we can add modal pop up later on, by doing so the page wont reload after that
 
   const firstName = form.querySelector('input[name="first-name"]').value.trim();
   const lastName = form.querySelector('input[name="last-name"]').value.trim();
@@ -119,13 +121,14 @@ submitButton.addEventListener("click", function (e) {
     return;
   }
 
-  // If all inputs are valid, submit the form
+  // If all inputs are valid, submit the form, create a new form and submit this way, by doing so the input wont be shown on the browser search bar
   const formData = new FormData(form);
 
   const xhr = new XMLHttpRequest();
   xhr.open("POST", form.action);
   xhr.send(formData); // submit the form data asynchronously
 
+  // ---------------- LOG USERS INPUT TO BROWSER ---------------------------
   console.log({
     firstName,
     lastName,
@@ -134,11 +137,15 @@ submitButton.addEventListener("click", function (e) {
     infor,
   });
 
+  // ---------------- OPEN UP MODAL AND RESET THE FORM TO CLEAR THE INPUTS ---------------------------
+
   const modal = document.querySelector(submitButton.dataset.modalTarget);
   openModal(modal); // open the modal
 
   form.reset(); // reset the form inputs
 });
+
+// ------------- WORKING WITH FIXED NAVBAR -------------------
 
 var NavBar = document.getElementById("topnav");
 var logo = document.getElementById("logo");
