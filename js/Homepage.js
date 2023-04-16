@@ -5,7 +5,6 @@ $(document).ready(function () {
     loop: true,
     autoplay: true,
     smartSpeed: 1500,
-    navigation: true,
     center: true,
     nav: true,
     margin: 0,
