@@ -1,8 +1,26 @@
-if ($(window).width() > 870) {
+if ($(window).width() <= 1100 && ($(window).width() > 750)) {
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    margin: 10,
+    item: 2,
+    nav: false,
+    dots: false,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 2,
+      },
+      
+    },
+  });
+} else if ($(window).width() > 1100) {
   $(".owl-carousel").owlCarousel({
     loop: true,
     margin: 10,
     nav: false,
+    dots: false,
     responsive: {
       0: {
         items: 1,
@@ -15,11 +33,12 @@ if ($(window).width() > 870) {
       },
     },
   });
-} else {
+} else if ($(window).width() <=  750) {
   console.log("Helll");
   $(".owl-carousel").owlCarousel({
     center: true,
     item: 1,
+    dots: false,
     loop: true,
     margin: 10,
     nav: false,
