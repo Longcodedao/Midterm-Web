@@ -185,11 +185,11 @@ input:focus {
 }
 
 #first-name {
-  width: 70%;
+  width: 60%;
 }
 #last-name {
   margin-left: 1.5rem;
-  width: 30%;
+  width: 40%;
 }
 #email {
   margin-bottom: 50px;
