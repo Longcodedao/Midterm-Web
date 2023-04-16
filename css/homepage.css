@@ -690,7 +690,7 @@ li {
     max-width: 90vw;
     width: 70vw;
     height: auto;
-    margin: 7px;
+    margin: 5px;
   }
 
   .logo {
@@ -836,6 +836,7 @@ li {
   .container p {
     font-size: 0.85rem;
   }
+
   .we-do-col i {
     font-size: 40px;
   }
