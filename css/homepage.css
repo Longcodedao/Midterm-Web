@@ -923,7 +923,7 @@ li {
     letter-spacing: 3px;
   }
 }
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 430px) {
   .hero h1 {
     font-size: 1.75rem;
   }
@@ -934,8 +934,18 @@ li {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+
+  .we-do-col {
+    max-width: 80vw;
+  }
   .our-advantages {
     margin-top: 2rem;
+  }
+  .text-carousel h1 {
+    font-size: 1.25rem;
+  }
+  .text-carousel p {
+    font-size: 0.8rem;
   }
 }
 
