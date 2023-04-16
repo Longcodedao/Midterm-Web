@@ -5,6 +5,7 @@
  <source media="(prefers-color-scheme: light)" srcset="https://cdn.shopify.com/s/files/1/0410/7180/4571/articles/Screenshot_2021-07-13_at_13.50.32.png?v=1626182132">
  <img alt="Louis Wain's cats" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/10EEF/production/_121995396_mediaitem121958723.jpg">
 </picture>
+
 ## Overview of the project
 This is a simple 3-page responsive website that showcases an IOT agriculture company's products and services. The company specializes in providing smart agriculture solutions to farmers.
 
