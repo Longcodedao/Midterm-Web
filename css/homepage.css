@@ -936,6 +936,7 @@ li {
   }
 
   .we-do-col {
+    max-width: 90vw;
     padding: 4px;
   }
   .our-advantages {
