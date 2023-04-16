@@ -8,7 +8,6 @@ $(document).ready(function () {
     navigation: true,
     center: true,
     nav: true,
-    rewindNav: true,
     margin: 0,
     responsive: {
       0: {
