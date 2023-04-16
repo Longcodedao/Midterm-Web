@@ -219,7 +219,7 @@ li {
 
 /* --------------------  Our Mission ---------------------*/
 .our-carousel-1 {
-  height: 50rem;
+  height: 60vh;
   background-image: linear-gradient(
       rgba(63, 63, 63, 0.5),
       rgba(63, 63, 24, 0.5)
@@ -230,13 +230,19 @@ li {
   background-repeat: no-repeat;
   position: relative;
   text-align: center;
+  padding: 0rem 4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .text-carousel {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem 0;
+  align-items: center;
+  height: 60vh;
+  
 }
 
 .our-carousel-1 h1 {
@@ -252,6 +258,7 @@ li {
   position: relative;
   color: white;
   line-height: 27px;
+
 }
 
 .our-carousel-2 {
@@ -266,6 +273,7 @@ li {
   position: relative;
   background-repeat: no-repeat;
   text-align: center;
+  padding: 0rem 3rem;
 }
 
 .our-carousel-2 h1 {
@@ -295,6 +303,7 @@ li {
 
   position: relative;
   text-align: center;
+  padding: 0rem 3rem;
 }
 
 .our-carousel-3 h1 {
