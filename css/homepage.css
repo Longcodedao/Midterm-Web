@@ -225,7 +225,7 @@ li {
       rgba(63, 63, 63, 0.5),
       rgba(63, 63, 24, 0.5)
     ),
-    url("../images/OurMission.jpg");
+    url("../images/ourcarousel1.jpg");
   background-position: center;
   background-size: cover;
   position: relative;
@@ -263,7 +263,7 @@ li {
       rgba(63, 63, 63, 0.5),
       rgba(63, 63, 24, 0.5)
     ),
-    url("../images/OurTarget.jpg");
+    url("../images/ourcarousel2.jpg");
   background-position: center;
   background-size: cover;
   position: relative;
@@ -293,7 +293,7 @@ li {
       rgba(63, 63, 63, 0.5),
       rgba(63, 63, 24, 0.5)
     ),
-    url("../images/OurValues.jpg");
+    url("../images/ourcarousel3.jpg");
   background-position: center;
   background-size: cover;
 
