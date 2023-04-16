@@ -190,7 +190,7 @@ li {
   text-align: center;
   max-width: 20rem;
   height: auto;
-  margin: 7px;
+  margin: 8px;
 }
 
 .we-do-col:hover {
@@ -938,7 +938,6 @@ li {
   }
 
   .we-do-col {
-    max-width: 80vw;
     padding: 4px;
   }
   .our-advantages {
