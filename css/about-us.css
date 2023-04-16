@@ -868,6 +868,10 @@ li {
     line-height: 32px;
   }
 
+  .product-wrapper {
+    margin-top: -150px;
+  }
+
   .product-box {
     width: 10rem;
     height: 12rem;
@@ -940,6 +944,10 @@ li {
   #fourth:hover p {
     font-size: 20px;
     line-height: 28px;
+  }
+
+  .product-wrapper {
+    margin-top: -130px;
   }
 
   .product-wrapper h1 {
