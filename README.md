@@ -23,3 +23,7 @@ This is a simple 3-page responsive website that showcases an IOT agriculture com
 ### Source used
 - For images, we mostly use images from Unsplash and Google
 - For the google map, we use Google Javascript Map API
+
+## Instruction to view the project
+- View the website here [Our Website](https://duckduckgo.com).
+- View our slides here [Our Slides](https://www.canva.com/design/DAFgLnGXvp4/_XSzwBAkhBh6FkTNi_4Cuw/edit?utm_content=DAFgLnGXvp4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
