@@ -212,7 +212,6 @@ li {
 
 .we-do-col p {
   color: rgb(143, 142, 142);
-  line-height: 30px;
 }
 
 .topnav.scroll {
@@ -849,7 +848,6 @@ li {
 
   .we-do-col p {
     font-size: 0.85rem;
-    line-height: 20px;
   }
 
   /* ------------ Our Mission ------------------*/
