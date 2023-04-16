@@ -224,10 +224,10 @@ textarea {
   transition: 200ms ease-in-out;
   border: black 1px solid;
   border-radius: 10px;
-  z-index: 10;
+  z-index: 1000000000000000000000000000000;
   background-color: rgb(214, 214, 214);
   width: 500px;
-  max-width: 80%;
+  max-width: 90%;
 }
 
 .modal.active {
@@ -947,5 +947,43 @@ textarea {
   .submit-button {
     padding: 12px;
     width: 8rem;
+  }
+  .modal {
+    max-width: 95%;
+  }
+
+  .fa-circle-check {
+    color: green;
+    font-size: 5rem;
+    margin-bottom: 5px;
+  }
+  .modal-header .title {
+    font-size: 1.5rem;
+  }
+  .modal-header .title {
+    font-size: 1.5rem;
+  }
+  .modal-header .close-button {
+    font-size: 1.5rem;
+  }
+  .modal-body h2 {
+    color: rgb(13, 102, 13);
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+  .modal-body p {
+    color: rgb(99, 99, 99);
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+  }
+
+  .modal-body {
+    padding: 12px 18px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
