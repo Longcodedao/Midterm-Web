@@ -100,7 +100,7 @@ li {
   transition: color 0.5s;
 }
 
-/* --------------------------- Contact Us ---------------------------------------*/
+/* --------------------------- Contact Us Section(Top part) ---------------------------------------*/
 
 .contact-us {
   margin: 90px 0px 0px 0px;
@@ -275,7 +275,7 @@ textarea {
   text-align: center;
 }
 
-/* -------------OVERLAY----------------- */
+/* -------------OVERLAY WHEN MODAL POPUP IS OPENED----------------- */
 #overlay {
   position: fixed;
   opacity: 0;
@@ -350,6 +350,8 @@ textarea {
 .location-text-wrapper p {
   font-size: 1rem;
 }
+
+/* ----------google javascript map --------------- */
 #map {
   width: 50%;
   height: 600px;
@@ -543,7 +545,7 @@ textarea {
   text-decoration: none;
 }
 
-/* -----------------------------KEYFRAMES----------------------------- */
+/* -----------------------------KEYFRAMES for slide in and out animation----------------------------- */
 
 @keyframes slideleft {
   from {
@@ -580,6 +582,7 @@ textarea {
   }
 }
 
+/* ---------------------- RESPONSIVE ------------------ */
 @media only screen and (max-width: 1250px) {
   .further-info-wrapper {
     width: 20vw;
@@ -739,6 +742,8 @@ textarea {
     width: 40vh;
   }
 }
+
+/* -----------FOR SMALLER DEVICES----------------- */
 
 @media only screen and (max-width: 760px) {
   .our-location {

@@ -381,12 +381,7 @@ li {
   font-style: italic;
 }
 
-/* .hamburger-icon i:hover {
-  color: rgb(6, 236, 6);
-  transition: color 0.5s ease-in-out, transform 0.5s;
-} */
-
-/* ----------------- Our Advantages ------------------ */
+/* ----------------- Our Advantages SECTION ------------------ */
 .our-advantages {
   background-color: #fff;
   margin-top: 50px;
@@ -783,7 +778,7 @@ li {
     margin-bottom: 20px;
   }
 }
-/* --------------------- Responsive -----------------------*/
+/* --------------------- Responsive for smaller devices -----------------------*/
 @media only screen and (max-width: 650px) {
   .navbar li {
     display: none;
@@ -943,6 +938,7 @@ li {
   }
 }
 
+/* ---------- keyframes for the sliding in and out animation ----------------- */
 @keyframes slideleft {
   from {
     transform: translateX(-50%);

@@ -11,9 +11,11 @@
   overflow-x: hidden;
 }
 html {
-  /* TO FIX OFFSET ANCHOR LINK */
+  /* TO FIX OFFSET ANCHOR LINK WHEN CLICK THE "PRODUCT" ON THE NAVBAR*/
   scroll-padding-top: 5vw;
 }
+
+/* ---------- HERO SECTION------------ */
 
 .hero {
   background-image: linear-gradient(
@@ -132,7 +134,7 @@ li {
   line-height: 1.4;
 }
 
-/* --------------- Our Team -------------------------------*/
+/* --------------- Our Team CAROUSEL-------------------------------*/
 
 .our-team {
   padding: 3rem 0rem;
@@ -203,7 +205,7 @@ li {
   transition: background-image 0.5s;
 }
 
-/* ------------------ Hover ----------------------- */
+/* ------------------ Hovering carousel ----------------------- */
 #first:hover {
   border: none;
   cursor: pointer;
@@ -455,7 +457,7 @@ li {
   background-size: 125% 125%;
 }
 
-/* --------------------Technologies Include------------------------------- */
+/* --------------------Technologies Include Section------------------------------- */
 
 .row2 {
   background-image: linear-gradient(
@@ -861,6 +863,7 @@ li {
   }
 }
 
+/* -------------FOR SMALLER DEVICES------------- */
 @media only screen and (max-width: 750px) {
   .intro-mem {
     max-width: 120rem;
@@ -1116,7 +1119,7 @@ li {
   }
 }
 
-/* -----KeyFrames------ */
+/* -----KeyFrames for slide in and out animation------ */
 @keyframes slideleft {
   from {
     transform: translateX(-50%);
