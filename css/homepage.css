@@ -230,7 +230,7 @@ li {
   background-repeat: no-repeat;
   position: relative;
   text-align: center;
-  padding: 0rem 4rem;
+  padding: 0rem 6rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -273,7 +273,7 @@ li {
   position: relative;
   background-repeat: no-repeat;
   text-align: center;
-  padding: 0rem 3rem;
+  padding: 0rem 6rem;
 }
 
 .our-carousel-2 h1 {
@@ -303,7 +303,7 @@ li {
 
   position: relative;
   text-align: center;
-  padding: 0rem 3rem;
+  padding: 0rem 6rem;
 }
 
 .our-carousel-3 h1 {
@@ -708,6 +708,17 @@ li {
     margin-left: 5rem;
   }
 
+  .our-carousel-1{
+    padding: 0 4rem;
+  }
+
+  .our-carousel-2{
+    padding: 0 4rem;
+  }
+
+  .our-carousel-3{
+    padding: 0 4rem;
+  }
   .text-carousel {
     padding: 5rem 0;
   }
