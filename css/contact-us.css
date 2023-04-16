@@ -25,13 +25,11 @@ body {
   box-shadow: 1px 1px 2px #b9b9b9;
 }
 
-
 .logo:hover {
   color: aquamarine;
   transform: scale(1.1);
   transition: transform 0.5s, color 0.5s;
 }
-
 
 .navigation-bar {
   background-color: white;
@@ -48,7 +46,6 @@ body {
   flex-wrap: wrap;
   padding: 20px 0;
   z-index: 9999;
-  
 }
 
 .hamburger-icon i {
@@ -108,7 +105,8 @@ li {
 .contact-us {
   margin: 90px 0px 0px 0px;
   padding-top: 30px;
-  height: 90vh;
+  display: flex;
+  flex-direction: column;
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.685)
@@ -117,20 +115,17 @@ li {
 
   background-position: center;
   background-size: cover;
+  align-items: center;
 }
 
 .contact-us .text-main {
-  position: relative;
-  top: 0%;
-  left: 25%;
   text-align: center;
-  width: 50vw;
+  margin-bottom: 8rem;
 }
 
 .text-main > h1 {
   margin-bottom: 10px;
   font-size: 4rem;
-  /* font-family: "IBM+Plex+Mono"; */
   color: #060149;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -144,21 +139,18 @@ li {
 
 .form {
   padding: 50px 55px;
-  width: 60vw;
-  height: auto;
   background-color: white;
   box-shadow: 0px 0px 5px rgb(182, 182, 182);
   border-radius: 15px;
-  position: absolute;
-  top: 75%;
-  left: 18%;
+  display: flex;
+  flex-direction: column;
+  max-width: 60vw;
 }
 
 input {
   border: none;
   border-bottom: 1px solid rgb(177, 177, 177);
   padding: 5px 10px;
-  width: 15vw;
   letter-spacing: 1px;
   font-size: 16px;
   border-radius: 10px 10px 0px 0px;
@@ -180,7 +172,9 @@ input:focus {
   padding: 12px;
   border-radius: 1rem;
   cursor: pointer;
-  font-size: 1.2rem;
+  width: 10rem;
+
+  font-size: 1rem;
   transition: 300ms ease-in-out;
 }
 
@@ -190,6 +184,13 @@ input:focus {
   color: white;
 }
 
+#first-name {
+  width: 70%;
+}
+#last-name {
+  margin-left: 1.5rem;
+  width: 30%;
+}
 #email {
   margin-bottom: 50px;
 }
@@ -199,21 +200,19 @@ input:focus {
 }
 
 #infor {
-  margin-top: 20px;
   margin-bottom: 50px;
 }
-
+#infor-label {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+}
 textarea {
   resize: none;
-  width: 58vw;
-  max-width: 40vw;
-  max-height: 20vh;
+  /* max-width: 25vw; */
+  max-height: 22vh;
   border-radius: 10px;
   padding: 10px;
-}
-
-label {
-  padding: 10px 5px;
 }
 
 /* --------------------------MODAL POPUP-------------------------- */
@@ -234,6 +233,7 @@ label {
 .modal.active {
   transform: translate(-50%, -50%) scale(1);
 }
+
 .modal-header {
   padding: 12px 18px;
   display: flex;
@@ -318,7 +318,6 @@ label {
 
 /* ----------------------OUR LOCATION SEGMENT--------------------- */
 .our-location-wrapper {
-  margin-top:  35rem;
   background-color: rgba(188, 241, 175, 0.3);
   width: 100vw;
 }
@@ -339,6 +338,7 @@ label {
   max-width: 30%;
   margin-right: 3rem;
 }
+
 .location-text-wrapper h1 {
   font-size: 2.5rem;
   color: #029602;
@@ -364,14 +364,9 @@ label {
   padding-left: 5rem;
   padding-right: 5rem;
   padding-top: 5rem;
-  padding-bottom: 5rem;
-
-  padding-left: 5rem;
-  padding-right: 5rem;
-  padding-top: 4rem;
 }
 
-.further-info h1 {
+.further-info-header h1 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   text-transform: uppercase;
@@ -409,13 +404,15 @@ label {
 .further-info-wrapper h2 {
   font-size: 1.5rem;
   text-transform: uppercase;
-  letter-spacing: 1px; 
+  letter-spacing: 1px;
 }
 
 .further-info-wrapper p {
   letter-spacing: 1px;
 }
-
+.further-info-header {
+  text-align: center;
+}
 #further1 {
   border: 3px solid #0075e2;
   border-top: 8px solid #0075e2;
@@ -449,7 +446,7 @@ label {
 /* ----------------------------FOOOTER---------------------------- */
 
 .footer {
-  margin-top: 20vh;
+  margin-top: 5rem;
 }
 
 .svg {
@@ -564,13 +561,7 @@ label {
   }
 }
 
-
-
-
-
 @media only screen and (min-width: 960px) {
-
-
   .our-location.animate {
     animation-name: slideright;
     animation-duration: 2s;
@@ -585,8 +576,6 @@ label {
     animation-play-state: running;
   }
 }
-
-
 
 @media only screen and (max-width: 1250px) {
   .further-info-wrapper {
@@ -605,10 +594,13 @@ label {
 
   #map {
     height: 50vh;
-    width: 70vw;
+    width: 60vw;
+  }
+  .contact-us .text-main {
+    text-align: center;
+    margin-bottom: 5rem;
   }
 }
-
 
 @media only screen and (max-width: 960px) {
   .navbar a {
@@ -666,11 +658,10 @@ label {
     z-index: 1000000000000000000000;
   }
 
-
   .further-info-wrapper {
     width: 10rem;
   }
-  
+
   .further-info-body {
     width: 100vw;
     justify-content: space-between;
@@ -688,9 +679,23 @@ label {
   }
 
   .contact-us {
-    margin-top: 180px;
+    margin-top: 120px;
+  }
+  .contact-us .text-main {
+    margin-bottom: 3rem;
   }
 
+  .form {
+    padding: 40px 47px;
+    max-width: 75vw;
+  }
+
+  #first-name {
+    width: 60%;
+  }
+  #last-name {
+    width: 40%;
+  }
 
   .text-main h1 {
     font-size: 3rem;
@@ -700,18 +705,9 @@ label {
     font-size: 1.25rem;
   }
 
-  .form {
-    top: 60%;
-    left: 19%;
-    width: 31rem;
-  }
-
   .our-location {
-    margin-top: 18rem;
-  }
-
-  input {
-    width: 10rem;
+    margin-top: 6rem;
+    padding-top: 6rem;
   }
 
   .our-location {
@@ -720,13 +716,12 @@ label {
   }
 
   .location-text-wrapper {
-    width: 30vw;
-    margin-right: 1.5rem;
+    max-width: 30vw;
   }
 
   .location-text-wrapper h1 {
     font-size: 1.75rem;
-    
+
     margin-bottom: 10px;
     letter-spacing: 1.25px;
   }
@@ -737,33 +732,71 @@ label {
   }
 
   #map {
-    height: 50vh;
-    width: 28rem;
+    height: 40vh;
+    width: 40vh;
   }
 }
 
+@media only screen and (max-width: 760px) {
+  .our-location {
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem;
+  }
+  .location-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 80vw;
+    margin-right: 0;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
 
-@media only screen and (max-width: 760px){ 
+  #map {
+    max-height: 55vh;
+    max-width: 55vh;
+  }
+
+  .location-text-wrapper h1 {
+    font-size: 1.75rem;
+
+    margin-bottom: 10px;
+    letter-spacing: 1.25px;
+  }
+
+  .location-text-wrapper p {
+    font-size: 1rem;
+    letter-spacing: 1.25px;
+  }
 
   .contact-us .text-main {
-    width: 30rem;
-    left: 10%
+    width: 90vw;
+    margin-bottom: 3rem;
   }
 
   .text-main h1 {
     font-size: 2.75rem;
   }
+  .form {
+    max-width: 82vw;
+    padding: 30px 37px;
+  }
+
+  .form input {
+    font-size: 0.75rem;
+  }
+
+  #infor {
+    margin-bottom: 30px;
+  }
+
+  #last-name {
+    margin-left: 1rem;
+  }
 
   .text-main p {
     font-size: 1.115rem;
   }
-
-  .form {
-    top: 58%;
-    left: 14%;
-    width: 72vw;
-  }
-
 
   .further-info-body {
     flex-direction: column;
@@ -776,7 +809,6 @@ label {
 }
 
 @media screen and (max-width: 600px) {
-
   .navbar a {
     font-size: 1rem;
     color: black;
@@ -788,7 +820,6 @@ label {
     padding: 5px 0px;
     margin: 5px 0;
   }
-
 
   .topnav {
     background-color: white;
@@ -802,16 +833,18 @@ label {
   }
 
   .contact-us .text-main {
-    width: 80vw;
-    left: 10%
+    width: 90vw;
+    margin-bottom: 3rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
-  
 
   .form {
-    top: 70%;
-    left: 11.5%;
-    padding: 30px 30px;
-    width: 80vw;
+    max-width: 85vw;
+    padding: 20px 27px;
+  }
+  .further-info {
+    padding-top: 2rem;
   }
 
   .further-info-body {
@@ -824,6 +857,8 @@ label {
     flex-direction: column;
     width: 100%;
     padding: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .location-text-wrapper {
@@ -833,6 +868,7 @@ label {
     width: 80vw;
     text-align: center;
     margin-right: 0rem;
+    margin-bottom: 1rem;
   }
 
   .location-text-wrapper h1 {
@@ -846,36 +882,20 @@ label {
     line-height: 30px;
     text-align: center;
   }
+
   #map {
-    width: 300px;
-    height: 300px;
+    max-width: 80vw;
+    max-height: 80vh;
   }
 }
 
-
 @media screen and (max-width: 550px) {
-
-  .form {
-    top: 60%;
-    left: 16%;
-    width: 70%
-  }
-
-  .text-main h1{
+  .text-main h1 {
     font-size: 35px;
   }
 
   .text-main p {
     font-size: 18px;
-  }
-
-  input {
-    font-size: 14px;
-    width: 50vw;
-  }
-
-  label {
-    font-size: 15px;
   }
 
   textarea {
@@ -887,17 +907,36 @@ label {
     flex-direction: column;
     gap: 50px;
   }
+  #map {
+    max-width: 90vw;
+    max-height: 70vh;
+  }
 
-  .location-text-wrapper h1{
+  .contact-us {
+    padding-top: 10px;
+  }
+
+  input {
+    font-size: 0.7rem;
+  }
+  #last-name {
+    margin-left: 0;
+  }
+  #first-name,
+  #last-name {
+    width: 100%;
+  }
+  .location-text-wrapper h1 {
     font-size: 30px;
     margin-bottom: 2px;
   }
 
-  .location-text-wrapper p{
+  .location-text-wrapper p {
     font-size: 15px;
   }
-  
-  .further-info-header h1{
+
+  .further-info-header h1 {
+    margin-bottom: 1rem;
     font-size: 35px;
   }
 
@@ -905,7 +944,8 @@ label {
     font-size: 20px;
   }
 
-  .our-location-wrapper {
-    margin-top: 26rem;
+  .submit-button {
+    padding: 12px;
+    width: 8rem;
   }
 }

@@ -49,56 +49,61 @@
         <h1>Contact Us</h1>
         <p>Fill in the form below if you're interested in our business</p>
       </div>
+      <form action="" class="form">
+        <div class="input-name">
+          <input
+            type="text"
+            id="first-name"
+            name="first-name"
+            placeholder="First Name"
+            required
+          />
+          <input
+            type="text"
+            id="last-name"
+            name="last-name"
+            placeholder="Last Name"
+            required
+          />
+        </div>
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+        <br />
+
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          placeholder="Phone number"
+          required
+        />
+        <br />
+
+        <label for="infor" id="infor-label">Things said to Us</label><br />
+        <textarea
+          name="infor"
+          id="infor"
+          cols="30"
+          rows="10"
+          required
+        ></textarea
+        ><br />
+
+        <input
+          type="submit"
+          value="Submit"
+          class="submit-button"
+          data-modal-target="#modal"
+          id="open-modal"
+        /><br />
+      </form>
     </div>
-
-    <form action="" class="form">
-      <div class="input-name">
-        <input
-          type="text"
-          id="first-name"
-          name="first-name"
-          placeholder="First Name"
-          required
-        />
-        <input
-          type="text"
-          id="last-name"
-          name="last-name"
-          placeholder="Last Name"
-          required
-        />
-      </div>
-
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Email"
-        required
-      />
-      <br />
-
-      <input
-        type="text"
-        id="phone"
-        name="phone"
-        placeholder="Phone number"
-        required
-      />
-      <br />
-
-      <label for="infor" id="infor">Things said to Us</label><br />
-      <textarea name="infor" id="infor" cols="30" rows="10" required></textarea
-      ><br />
-
-      <input
-        type="submit"
-        value="Submit"
-        class="submit-button"
-        data-modal-target="#modal"
-        id="open-modal"
-      /><br />
-    </form>
 
     <div class="modal" id="modal">
       <div class="modal-header">
