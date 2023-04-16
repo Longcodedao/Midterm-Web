@@ -185,6 +185,8 @@ li {
 }
 
 .we-do-col {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   max-width: 20rem;
   height: auto;
@@ -818,7 +820,7 @@ li {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    gap: 42px;
+    gap: 44px;
   }
 
   .we-do {
@@ -937,6 +939,7 @@ li {
 
   .we-do-col {
     max-width: 80vw;
+    padding: 4px;
   }
   .our-advantages {
     margin-top: 2rem;
