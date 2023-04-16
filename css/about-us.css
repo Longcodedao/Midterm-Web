@@ -162,6 +162,7 @@ li {
 .list-mem {
   display: flex;
   flex-direction: row;
+  height: 10rem;
   justify-content: space-evenly;
   padding: 0px 8vw;
   margin-top: 60px;
@@ -837,7 +838,7 @@ li {
   }
 
   .product-box {
-    width: 12rem;
+    width: 14rem;
     height: 14rem;
   }
 
@@ -867,13 +868,17 @@ li {
   }
 
   .intro-mem h3 {
-    font-size: 22px;
-    overflow: hiden;
+    font-size: 20px;
   }
 
   .owl-carousel {
     padding-left: 8vw;
     overflow: hidden;
+  }
+
+  .product-box {
+    width: 13rem;
+    height: 13rem;
   }
 }
 
@@ -965,7 +970,7 @@ li {
 
   .product-box {
     width: 10rem;
-    height: 12rem;
+    height: 10rem;
   }
 
   .product-content > h2 {
@@ -977,9 +982,9 @@ li {
     font-size: 0.7rem;
   }
 
-  /* .product-wrapper {
-    padding-bottom: 0;
-  } */
+  .product-wrapper {
+    padding-top: 1rem;
+  }
 
   .footer {
     margin-top: 5rem;
