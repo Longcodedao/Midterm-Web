@@ -7,6 +7,7 @@ $(document).ready(function () {
     smartSpeed: 1500,
     center: true,
     nav: true,
+    rewind: true,
     margin: 0,
     responsive: {
       0: {
