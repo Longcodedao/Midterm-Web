@@ -6,10 +6,19 @@
  <img alt="Louis Wain's cats" src="https://ichef.bbci.co.uk/news/976/cpsprodpb/10EEF/production/_121995396_mediaitem121958723.jpg">
 </picture>
 ## Overview of the project
-This is a simple 3-page website that showcases an IOT agriculture company's products and services. The company specializes in providing smart agriculture solutions to farmers.
+This is a simple 3-page responsive website that showcases an IOT agriculture company's products and services. The company specializes in providing smart agriculture solutions to farmers.
 
-## Technology used
+### Pages
+- Homepage
+- About us
+- Contact us
+
+### Technology used
 - HTML
 - CSS
 - Javascript
 - JQuery 
+
+### Source used
+- For images, we mostly use images from Unsplash and Google
+- For the google map, we use Google Javascript Map API
