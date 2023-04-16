@@ -65,7 +65,7 @@ const ourAdvantages = document.querySelector(".our-advantages");
 function isElementInViewport(element) {
   const windowHeight = window.innerHeight;
   let elementTop = element.getBoundingClientRect().top;
-  let elementVisible = 150;
+  let elementVisible = 50;
 
   if (elementTop < windowHeight - elementVisible) {
     return true;
