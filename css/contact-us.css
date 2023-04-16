@@ -145,6 +145,7 @@ li {
   display: flex;
   flex-direction: column;
   max-width: 60vw;
+  transition: 600ms ease-in-out;
 }
 
 input {
@@ -221,7 +222,7 @@ textarea {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  transition: 200ms ease-in-out;
+  transition: 400ms ease-in-out;
   border: black 1px solid;
   border-radius: 10px;
   z-index: 1000000000000000000000000000000;
@@ -329,6 +330,7 @@ textarea {
   justify-content: space-around;
   padding-left: 5rem;
   padding-right: 5rem;
+  transition: 500ms ease-in-out;
 
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -364,6 +366,7 @@ textarea {
   padding-left: 5rem;
   padding-right: 5rem;
   padding-top: 5rem;
+  transition: 600ms ease-in-out;
 }
 
 .further-info-header h1 {
