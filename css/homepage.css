@@ -718,7 +718,7 @@ li {
     flex-direction: column;
     justify-content: flex-start;
     gap: 30px;
-    padding-top: 60px;
+    padding-top: 30px;
   }
   .display-row {
     max-width: 90%;
