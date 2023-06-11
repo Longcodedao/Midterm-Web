@@ -34,7 +34,7 @@ if ($("window").width() > 600) {
   $listNav.show();
 }
 
-// -------------GENERATE RANDOM FUNKY COLOR FOR THE BUYING BUTTON------------------
+// -------------GENERATE RANDOM FUNKY COLOR FOR THE BUYING BUTTON and price------------------
 var colors = [
   "#2c3e50",
   "#d42b6a",
@@ -52,22 +52,30 @@ var colors = [
   "#4a80b5",
   "#c44e3b",
   "#d5882a",
-  "#d82767",
   "#fd79a8",
   "#8adb24",
   "#2327dc",
   "#21de96",
   "#c8d32c",
-  ,
 ];
 
 let buyingButtons = $(".buying-button");
-let price = $(".price");
-// using vanilla js cuz its the only way to do this
+let prices = $(".card-subtitle");
+let usedColors = [];
+
 for (let i = 0; i < buyingButtons.length; i++) {
-  let randomColor = colors[Math.floor(Math.random() * colors.length)];
-  price[i].style.color = randomColor;
-  buyingButtons[i].style.backgroundColor = randomColor;
+  let randomColor;
+
+  // Generate a unique random color
+  do {
+    randomColor = colors[Math.floor(Math.random() * colors.length)];
+  } while (usedColors.includes(randomColor)); // the used colors overlaps with the random color, we do another loop
+
+  // add the color to the usedColors array
+  usedColors.push(randomColor);
+
+  $(prices[i]).css("color", randomColor);
+  $(buyingButtons[i]).css("background-color", randomColor);
 }
 // --------------------- JQUERYUI ANIMATION ----------------------
 
