@@ -6,9 +6,9 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   font-family: "Poppins", sans-serif;
-  color: #2e2d2d;
+  /* color: #2e2d2d; */
 }
 
 body {
@@ -282,12 +282,6 @@ li {
 }
 
 /* ------------ CUSTOMISE CSS CODE (AFTER ADDING BOOTSTRAP) -------------------------------- */
-
-.card-img-top {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
 #product-header {
   margin-bottom: 40px;
 }
@@ -310,4 +304,42 @@ li {
   .row {
     margin-bottom: 30px;
   }
+}
+
+.card .card-img-top {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card {
+  background-color: rgb(235, 235, 235);
+  transition: transform 0.3s;
+  outline: none !important;
+  border: none !important;
+
+  border-radius: 20px !important;
+}
+
+.card:hover {
+  transform: translateY(-15px);
+  transition: transform 0.3s;
+}
+.buying-button {
+  cursor: pointer;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 1.25rem;
+}
+
+.buying-button:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+/* ------------ body color--------------- */
+.wrapper {
+  background-color: #d5ffd5;
 }
