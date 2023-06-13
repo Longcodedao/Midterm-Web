@@ -185,10 +185,12 @@ li {
 }
 
 .we-do-col {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   max-width: 20rem;
   height: auto;
-  margin: 7px;
+  margin: 8px;
 }
 
 .we-do-col:hover {
@@ -210,7 +212,6 @@ li {
 
 .we-do-col p {
   color: rgb(143, 142, 142);
-  line-height: 30px;
 }
 
 .topnav.scroll {
@@ -224,7 +225,7 @@ li {
       rgba(63, 63, 63, 0.5),
       rgba(63, 63, 24, 0.5)
     ),
-    url("../images/OurMission.jpg");
+    url("../images/ourcarousel1.jpg");
   background-position: center;
   background-size: cover;
   position: relative;
@@ -262,7 +263,7 @@ li {
       rgba(63, 63, 63, 0.5),
       rgba(63, 63, 24, 0.5)
     ),
-    url("../images/OurTarget.jpg");
+    url("../images/ourcarousel2.jpg");
   background-position: center;
   background-size: cover;
   position: relative;
@@ -292,7 +293,7 @@ li {
       rgba(63, 63, 63, 0.5),
       rgba(63, 63, 24, 0.5)
     ),
-    url("../images/OurValues.jpg");
+    url("../images/ourcarousel3.jpg");
   background-position: center;
   background-size: cover;
 
@@ -582,7 +583,7 @@ li {
   }
 
   .text-hero > h1 {
-    font-size: 55px;
+    font-size: 50px;
   }
 
   .text-hero > p {
@@ -690,7 +691,7 @@ li {
     max-width: 90vw;
     width: 70vw;
     height: auto;
-    margin: 7px;
+    margin: 5px;
   }
 
   .logo {
@@ -818,7 +819,7 @@ li {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    gap: 42px;
+    gap: 44px;
   }
 
   .we-do {
@@ -836,6 +837,7 @@ li {
   .container p {
     font-size: 0.85rem;
   }
+
   .we-do-col i {
     font-size: 40px;
   }
@@ -846,7 +848,6 @@ li {
 
   .we-do-col p {
     font-size: 0.85rem;
-    line-height: 20px;
   }
 
   /* ------------ Our Mission ------------------*/
@@ -922,7 +923,7 @@ li {
     letter-spacing: 3px;
   }
 }
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 430px) {
   .hero h1 {
     font-size: 1.75rem;
   }
@@ -933,8 +934,19 @@ li {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+
+  .we-do-col {
+    max-width: 90vw;
+    padding: 4px;
+  }
   .our-advantages {
     margin-top: 2rem;
+  }
+  .text-carousel h1 {
+    font-size: 1.25rem;
+  }
+  .text-carousel p {
+    font-size: 0.8rem;
   }
 }
 

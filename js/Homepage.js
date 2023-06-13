@@ -2,12 +2,13 @@
 
 $(document).ready(function () {
   $(".owl-carousel").owlCarousel({
-    lazyLoad: false,
     loop: true,
     autoplay: true,
     smartSpeed: 1500,
-    navigation: true,
+    center: true,
+    nav: true,
     margin: 0,
+    rewind: false,
     responsive: {
       0: {
         items: 1,
@@ -64,7 +65,7 @@ const ourAdvantages = document.querySelector(".our-advantages");
 function isElementInViewport(element) {
   const windowHeight = window.innerHeight;
   let elementTop = element.getBoundingClientRect().top;
-  let elementVisible = 150;
+  let elementVisible = 50;
 
   if (elementTop < windowHeight - elementVisible) {
     return true;
