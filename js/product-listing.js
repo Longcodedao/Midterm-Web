@@ -140,9 +140,9 @@ for (let i = 0; i < productWrapper.length; i++){
         height: "450px",
         border: "none",
         cursor: "pointer",
-        backgroundImage: `linear-gradient(rgba(63, 100, 34, 0.5), rgba(63, 100, 34, 0.5)), url(${directory[i]})`,
+        backgroundImage: `linear-gradient(rgba(63, 100, 34, 0.5), rgba(51, 95, 18, 0.5)), url(${directory[i]})`,
         backgroundSize: "cover",
-        animation: "backgroundIMG 0.5s linear"
+        animation: "backgroundIMG 0.6s linear"
       })
       var div = $(productWrapper[i]).find('div');
       div.css({
@@ -156,9 +156,15 @@ for (let i = 0; i < productWrapper.length; i++){
         fontSize: "35px",
       })
       
+      var paragraph = div.find('p');
+      paragraph.css({
+        fontSize: "20px",
+      })
+
       var subTitle = div.find(".card-subtitle");
       subTitle.css({
         color: "white",
+        fontSize: "18px",
       })
 
       var images = $(productWrapper[i]).find("img");
@@ -206,9 +212,15 @@ for (let i = 0; i < productWrapper.length; i++){
         fontSize: "",
       })
 
+      var paragraph = div.find('p');
+      paragraph.css({
+        fontSize: "",
+      })
+
       var subTitle = div.find(".card-subtitle");
       subTitle.css({
         color: "",
+        fontSize: "",
       })
 
       var images = $(productWrapper[i]).find("img");
