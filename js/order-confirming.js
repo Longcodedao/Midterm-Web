@@ -67,9 +67,9 @@ $(document).ready(function () {
 
   //   ------------------------ working with accordion --------------------------------
 
-  $("#my-accordion").accordion({ collapsible: true, active: false });
-
-  $("#my-accordion").collapse({
-    // To prevent all panels from being open initially
+  $("#my-accordion").accordion({
+    // do this so we can collapse the accordion with just one section, for the sake of having implemenented one jqueryui element
+    collapsible: true,
+    active: false,
   });
 });
