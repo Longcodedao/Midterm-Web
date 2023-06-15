@@ -1,6 +1,6 @@
 // ------------- WORKING WITH FIXED NAVBAR -------------------
-
-var NavBar = document.getElementById("topnav");
+$(document).ready(function (){
+  var NavBar = document.getElementById("topnav");
 var logo = document.getElementById("logo");
 var navigate_options = document.getElementById("nav-option");
 var sticky = NavBar.offsetTop;
@@ -68,9 +68,28 @@ var colors = [
   "#cac036",
 ];
 
+
+var directory = [
+  "./product-images/attena.jpg",
+  "./product-images/arduino.jpg",
+  "./product-images/cattlemonitoring.jpg",
+  "./product-images/driverless-tractor.jpg",
+  "./product-images/drone.jpg",
+  "./product-images/esp8266.jpg",
+  "./product-images/minicar.jpg",
+  "./product-images/minicomputer.jpg",
+  "./product-images/irrigation.jpg"
+]
+
 let buyingButtons = $(".buying-button");
 let prices = $(".card-subtitle");
 let usedColors = [];
+
+let productWrapper = $(".product-wrapper");
+// console.log(productWrapper.length);
+// console.log(productWrapper);
+
+// console.log(buyingButtons.length);
 
 for (let i = 0; i < buyingButtons.length; i++) {
   let randomColor;
@@ -85,6 +104,126 @@ for (let i = 0; i < buyingButtons.length; i++) {
 
   $(prices[i]).css("color", randomColor);
   $(buyingButtons[i]).css("background-color", randomColor);
+
 }
 
+
+
+// ------------------------------------- Working with click animation -------------------------------------
+for (let i = 0; i < productWrapper.length; i++){
+
+// $(productWrapper[i]).hover(
+  //   function(){
+  //     // var color = $(pro)
+  //     var word = $(productWrapper[i]).find('div').find('h6');
+  //     console.log(word.html())
+
+  //     word.css({
+  //       color: "white",
+  //     })
+  //   },
+
+  //   function(){
+  //     var word = $(productWrapper[i]).find('div').find('h6');
+      
+  //     word.css({color: randomColor});
+  //   }
+
+  // )
+
+  $(productWrapper[i]).hover(
+    function(){
+      // console.log(directory[i]);
+      var animation = $(productWrapper[i]).addClass("animation");
+      
+      animation.css({
+        height: "450px",
+        border: "none",
+        cursor: "pointer",
+        backgroundImage: `linear-gradient(rgba(63, 100, 34, 0.5), rgba(63, 100, 34, 0.5)), url(${directory[i]})`,
+        backgroundSize: "cover",
+        animation: "backgroundIMG 0.5s linear"
+      })
+      var div = $(productWrapper[i]).find('div');
+      div.css({
+        marginTop: "100px",
+        color: "white",
+      })
+
+      var headFive = div.find('h5');
+      headFive.css({
+        color: "white",
+        fontSize: "35px",
+      })
+      
+      var subTitle = div.find(".card-subtitle");
+      subTitle.css({
+        color: "white",
+      })
+
+      var images = $(productWrapper[i]).find("img");
+      images.css({
+        display: "none",
+      })
+
+
+    // $(productWrapper[i]).css({
+    //   height: "450px",
+    //   border: "none",
+    //   cursor: "pointer",
+    //   backgroundImage: `linear-gradient(rgba(63, 100, 34, 0.5), rgba(63, 100, 34, 0.5)), url(${directory[i]})`,
+    //   backgroundSize: "cover",
+    //   animation: "backgroundIMG 0.5s linear"
+    // })
+    
+    // var images = $(productWrapper[i]).find("img");
+    // images.css({
+    //   display: "none",
+    // })
+    },
+    function(){
+      $(this).removeClass("animation");
+      var animation = $(productWrapper[i]).addClass("animation");
+      console.log(animation);
+      animation.css({
+        height: "",
+        border: "",
+        cursor: "",
+        backgroundImage: ``,
+        backgroundSize: "",
+        animation: ""
+      })
+
+      var div = $(productWrapper[i]).find('div');
+      div.css({
+        marginTop: "",
+        color: "",
+      })
+      
+      var headFive = div.find('h5');
+      headFive.css({
+        color: "",
+        fontSize: "",
+      })
+
+      var subTitle = div.find(".card-subtitle");
+      subTitle.css({
+        color: "",
+      })
+
+      var images = $(productWrapper[i]).find("img");
+      images.css({
+        display: "block",
+      })
+    }
+  )
+}
+  
+
+
+  
+
+
 // --------------------- JQUERYUI ANIMATION ----------------------
+
+})

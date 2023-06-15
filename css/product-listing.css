@@ -281,6 +281,14 @@ li {
   text-decoration: none;
 }
 
+/* ------------ Annimation hover -----------------------*/
+
+
+.animation {
+  height: 450px;
+
+}
+
 /* ------------ CUSTOMISE CSS CODE (AFTER ADDING BOOTSTRAP) -------------------------------- */
 #product-header {
   margin-bottom: 40px;
