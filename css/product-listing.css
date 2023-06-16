@@ -283,10 +283,8 @@ li {
 
 /* ------------ Annimation hover -----------------------*/
 
-
 .animation {
   height: 450px;
-
 }
 
 /* ------------ CUSTOMISE CSS CODE (AFTER ADDING BOOTSTRAP) -------------------------------- */
@@ -331,6 +329,11 @@ li {
   border-radius: 20px !important;
 }
 
+.card-body {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .card:hover {
   transform: translateY(-15px);
   transition: transform 0.3s;
@@ -351,7 +354,6 @@ li {
 .wrapper {
   background-color: #d5ffc2;
 }
-
 
 @keyframes backgroundIMG {
   0% {
