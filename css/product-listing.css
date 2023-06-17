@@ -184,20 +184,20 @@ li {
   }
 }
 
-
 /* -------------------------- Popup Container ---------------------------------*/
+
 #popup-container {
   display: none;
+
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
-}
 
-.custom-height{
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1999999999999999;
+}
+.custom-height {
   height: 60px;
 }
 
@@ -209,22 +209,21 @@ li {
   border-radius: 0px 0px 10px 0px;
 }
 
-a{
-  text-decoration: none!important;
+a {
+  text-decoration: none !important;
 }
 
-#order-btn:hover{
-  background-color:  #0056b3!important;
+#order-btn:hover {
+  background-color: #0056b3 !important;
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
 
-#cancel-btn:hover{
-  background-color:  #b30000!important;
+#cancel-btn:hover {
+  background-color: #b30000 !important;
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
-
 
 /* --------------------------- Footer(Reused from midterm) generated fro: https://svgwave.in/---------------------------------------- */
 
@@ -323,12 +322,6 @@ a{
   text-decoration: none;
 }
 
-/* ------------ Annimation hover -----------------------*/
-
-.animation {
-  height: 450px;
-}
-
 /* ------------ CUSTOMISE CSS CODE (AFTER ADDING BOOTSTRAP) -------------------------------- */
 #product-header {
   margin-bottom: 40px;
@@ -354,6 +347,12 @@ a{
   }
 }
 
+/* ------------ Annimation hover -----------------------*/
+
+.animation {
+  height: 450px;
+}
+
 .card .card-img-top {
   width: 100%;
   height: 250px;
@@ -376,10 +375,10 @@ a{
   margin-bottom: 10px;
 }
 
-.card:hover {
-  transform: translateY(-15px);
+.card-wrapper:hover {
   transition: transform 0.3s;
 }
+
 .buying-button {
   cursor: pointer;
   border-bottom-left-radius: 20px;

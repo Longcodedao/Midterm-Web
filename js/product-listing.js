@@ -107,29 +107,10 @@ $(document).ready(function () {
 
   // ------------------------------------- Working with click animation -------------------------------------
   for (let i = 0; i < productWrapper.length; i++) {
-    // $(productWrapper[i]).hover(
-    //   function(){
-    //     // var color = $(pro)
-    //     var word = $(productWrapper[i]).find('div').find('h6');
-    //     console.log(word.html())
-
-    //     word.css({
-    //       color: "white",
-    //     })
-    //   },
-
-    //   function(){
-    //     var word = $(productWrapper[i]).find('div').find('h6');
-
-    //     word.css({color: randomColor});
-    //   }
-
-    // )
-
     $(productWrapper[i]).hover(
       function () {
         // console.log(directory[i]);
-        var animation = $(productWrapper[i]).addClass("animation");
+        let animation = $(productWrapper[i]).addClass("animation");
 
         animation.css({
           height: "450px",
@@ -139,51 +120,40 @@ $(document).ready(function () {
           backgroundSize: "cover",
           animation: "backgroundIMG 0.6s linear",
         });
-        var div = $(productWrapper[i]).find("div");
+
+        let div = $(productWrapper[i]).find(".card-body");
         div.css({
-          marginTop: "100px",
           color: "white",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
         });
 
-        var headFive = div.find("h5");
+        let headFive = div.find("h5");
         headFive.css({
-          color: "white",
           fontSize: "35px",
         });
 
-        var paragraph = div.find("p");
+        let paragraph = div.find("p");
         paragraph.css({
           fontSize: "20px",
         });
 
-        var subTitle = div.find(".card-subtitle");
+        let subTitle = div.find(".card-subtitle");
         subTitle.css({
           color: "white",
           fontSize: "18px",
         });
 
-        var images = $(productWrapper[i]).find("img");
+        let images = $(productWrapper[i]).find("img");
         images.css({
           display: "none",
         });
-
-        // $(productWrapper[i]).css({
-        //   height: "450px",
-        //   border: "none",
-        //   cursor: "pointer",
-        //   backgroundImage: `linear-gradient(rgba(63, 100, 34, 0.5), rgba(63, 100, 34, 0.5)), url(${directory[i]})`,
-        //   backgroundSize: "cover",
-        //   animation: "backgroundIMG 0.5s linear"
-        // })
-
-        // var images = $(productWrapper[i]).find("img");
-        // images.css({
-        //   display: "none",
-        // })
       },
       function () {
         $(this).removeClass("animation");
-        var animation = $(productWrapper[i]).addClass("animation");
+        let animation = $(productWrapper[i]).addClass("animation");
         console.log(animation);
         animation.css({
           height: "",
@@ -196,7 +166,6 @@ $(document).ready(function () {
 
         var div = $(productWrapper[i]).find("div");
         div.css({
-          marginTop: "",
           color: "",
         });
 
@@ -212,7 +181,7 @@ $(document).ready(function () {
         });
 
         var subTitle = div.find(".card-subtitle");
-        var rndColor = $(buyingButtons[i]).css('background-color');
+        var rndColor = $(buyingButtons[i]).css("background-color");
         console.log(rndColor);
 
         subTitle.css({
@@ -227,17 +196,15 @@ $(document).ready(function () {
       }
     );
 
-    $(buyingButtons[i]).click(
-      function(){
-        $('#popup-container').fadeIn();
-      }
-    )
+    // ------------ activate pop up----------------
 
-    $('#cancel-btn').click(
-      function(){
-        $('#popup-container').fadeOut();
-      }
-    )
+    $(buyingButtons[i]).click(function () {
+      $("#popup-container").fadeIn();
+    });
+
+    $("#cancel-btn").click(function () {
+      $("#popup-container").fadeOut();
+    });
   }
 });
 
@@ -285,5 +252,3 @@ $(document).ready(function () {
 if ($("window").width() > 600) {
   $listNav.show();
 }
-
-
