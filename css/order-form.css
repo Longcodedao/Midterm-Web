@@ -180,12 +180,14 @@ a {
   text-transform: capitalize;
   line-height: 3rem;
 }
+
 .footer-wrapper h3 {
   font-weight: 500;
   letter-spacing: 0.4rem;
   margin-top: 10px;
   color: white;
 }
+
 .footer-wrapper p {
   margin: 10px auto;
   line-height: 28px;
@@ -237,6 +239,7 @@ a {
   word-spacing: 2px;
   text-transform: capitalize;
 }
+
 .footer-bottom p a {
   color: #4042ad;
   font-size: 16px;
