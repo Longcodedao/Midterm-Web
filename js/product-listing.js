@@ -247,6 +247,9 @@ $(document).ready(function () {
 
   // Check initial scroll position to show/hide the buttons
   $(window).trigger("scroll");
+
+
+  
 });
 
 if ($("window").width() > 600) {
