@@ -47,6 +47,57 @@ nav {
     border-bottom: solid 0.5px rgb(177, 177, 177);
 }
 
+/* -------------------------- Form Order ------------------------------- */
+
+  
+  #progressbar-1 {
+  color: #455A64;
+  }
+  
+  #progressbar-1 li {
+  list-style-type: none;
+  font-size: 13px;
+  width: 33.33%;
+  float: left;
+  position: relative;
+  }
+  
+  #progressbar-1 #step1:before {
+  content: "1";
+  color: #fff;
+  width: 29px;
+  margin-left: 22px;
+  padding-left: 11px;
+  }
+
+.custom-height{
+  height: 60px;
+}
+
+.round-left-border {
+  border-radius: 0px 0px 0px 10px;
+}
+
+.round-right-border {
+  border-radius: 0px 0px 10px 0px;
+}
+
+a{
+  text-decoration: none!important;
+}
+
+#order-btn:hover{
+  background-color:  #0056b3!important;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+#cancel-btn:hover{
+  background-color:  #b30000!important;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
 /* ----------------------------Footer Reused ------------------------------ */
 
 .footer {
