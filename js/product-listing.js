@@ -190,7 +190,7 @@ for (let i = 0; i < productWrapper.length; i++){
     function(){
       $(this).removeClass("animation");
       var animation = $(productWrapper[i]).addClass("animation");
-      console.log(animation);
+    
       animation.css({
         height: "",
         border: "",
@@ -229,12 +229,31 @@ for (let i = 0; i < productWrapper.length; i++){
       })
     }
   )
+
+
 }
   
 
+for (let i = 0; i < productWrapper.length; i++){
+  // Continue to do the task after creating the database
+  $(buyingButtons[i]).click(function() {
+    // var information = $('#product-information');
+    // var title = information.find('h5');
 
-  
+    // title.html('')
+    $('#popup-container').fadeIn();
+  });
 
+  // $(document).mouseup(function(e) {
+  //   if (!$('#popup-container').is(e.target)) {
+  //     $('#popup-container').fadeOut();
+  //   }
+  // });
+
+  $('#cancel-btn').click(function() {
+    $('#popup-container').fadeOut();
+  })
+}
 
 // --------------------- JQUERYUI ANIMATION ----------------------
 
