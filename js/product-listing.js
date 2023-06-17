@@ -226,8 +226,21 @@ $(document).ready(function () {
         });
       }
     );
+
+    $(buyingButtons[i]).click(
+      function(){
+        $('#popup-container').fadeIn();
+      }
+    )
+
+    $('#cancel-btn').click(
+      function(){
+        $('#popup-container').fadeOut();
+      }
+    )
   }
 });
+
 // --------------- JQUERY ANIMATE top to bottom scroll ------------------------------
 $(document).ready(function () {
   // Scroll to bottom button
@@ -272,4 +285,5 @@ $(document).ready(function () {
 if ($("window").width() > 600) {
   $listNav.show();
 }
+
 
