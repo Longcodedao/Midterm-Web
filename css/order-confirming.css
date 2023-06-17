@@ -97,7 +97,7 @@ li {
 }
 
 .navbar a:hover {
-  color: rgb(74, 63, 241);
+  color: rgb(104, 93, 255);
   transition: color 0.5s;
 }
 
@@ -325,6 +325,9 @@ li {
   #my-accordion > div > h6 {
     font-size: 0.9rem;
   }
+  #my-accordion {
+    height: auto;
+  }
 }
 
 /* Customize the accordion header */
@@ -354,5 +357,67 @@ li {
 
 #my-accordion {
   max-width: 96%;
-  width: 500px;
+  width: 650px;
+  overflow: hidden;
+}
+
+#my-accordion > div > h5 {
+  font-size: 1rem;
+}
+
+.order-product-image {
+  object-fit: contain;
+  max-width: 100%;
+}
+
+.order-product-image-name {
+  font-size: 0.9rem;
+}
+
+/* ------------------- scroll to top and bottom button ------------------------ */
+#scrollToTopBtn,
+#scrollToBottomBtn {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 4rem;
+  height: 4rem;
+  opacity: 0;
+  border-radius: 50%;
+  background-color: #008800;
+  color: rgb(255, 255, 255);
+  font-size: 26px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  z-index: 1000000000000000000;
+  display: none;
+  justify-content: center;
+  text-align: center;
+}
+
+#scrollToTopBtn.active,
+#scrollToBottomBtn.active {
+  opacity: 1;
+  display: block;
+}
+
+@media only screen and (max-width: 600px) {
+  #scrollToTopBtn,
+  #scrollToBottomBtn {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  #scrollToTopBtn,
+  #scrollToBottomBtn {
+    right: 1rem;
+    bottom: 1rem;
+    font-size: 1.25rem;
+    width: 2.75rem;
+    height: 2.75rem;
+  }
 }

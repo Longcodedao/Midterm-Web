@@ -89,41 +89,53 @@
                 Thank you for having ordered from our site
               </h4>
 
-              <h5 class="text-center">Your order key is</h5>
+              <h5 class="text-center">Your order description is</h5>
 
               <div
                 class="d-flex justify-content-center align-items-center mt-4"
               >
                 <div id="my-accordion">
                   <h3>Order key: <span class="order-key"></span></h3>
-                  <div>
-                    <h6>
-                      Product:
-                      <span class="product-name"
-                        >Lorem ipsum dolor sit amet.</span
+                  <div class="row">
+                    <div class="col-sm-7">
+                      <h6>
+                        Product:
+                        <span class="product-name"
+                          >Lorem ipsum dolor sit amet.</span
+                        >
+                      </h6>
+                      <h6>
+                        Order value:
+                        <span class="price">Lorem, ipsum..</span>
+                      </h6>
+                      <h6>
+                        Your name:
+                        <span class="customer-name">Lorem, ipsum.</span>
+                      </h6>
+                      <h6>
+                        Address:
+                        <span class="address">Lorem ipsum dolor sit amet.</span>
+                      </h6>
+                      <h6>
+                        Your phone number:
+                        <span class="phone">Lorem ipsum dolor sit .</span>
+                      </h6>
+                      <h6>
+                        Email:
+                        <span class="email">Lorem ipsum dolor sit amet.</span>
+                      </h6>
+                    </div>
+                    <div class="col-sm-5 d-flex flex-column align-items-center">
+                      <img
+                        src="./product-images/arduino.jpg"
+                        alt="Image of that order"
+                        class="img-fluid img-thumbnail order-product-image"
+                      />
+                      <span
+                        class="product-name order-product-image-name mt-sm-1"
+                        >Lorem ipsum dolor sit.</span
                       >
-                    </h6>
-                    <h6>
-                      Price:
-                      <span class="price">Lorem ipsum dolor sit amet.</span>
-                    </h6>
-                    <h6>
-                      Address:
-                      <span class="address">Lorem ipsum dolor sit amet.</span>
-                    </h6>
-
-                    <h6>
-                      Your name:
-                      <span class="customer-name">Lorem, ipsum.</span>
-                    </h6>
-                    <h6>
-                      Your phone number:
-                      <span class="phone">Lorem ipsum dolor sit .</span>
-                    </h6>
-                    <h6>
-                      Email:
-                      <span class="email">Lorem ipsum dolor sit amet.</span>
-                    </h6>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -131,6 +143,10 @@
           </div>
         </div>
       </div>
+
+      <!-- ------- scroll to top and bottom button ------------------------------------------------ -->
+      <button id="scrollToTopBtn">&#8593;</button>
+      <button id="scrollToBottomBtn">&#8595;</button>
 
       <div class="footer">
         <svg
