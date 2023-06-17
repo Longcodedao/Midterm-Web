@@ -111,9 +111,11 @@ $(document).ready(function () {
       function () {
         // console.log(directory[i]);
         let animation = $(productWrapper[i]).addClass("animation");
+        let height = $(productWrapper[i]).css("height");
+        console.log(height);
 
         animation.css({
-          height: "450px",
+          height: `${height}`,
           border: "none",
           cursor: "pointer",
           backgroundImage: `linear-gradient(rgba(63, 100, 34, 0.5), rgba(51, 95, 18, 0.5)), url(${directory[i]})`,
@@ -182,7 +184,7 @@ $(document).ready(function () {
 
         var subTitle = div.find(".card-subtitle");
         var rndColor = $(buyingButtons[i]).css("background-color");
-        console.log(rndColor);
+        // console.log(rndColor);
 
         subTitle.css({
           color: `${rndColor}`,
