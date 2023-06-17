@@ -98,6 +98,11 @@ a{
   cursor: pointer;
 }
 
+
+.custom-btn{
+  width: 44vw;
+}
+
 /* ----------------------------Footer Reused ------------------------------ */
 
 .footer {
