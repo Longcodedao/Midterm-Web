@@ -73,3 +73,5 @@ $(document).ready(function () {
     active: false,
   });
 });
+
+/// no need to add scroll up down to this page because its not long
