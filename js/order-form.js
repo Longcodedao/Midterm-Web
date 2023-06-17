@@ -70,4 +70,45 @@ $(document).ready(function () {
 
   // Check initial scroll position to show/hide the buttons
   $(window).trigger("scroll");
+
+  $('#name').on('input', function() {
+    console.log(validateName());
+  });
+
+  $('email').on('input', function() {
+
+  })
 });
+
+
+
+function validateName(){
+  var name = $('#name').val();
+
+  if (name === ''){
+    $('#name-error').css({
+      color: "red",
+      fontSize: "13px",
+    })
+    $('#name-error').html("Please enter your name");
+    return false;
+  } else {
+    $('#name-error').html("");
+    return true;
+  }
+}
+
+function validateEmail(){
+  var email = $('#email').val();
+
+  if (email === ''){
+    $('#email-error').css({
+      color: "red",
+      fontSize: "13px",
+    })
+    $('#email-error').html("Please enter your name");
+    return false;
+  } else {
+    $('#name-error')
+  }
+}
