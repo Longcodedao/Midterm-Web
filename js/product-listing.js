@@ -493,4 +493,3 @@ for (let i = 0; i < productWrapper.length; i++){
 
 // --------------------- JQUERYUI ANIMATION ----------------------
 
-})
