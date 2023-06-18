@@ -99,6 +99,14 @@ a {
 .custom-btn{
   width: 44vw;
 }
+
+/* ------------------- Warning ----------------------------------------------*/
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
 /* ------------------- scroll to top and bottom button ------------------------ */
 #scrollToTopBtn,
 #scrollToBottomBtn {
@@ -146,6 +154,9 @@ a {
     height: 2.75rem;
   }
 }
+
+
+
 
 /* ----------------------------Footer Reused ------------------------------ */
 

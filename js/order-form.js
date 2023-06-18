@@ -72,12 +72,21 @@ $(document).ready(function () {
   $(window).trigger("scroll");
 
   $('#name').on('input', function() {
-    console.log(validateName());
+    validateName();
   });
 
-  $('email').on('input', function() {
-
+  $('#email').on('input', function() {
+    validateEmail();
   })
+
+  $('#address').on('input', function(){
+    validateAddress();
+  })
+
+  $('#phone').on('input', function() {
+    validatePhone();
+  })
+
 });
 
 
@@ -86,10 +95,6 @@ function validateName(){
   var name = $('#name').val();
 
   if (name === ''){
-    $('#name-error').css({
-      color: "red",
-      fontSize: "13px",
-    })
     $('#name-error').html("Please enter your name");
     return false;
   } else {
@@ -100,15 +105,52 @@ function validateName(){
 
 function validateEmail(){
   var email = $('#email').val();
+  console.log(email.indexOf('@'))
 
-  if (email === ''){
-    $('#email-error').css({
-      color: "red",
-      fontSize: "13px",
-    })
-    $('#email-error').html("Please enter your name");
+  // if (email === '' ){
+  //   $('#email-error').html("Please enter your email");
+  //   return false;
+  // } else if (email.indexOf('@') === -1){
+  //   $('#email-error').html("Please enter a valid email address");
+  //   return false;
+  // } else {
+  //   $('#email-error').html("");
+  //   return true;
+  // }
+
+  if (email === "") {
+    $('#email-error').html("Please enter your email");
+    return false;
+  } else if (!/\S+@\S+\.\S+/.test(email)) {
+    $('#email-error').html("Please enter a valid email address (for example: imSoStupidIcantTypeMyEmail@gmail.com).");
     return false;
   } else {
-    $('#name-error')
+    $('#email-error').html("");
+    return true;
+  }
+}
+
+function validateAddress(){
+  var address = $('#address').val();
+  if (address === ''){
+    $('#address-error').html("Please enter your address");
+    return false;
+  }else{
+    $('#address-error').html("");
+    return true;
+  }
+}
+
+function validatePhone(){
+  var phone = $('#phone').val();
+  if (phone === "") {
+    $('#phone-error').html("Please enter your phone number.");
+    return false;
+  } else if (!/^\d{10,11}$/.test(phone)) {
+    $('#phone-error').html("Please enter a valid 10 or 11-digit phone number.");
+    return false;
+  } else{ 
+    $('#phone-error').html("");
+    return true;
   }
 }
