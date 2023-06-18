@@ -51,6 +51,8 @@ if ($(window).width() <= 1100 && $(window).width() > 750) {
 }
 
 // -------------- WORKING WITH FIXED NAVBAR -------------------
+//  ( CANT TURN TO NAVBAR BOOTSTRAP BECAUSE IT WILL CREATE A LOT OF CONFLICTS)-------------
+
 var NavBar = document.getElementById("topnav");
 var logo = document.getElementById("logo");
 var navigate_options = document.getElementById("nav-option");

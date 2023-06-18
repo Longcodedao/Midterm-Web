@@ -146,6 +146,7 @@ submitButton.addEventListener("click", function (e) {
 });
 
 // ------------- WORKING WITH FIXED NAVBAR -------------------
+//  ( CANT TURN TO NAVBAR BOOTSTRAP BECAUSE IT WILL CREATE A LOT OF CONFLICTS)-------------
 
 var NavBar = document.getElementById("topnav");
 var logo = document.getElementById("logo");
