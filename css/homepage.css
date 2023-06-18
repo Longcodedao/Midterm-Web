@@ -679,6 +679,11 @@ li {
     font-size: 16px;
   }
 
+  .topnav .logo {
+    color: rgb(18, 32, 124);
+    letter-spacing: 3px;
+    font-size: 22px;
+  }
   .topnav {
     background-color: white;
     display: flex;
@@ -689,13 +694,6 @@ li {
     position: fixed;
     top: 0;
   }
-
-  .topnav .logo {
-    color: rgb(18, 32, 124);
-    letter-spacing: 3px;
-    font-size: 22px;
-  }
-
   .navbar {
     flex-direction: column;
     gap: 0px;

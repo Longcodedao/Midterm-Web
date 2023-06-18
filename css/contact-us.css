@@ -72,6 +72,13 @@ body {
 
 li {
   list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 520px) {
+  li {
+    margin-bottom: 12px !important;
+  }
 }
 
 .navbar {
