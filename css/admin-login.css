@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@500;800&family=Pacifico&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap");
+body {
+  font-family: "Poppins" !important;
+}
+
+/* ------------- customise css code ------------------------------------------------ */
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/login-background.png") !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.form-wrapper {
+  border: none;
+  border-radius: 1.25rem;
+  background-color: rgb(236, 220, 128);
+  z-index: 10000 !important;
+  border: 3px solid rgba(0, 53, 18, 0.986);
+}
+.form-wrapper > h5 {
+  font-size: 1rem;
+  color: #664304;
+}
+.admin-login-header {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #664304;
+}
+
+.label-text {
+  font-size: 1rem;
+  color: rgb(63, 34, 0);
+}
+
+.user-input {
+  border-radius: 1rem !important;
+  border: 2px solid rgb(66, 0, 0) !important;
+}
+form {
+  display: flex;
+  flex-direction: column !important;
+}
+.login-button {
+  padding: 12px 12px !important;
+  border-radius: 1.25rem !important;
+  background-color: #664304 !important;
+  border: 2px solid transparent !important;
+  transition: background-color 0.5s ease-in-out !important;
+}
+
+.login-button:hover {
+  background-color: rgb(165, 99, 1) !important;
+  color: rgb(255, 255, 255) !important;
+}
