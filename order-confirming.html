@@ -52,23 +52,60 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="navigation-bar">
-        <nav id="topnav" class="topnav">
-          <a href="Homepage.html" class="logo" id="logo">SmartAgri</a>
-
-          <ul class="navbar" id="nav-option">
-            <li class="nav-opt"><a href="Homepage.html">Home</a></li>
-            <li class="nav-opt"><a href="about-us.html">About us</a></li>
-            <li class="nav-opt"><a href="contact-us.html">Contact</a></li>
-            <li class="nav-opt">
-              <a href="product-listing.html" class="anchor">Product</a>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light pt-3 pb-3">
+        <a class="navbar-brand ms-6 pt-2 pb-2 fs-2.5" id="logo" href="#"
+          >SmartAgri</a
+        >
+        <button
+          id="toggle"
+          class="navbar-toggler mx-3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#btn"
+        >
+          <i class="fa-solid fa-bars hamburger-icon"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="btn">
+          <ul class="navbar-nav ms-auto">
+            <li
+              class="nav-item active nav-element mb-lg-0 mb-xxl-0 mb-md-3 mb-sm-4 mb-xs-4"
+            >
+              <a
+                class="nav-link d-flex justify-content-center list pt-1 pb-1"
+                href="Homepage.html"
+                >Home</a
+              >
+            </li>
+            <li
+              class="nav-item nav-element mb-lg-0 mb-xxl-0 mb-md-3 mb-sm-4 mb-xs-4"
+            >
+              <a
+                class="nav-link d-flex justify-content-center list pt-1 pb-1"
+                href="about-us.html"
+                >About</a
+              >
+            </li>
+            <li
+              class="nav-item nav-element mb-lg-0 mb-xxl-0 mb-md-3 mb-sm-4 mb-xs-4"
+            >
+              <a
+                class="nav-link d-flex justify-content-center list pt-1 pb-1"
+                href="product-listing.html"
+                >Products</a
+              >
+            </li>
+            <li
+              class="nav-item nav-element mb-lg-0 mb-xxl-0 mb-md-3 mb-sm-4 mb-xs-4"
+            >
+              <a
+                class="nav-link d-flex justify-content-center list pt-1 pb-1"
+                href="contact-us.html"
+                >Contact</a
+              >
             </li>
           </ul>
-        </nav>
-        <a href="javascript:void(0);" class="hamburger-icon" id="hamburger-icon"
-          ><i class="fa-solid fa-bars"></i
-        ></a>
-      </div>
+        </div>
+      </nav>
 
       <div
         class="container justify-content-center align-items-center mt-4"

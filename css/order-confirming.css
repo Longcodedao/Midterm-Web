@@ -14,172 +14,85 @@ body {
   overflow-x: hidden;
 }
 /* ----------------- Navigation Bar --------------- */
+/* ----------------- Navigation Bar --------------- */
 
-.sticky {
-  position: fixed;
-  top: 5;
-  background-color: white;
-  width: 100vw;
-
-  box-shadow: 1px 1px 2px #b9b9b9;
+.nav-element {
+  margin-right: 70px;
 }
 
-.logo:hover {
-  color: aquamarine;
-  transform: scale(1.1);
-  transition: transform 0.5s, color 0.5s;
+/* ---- hamburger icon ---------------- */
+#toggle {
+  border: 1px solid rgb(18, 32, 124);
+  border-radius: 12px;
+  padding: 8px 12px;
 }
 
-.navigation-bar {
-  background-color: white;
-  width: 100vw;
-  border-bottom: 1px solid #dbd8d8;
-  z-index: -100;
+.hamburger-icon {
+  color: rgb(18, 32, 124);
+  font-size: 1rem;
+}
+#toggle:focus {
+  box-shadow: none;
 }
 
-.topnav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 20px 0;
-  z-index: 9999;
-  margin: 0 0 0 0;
-}
-
-.hamburger-icon i {
-  color: white;
-  font-size: 1.25rem;
-  display: none;
-}
-
-.logo {
+/* ----- working with other stuff of the navbar */
+#logo {
   font-size: 35px;
-  color: rgb(17, 30, 112);
-  font-weight: bold;
+  color: rgb(17, 30, 112) !important;
+  font-weight: bold !important;
   letter-spacing: 7px;
   margin-left: 8vw;
   text-decoration: none;
   font-family: "Space Grotesk";
 }
 
-.logo:hover {
-  color: rgb(3, 0, 46);
-  transform: scale(1.1);
-  transition: transform 0.5s, color 0.5s;
-}
-
-li {
-  list-style-type: none;
-}
-
-.navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 70px;
-  max-width: 51vw;
-  padding: 20px 0px;
-  margin-right: 8vw;
-  margin-bottom: 0;
-}
-
-.navbar a {
-  text-decoration: none;
+li .list {
   color: rgb(18, 32, 124);
   font-weight: 600;
   font-size: 1.25rem !important;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow: visible;
+}
+li .list:hover {
+  color: rgb(0, 145, 43);
 }
 
-.navbar a:hover {
-  color: rgb(104, 93, 255);
-  transition: color 0.5s;
+nav {
+  border-bottom: solid 0.5px rgb(177, 177, 177);
 }
 
-@media only screen and (max-width: 960px) {
-  .navbar a {
-    font-size: 0.7rem;
+@media only screen and (max-width: 560px) {
+  #logo {
+    font-size: 28px;
+    letter-spacing: 2px;
   }
 
-  .navbar li {
-    /* display: none; */
-    padding: 5px 0px;
-    margin: 5px 0;
+  li .list {
+    font-size: 19px !important;
   }
-  .navbar a {
-    color: black;
-    font-size: 16px;
+  .nav-element {
+    margin-bottom: 10px;
   }
+  .active {
+    margin-top: 12px;
+  }
+}
 
-  .topnav {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 28px 0px 10px 0px;
-    position: fixed;
-    width: 100vw;
-    top: 0;
-  }
-
-  .topnav .logo {
-    color: rgb(18, 32, 124);
-    letter-spacing: 3px;
+@media only screen and (max-width: 300px) {
+  #logo {
     font-size: 22px;
   }
-
-  .navbar {
-    flex-direction: column;
-    gap: 0px;
-    max-width: 100vw;
-    width: 100vw;
-    padding: 10px 12vw;
-  }
-
-  .hamburger-icon i {
-    display: inline-block;
-    margin-right: 8vw;
-    color: rgb(18, 32, 124);
-    padding: 10px 10px;
-    font-size: 1rem;
-    border: 1px solid rgb(18, 32, 124);
-    border-radius: 10px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    margin-top: 20px;
-    z-index: 1000000000000000000000;
+  .nav-element {
+    margin-bottom: 8px;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .navbar a {
-    font-size: 1rem;
-    color: black;
-    font-size: 16px;
+@media only screen and (max-width: 768px) {
+  .nav-element {
+    margin-right: 0px !important;
   }
-
-  .navbar li {
-    /* display: none; */
-    padding: 5px 0px;
-    margin: 5px 0;
-  }
-
-  .topnav {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 28px 0px 10px 0px;
-    position: fixed;
-    top: 0;
+}
+@media only screen and (max-width: 992px) {
+  .nav-element {
+    margin-right: 30px;
   }
 }
 

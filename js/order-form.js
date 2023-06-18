@@ -71,54 +71,55 @@ $(document).ready(function () {
   // Check initial scroll position to show/hide the buttons
   $(window).trigger("scroll");
 
-  $('#name').on('input', function() {
+  $("#name").on("input", function () {
     validateName();
   });
 
-  $('#email').on('input', function() {
+  $("#email").on("input", function () {
     validateEmail();
-  })
+  });
 
-  $('#address').on('input', function(){
+  $("#address").on("input", function () {
     validateAddress();
-  })
+  });
 
-  $('#phone').on('input', function() {
+  $("#phone").on("input", function () {
     validatePhone();
-  })
+  });
 
-
-  $('#myForm').submit(function(event){
+  $("#myForm").submit(function (event) {
     event.preventDefault();
 
-    if (validateName() && validateEmail() && validateAddress() && validatePhone()){
-      $('#popup').fadeIn();
+    if (
+      validateName() &&
+      validateEmail() &&
+      validateAddress() &&
+      validatePhone()
+    ) {
+      $("#popup").fadeIn();
     }
-  })
+  });
 
-  $('#btn-close').click(function() {
-    $('#popup').fadeOut();
-  })
-
+  $("#btn-close").click(function () {
+    $("#popup").fadeOut();
+  });
 });
 
+function validateName() {
+  var name = $("#name").val();
 
-
-function validateName(){
-  var name = $('#name').val();
-
-  if (name === ''){
-    $('#name-error').html("Please enter your name");
+  if (name === "") {
+    $("#name-error").html("Please enter your name");
     return false;
   } else {
-    $('#name-error').html("");
+    $("#name-error").html("");
     return true;
   }
 }
 
-function validateEmail(){
-  var email = $('#email').val();
-  console.log(email.indexOf('@'))
+function validateEmail() {
+  var email = $("#email").val();
+  console.log(email.indexOf("@"));
 
   // if (email === '' ){
   //   $('#email-error').html("Please enter your email");
@@ -132,38 +133,40 @@ function validateEmail(){
   // }
 
   if (email === "") {
-    $('#email-error').html("Please enter your email");
+    $("#email-error").html("Please enter your email");
     return false;
   } else if (!/\S+@\S+\.\S+/.test(email)) {
-    $('#email-error').html("Please enter a valid email address (for example: imSoStupidIcantTypeMyEmail@gmail.com).");
+    $("#email-error").html(
+      "Please enter a valid email address (for example: imSoStupidIcantTypeMyEmail@gmail.com)."
+    );
     return false;
   } else {
-    $('#email-error').html("");
+    $("#email-error").html("");
     return true;
   }
 }
 
-function validateAddress(){
-  var address = $('#address').val();
-  if (address === ''){
-    $('#address-error').html("Please enter your address");
+function validateAddress() {
+  var address = $("#address").val();
+  if (address === "") {
+    $("#address-error").html("Please enter your address");
     return false;
-  }else{
-    $('#address-error').html("");
+  } else {
+    $("#address-error").html("");
     return true;
   }
 }
 
-function validatePhone(){
-  var phone = $('#phone').val();
+function validatePhone() {
+  var phone = $("#phone").val();
   if (phone === "") {
-    $('#phone-error').html("Please enter your phone number.");
+    $("#phone-error").html("Please enter your phone number.");
     return false;
   } else if (!/^\d{10,11}$/.test(phone)) {
-    $('#phone-error').html("Please enter a valid 10 or 11-digit phone number.");
+    $("#phone-error").html("Please enter a valid 10 or 11-digit phone number.");
     return false;
-  } else{ 
-    $('#phone-error').html("");
+  } else {
+    $("#phone-error").html("");
     return true;
   }
 }

@@ -7,7 +7,6 @@
   padding: 0;
   /* box-sizing: border-box; */
   font-family: "Poppins", sans-serif;
-  /* color: #2e2d2d; */
 }
 
 body {
@@ -15,19 +14,26 @@ body {
 }
 /* ----------------- Navigation Bar --------------- */
 
-
-.nav-element{
+.nav-element {
   margin-right: 70px;
 }
 
+/* ---- hamburger icon ---------------- */
 #toggle {
-  border: none;
+  border: 1px solid rgb(18, 32, 124);
+  border-radius: 12px;
+  padding: 8px 12px;
 }
 
+.hamburger-icon {
+  color: rgb(18, 32, 124);
+  font-size: 1rem;
+}
 #toggle:focus {
   box-shadow: none;
 }
 
+/* ----- working with other stuff of the navbar */
 #logo {
   font-size: 35px;
   color: rgb(17, 30, 112) !important;
@@ -42,20 +48,64 @@ li .list {
   color: rgb(18, 32, 124);
   font-weight: 600;
   font-size: 1.25rem !important;
-  margin: 0;
-  padding: 0;
+}
+li .list:hover {
+  color: rgb(0, 145, 43);
 }
 
 nav {
   border-bottom: solid 0.5px rgb(177, 177, 177);
 }
 
+@media only screen and (max-width: 560px) {
+  #logo {
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+
+  li .list {
+    font-size: 19px !important;
+  }
+  .nav-element {
+    margin-bottom: 10px;
+  }
+  .active {
+    margin-top: 12px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  #logo {
+    font-size: 22px;
+  }
+  .nav-element {
+    margin-bottom: 8px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-element {
+    margin-right: 0px !important;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .nav-element {
+    margin-right: 30px;
+  }
+}
 /* -------------------------- Form Order ------------------------------- */
 
-.text-order{
+.form-wrapper {
+  background-image: url("/images/background-order-form-2.png");
+  background-size: 100% 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.text-order {
   color: rgb(18, 124, 41);
-  font-weight: bold!important;
-  letter-spacing: 2px!important;
+  font-weight: bold !important;
+  letter-spacing: 2px !important;
 }
 
 .text-col {
@@ -63,50 +113,44 @@ nav {
 }
 
 .customized {
-  margin: 125px 0vw 125px 20vw;
   border: 2px solid rgb(18, 124, 41);
   border-radius: 30px;
+  max-width: 93%;
+  background-color: white;
+  z-index: 1000;
+  opacity: 95%;
+  transition: 400ms ease-in-out;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .form-title {
-  letter-spacing: 1.5px!important;
+  letter-spacing: 1.5px !important;
   font-weight: bold;
 }
 
-/* .form-margin{
-  margin-left: 7.5vw;
-} */
-
 .input-form {
-  border : 2px solid rgb(36, 36, 36)!important;
+  border: 2px solid rgb(36, 36, 36) !important;
   background-color: white;
-  border-radius: 15px!important;
-  padding-left: 15px!important;
+  border-radius: 15px !important;
+  padding-left: 15px !important;
 }
 
-.custom-button{
-  font-weight: 600!important;
+.submit-button {
+  font-weight: 600 !important;
   margin-top: 20px;
-  padding: 15px 0px!important;
-  border-radius: 15px!important;
-  font-size: 18px!important;
+  padding: 15px 0px !important;
+  border-radius: 15px !important;
+  font-size: 18px !important;
+  background-color: rgb(4, 201, 4) !important;
+  width: 100%;
+  transition: 500ms ease-in-out !important;
+  border: none !important;
 }
 
-@media only screen and (min-width: 768px){
-  .offset-sm-1 {
-    margin-left: 12%!important;
-  }
-}
-
-@media only screen and (max-width: 768px){
-  .nav-element{
-    margin-right: 0px!important;
-  }
-}
-
-.btn-color{
-  background-color: green!important;
-
+.submit-button:hover {
+  transition: 500ms ease-in-out !important;
+  background-color: rgb(1, 109, 1) !important;
 }
 
 /* ------------------- Warning ----------------------------------------------*/
@@ -116,7 +160,6 @@ nav {
   font-size: 12px;
 }
 
-
 /* --------------------- Popup ---------------------------------------- */
 
 #popup {
@@ -124,52 +167,14 @@ nav {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-@media only screen and (max-width: 560px){
-  #logo {
-    font-size: 28px;
-    letter-spacing: 2px;
-  }
-  
-  li .list {
-    font-size: 18px!important;
-  }
-
-  .customed-modal{
-    max-width: 300px!important;
+@media only screen and (max-width: 560px) {
+  .customed-modal {
+    max-width: 300px !important;
     justify-content: center;
-    margin: 11vw!important;
-    height: 60vh!important;
-  }
-
-  .customized{
-    margin: 50px 7.5vw 50px 7.5vw;
-  }
-  .form-margin{
-    margin-left: 13vw;
-  }
-  
-  
-}
-
-@media only screen and (max-width: 992px){
-  .nav-element{
-    margin-right: 30px;
-  }
-
-  
-}
-
-@media only screen and (min-width: 992px){
-  .offset-large{
-    margin-left: 30%!important;
+    margin: 11vw !important;
+    height: 60vh !important;
   }
 }
-/* @media only screen and (max-width: 576px){
-  .customed-modal{
-    max-width: 300px!important;
-    margin: auto;
-  }
-} */
 
 /* ------------------- scroll to top and bottom button ------------------------ */
 #scrollToTopBtn,
@@ -218,9 +223,6 @@ nav {
     height: 2.75rem;
   }
 }
-
-
-
 
 /* ----------------------------Footer Reused ------------------------------ */
 
