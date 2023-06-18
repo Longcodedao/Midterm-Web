@@ -18,7 +18,7 @@ body {
 .form-wrapper {
   border: none;
   border-radius: 1.25rem;
-  background-color: rgb(236, 220, 128);
+  background-color: rgb(252, 240, 217);
   z-index: 10000 !important;
   border: 3px solid rgba(0, 53, 18, 0.986);
 }
