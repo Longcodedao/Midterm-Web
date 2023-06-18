@@ -74,7 +74,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="btn">
-        <ul class="navbar-nav ms-auto nav-change">
+        <ul class="navbar-nav ms-auto">
           <li class="nav-item active nav-element">
             <a class="nav-link d-flex justify-content-center list pt-1 pb-1 " href="Homepage.html"
               >Home</a
@@ -100,47 +100,47 @@
     </nav>
 
 
-    <div class="customized pt-5 pb-5">
+    <div class="customized pt-5 pb-5 col-sm-7 col-md-7 col-lg-6 offset-lg-3 offset-md-3 offset-sm-3">
       <div class="container justify-content-center align-items-center mt-3">
-        <h1 class="text-center display-4 text-dark form-title">ORDER FORM</h1>
-        <p class="text-center text-mute fs-6">Please enter the basic information to proceed the order</p>
+        <h1 class="text-center display-4 text-order form-title">ORDER FORM</h1>
+        <p class="text-center text-mute fs-6">Please enter basic information to proceed the order</p>
       </div>
   
       <div class="container">
           <div class="row">
-            <div class="col-md-9 col-sm-10 col-8 form-margin">
+            <div class="col-lg-9 col-md-9 col-sm-10 col-10 offset-1 offset-md offset-sm-1">
               <form action="" class="mt-4 mb-4" id="myForm">
                 
                 <div class="form-outline  mb-4">
-                  <label for="name" class="form-label fs-5 mb-3">Name</label>
+                  <label for="name" class="form-label fs-5 mb-3 text-col">Name</label>
                   <input type="text" id = "name" class="form-control fs-6 input-form"
                           placeholder="Enter name">
                   <span class="error" id="name-error"></span>
                 </div>
   
                 <div class="form-outline mb-4">
-                  <label for="email" class="form-label fs-5 mb-3">Email</label>
+                  <label for="email" class="form-label fs-5 mb-3 text-col">Email</label>
                   <input type="text" id = "email" class="form-control fs-6 input-form"
                           placeholder="Email">
                   <span class="error" id="email-error"></span>
                 </div>
   
                 <div class="form-outline mb-4">
-                  <label for="address" class="form-label fs-5 mb-3">Address</label>
+                  <label for="address" class="form-label fs-5 mb-3 text-col">Address</label>
                   <input type="text" id = "address" class="form-control fs-6 input-form"
                           placeholder="Address">
                   <span class="error" id="address-error"></span>
                 </div>
   
                 <div class="form-outline mb-4">
-                  <label for="phone" class="form-label fs-5 mb-3">Phone</label>
+                  <label for="phone" class="form-label fs-5 mb-3 text-col">Phone</label>
                   <input type="text" id = "phone" class="form-control fs-6 input-form"
                           placeholder="Phone">
                   <span class="error" id="phone-error"></span>
                 </div>
   
-                <button type="submit" class="col-md-12 col-sm-8  
-                        btn btn-primary custom-button">SUBMIT</button>
+                <button type="submit" class="col-md-12 col-sm-11 col-12
+                        btn btn-primary btn-color custom-button">SUBMIT</button>
               </form>
             </div>
             
@@ -155,7 +155,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h4 class="modal-title">Confirm information</h5>
-                <button type="button" class="btn-close"></button>
+                <button type="button" class="btn-close" id="btn-close"></button>
               </div>
 
               <div class="modal-body">

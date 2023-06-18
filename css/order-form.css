@@ -14,9 +14,7 @@ body {
   overflow-x: hidden;
 }
 /* ----------------- Navigation Bar --------------- */
-.nav-change{
-  margin-right: 30px;
-}
+
 
 .nav-element{
   margin-right: 70px;
@@ -54,9 +52,19 @@ nav {
 
 /* -------------------------- Form Order ------------------------------- */
 
+.text-order{
+  color: rgb(18, 124, 41);
+  font-weight: bold!important;
+  letter-spacing: 2px!important;
+}
+
+.text-col {
+  color: rgb(18, 124, 41);
+}
+
 .customized {
-  margin: 150px 15vw 150px 15vw;
-  border: 2px solid rgb(141, 141, 141);
+  margin: 125px 0vw 125px 20vw;
+  border: 2px solid rgb(18, 124, 41);
   border-radius: 30px;
 }
 
@@ -65,9 +73,9 @@ nav {
   font-weight: bold;
 }
 
-.form-margin{
+/* .form-margin{
   margin-left: 7.5vw;
-}
+} */
 
 .input-form {
   border : 2px solid rgb(36, 36, 36)!important;
@@ -82,6 +90,17 @@ nav {
   padding: 15px 0px!important;
   border-radius: 15px!important;
   font-size: 18px!important;
+}
+
+@media only screen and (min-width: 768px){
+  .offset-sm-1 {
+    margin-left: 12%!important;
+  }
+}
+
+.btn-color{
+  background-color: green!important;
+
 }
 
 /* ------------------- Warning ----------------------------------------------*/
@@ -121,11 +140,23 @@ nav {
   .form-margin{
     margin-left: 13vw;
   }
+  
+  
+}
+
+@media only screen and (max-width: 992px){
+  .nav-element{
+    margin-right: 30px;
+  }
 
   
 }
 
-
+@media only screen and (min-width: 992px){
+  .offset-large{
+    margin-left: 30%!important;
+  }
+}
 /* @media only screen and (max-width: 576px){
   .customed-modal{
     max-width: 300px!important;

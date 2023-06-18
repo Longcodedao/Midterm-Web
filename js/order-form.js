@@ -91,9 +91,13 @@ $(document).ready(function () {
   $('#myForm').submit(function(event){
     event.preventDefault();
 
-    if (validateName() && validateEmail() && validateAddress() && validatePhone){
+    if (validateName() && validateEmail() && validateAddress() && validatePhone()){
       $('#popup').fadeIn();
     }
+  })
+
+  $('#btn-close').click(function() {
+    $('#popup').fadeOut();
   })
 
 });
