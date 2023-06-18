@@ -14,6 +14,13 @@ body {
   overflow-x: hidden;
 }
 /* ----------------- Navigation Bar --------------- */
+.nav-change{
+  margin-right: 30px;
+}
+
+.nav-element{
+  margin-right: 70px;
+}
 
 #toggle {
   border: none;
@@ -47,57 +54,34 @@ nav {
 
 /* -------------------------- Form Order ------------------------------- */
 
-#progressbar-1 {
-  color: #455a64;
+.customized {
+  margin: 150px 15vw 150px 15vw;
+  border: 2px solid rgb(141, 141, 141);
+  border-radius: 30px;
 }
 
-#progressbar-1 li {
-  list-style-type: none;
-  font-size: 13px;
-  width: 33.33%;
-  float: left;
-  position: relative;
+.form-title {
+  letter-spacing: 1.5px!important;
+  font-weight: bold;
 }
 
-#progressbar-1 #step1:before {
-  content: "1";
-  color: #fff;
-  width: 29px;
-  margin-left: 22px;
-  padding-left: 11px;
+.form-margin{
+  margin-left: 7.5vw;
 }
 
-.custom-height {
-  height: 60px;
+.input-form {
+  border : 2px solid rgb(36, 36, 36)!important;
+  background-color: white;
+  border-radius: 15px!important;
+  padding-left: 15px!important;
 }
 
-.round-left-border {
-  border-radius: 0px 0px 0px 10px;
-}
-
-.round-right-border {
-  border-radius: 0px 0px 10px 0px;
-}
-
-a {
-  text-decoration: none !important;
-}
-
-#order-btn:hover {
-  background-color: #0056b3 !important;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-}
-
-#cancel-btn:hover {
-  background-color: #b30000 !important;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-}
-
-
-.custom-btn{
-  width: 44vw;
+.custom-button{
+  font-weight: 600!important;
+  margin-top: 20px;
+  padding: 15px 0px!important;
+  border-radius: 15px!important;
+  font-size: 18px!important;
 }
 
 /* ------------------- Warning ----------------------------------------------*/
@@ -106,6 +90,48 @@ a {
   color: red;
   font-size: 12px;
 }
+
+
+/* --------------------- Popup ---------------------------------------- */
+
+#popup {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 560px){
+  #logo {
+    font-size: 30px;
+  }
+
+  li .list {
+    font-size: 16px!important;
+  }
+
+  .customed-modal{
+    max-width: 300px!important;
+    justify-content: center;
+    margin: 11vw!important;
+    height: 60vh!important;
+  }
+
+  .customized{
+    margin: 50px 7.5vw 50px 7.5vw;
+  }
+  .form-margin{
+    margin-left: 13vw;
+  }
+
+  
+}
+
+
+/* @media only screen and (max-width: 576px){
+  .customed-modal{
+    max-width: 300px!important;
+    margin: auto;
+  }
+} */
 
 /* ------------------- scroll to top and bottom button ------------------------ */
 #scrollToTopBtn,

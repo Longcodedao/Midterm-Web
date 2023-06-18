@@ -87,6 +87,15 @@ $(document).ready(function () {
     validatePhone();
   })
 
+
+  $('#myForm').submit(function(event){
+    event.preventDefault();
+
+    if (validateName() && validateEmail() && validateAddress() && validatePhone){
+      $('#popup').fadeIn();
+    }
+  })
+
 });
 
 
