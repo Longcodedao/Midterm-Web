@@ -41,6 +41,10 @@ body {
   border-radius: 1rem !important;
   border: 2px solid rgb(66, 0, 0) !important;
 }
+
+.user-input.error {
+  border-color: red !important;
+}
 form {
   display: flex;
   flex-direction: column !important;
@@ -56,4 +60,8 @@ form {
 .login-button:hover {
   background-color: rgb(165, 99, 1) !important;
   color: rgb(255, 255, 255) !important;
+}
+
+#message-container {
+  font-size: 1.25rem !important;
 }

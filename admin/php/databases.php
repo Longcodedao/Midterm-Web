@@ -3,7 +3,7 @@
 $servername = "fdb1030.awardspace.net";
 $username = "4332767_witterwither";
 $database = "4332767_witterwither";
-$password = "Dinhchinh123@";
+$password = "dinhchinh123";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
