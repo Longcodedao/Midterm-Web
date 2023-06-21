@@ -10,7 +10,7 @@
       src="https://kit.fontawesome.com/57d08e8260.js"
       crossorigin="anonymous"
     ></script>
-    <script defer src="../js/admin-login.js"></script>
+    <script defer src="../js/admin-listprod.js"></script>
 
     <!-- ---- IMPORTING JQUERY, JQUERYUI, BOOTSTRAP----- -->
     <script
@@ -111,7 +111,7 @@
         </div>
         
         <div class="table-responsive mt-2 col-md-10 col-sm-10 col-10">
-            <table class="table table-bordered table-striped">
+            <table id="products-table" class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -132,25 +132,30 @@
                         <h5 class="modal-title" id="exampleModalLabel">Create Product</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body px-4">
                         <form method="POST" id="createProduct" enctype="multipart/form-data">
                 
-                            <label for="name" class="modal-label mb-2">Product name</label>
+                            <label for="name" class="modal-label mb-2">Name</label>
                             <input type="text" name="name" id="name" class="form-control">
                             <br/>
 
-                            <label for="description" class="modal-label mb-2">Product description</label>
+                            <label for="description" class="modal-label mb-2">Description</label>
                             <input type="text" name="description" id="description" class="form-control">
                             <br/>
                             
-                            <label for="detail" class="modal-label mb-2">Product Detail</label>
-                            <textarea id="description" class="form-control" rows="3"> </textarea>
+                            <label for="detail" class="modal-label mb-2">Detail</label>
+                            <textarea id="detail" class="form-control" rows="3"> </textarea>
                             <br/>
-                        </form>
+
+                            <label for="image" class="modal-label mb-2">Image</label>
+                            <input type="file" name="image" id ="image" class="form-control">
+
+                            <br>
+                          </form>
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-success col-md-3 col-sm-3">Create</button>
+                        <input type="submit" class="btn btn-success col-md-3 col-sm-3" value="Submit">
                     </div>
                 </div>
             </div>
