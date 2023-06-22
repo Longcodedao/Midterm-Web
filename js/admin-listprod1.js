@@ -46,7 +46,7 @@ $('#createProduct').on('submit', function(e) {
             alert(data);
             console.log($('#createProduct')[0]);
             $('#createProduct')[0].reset();
-            $('#modalCreate').modal.hide();
+            $('#modalCreate').modal('hide');
             dataTable.ajax.reload();
         }
     });

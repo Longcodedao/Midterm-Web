@@ -49,7 +49,7 @@
             error_log($row['image']. " <br>");
         }
 
-        $navigation_link = "../admin/admin-prod-detail.html?id=" . $row["id"];
+        $navigation_link = "../admin/product-detail-admin.html?id=" . $row["id"];
         $sub_array = array();
         $sub_array[] = $row["id"];
         $sub_array[] = $row["name"];

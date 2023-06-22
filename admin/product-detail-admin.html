@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Detail</title>
 
-    <link rel="stylesheet" href="/css/product-detail-admin.css" />
+    <link rel="stylesheet" href="../css/product-detail-admin1.css" />
     <script
       src="https://kit.fontawesome.com/57d08e8260.js"
       crossorigin="anonymous"
     ></script>
 
-    <script defer src="/js/product-detail-admin.js"></script>
+    <script defer src="../js/product-detail-admin.js"></script>
 
     <!-- ---- IMPORTING JQUERY, JQUERYUI, BOOTSTRAP----- -->
     <script
@@ -97,34 +97,41 @@
         <div class="row d-flex justify-content-center">
           <div class="col-md-5 mx-5">
             <img
-              src="/images/agriculture drone.jpg"
+              src=""
               alt=""
               class="img-fluid product-head-image"
+              id="image-product"
             />
           </div>
           <div class="col-md-5 mt-md-3 mt-sm-3 mt-3">
-            <h2 class="product-name">Product name</h2>
+            <h2 class="product-name" id="product-name">Product name</h2>
             <h4 class="price-header">
-              $<span class="product-price">999</span>
+              $<span class="product-price" id="product-price"></span>
             </h4>
 
             <h5 class="times-purchase-header" style="color: rgb(2, 114, 26)">
-              Purchased: <span class="product-price">69</span> times
+              Purchased: <span class="product-price" id = "purchase-time"></span> times
             </h5>
 
             <p class="description-wrapper">
               Description:
-              <span class="product-description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
-                animi!
+              <span class="product-description" id="product-description">
+                
+              </span>
+            </p>
+          
+            <p class="detail-wrapper">
+              Detail:
+              <span class="product-detail" id="product-detail">
+                
               </span>
             </p>
             <div class="d-flex flex-column align-items-center mt-4">
-              <button class="btn btn-success open-edit-modal page-button">
+              <button class="btn btn-success open-edit-modal page-button" id="edit-button">
                 Edit
               </button>
               <hr />
-              <button class="btn btn-danger open-delete-modal page-button">
+              <button class="btn btn-danger open-delete-modal page-button" id="delete-button">
                 Delete
               </button>
             </div>
@@ -171,7 +178,7 @@
         </div>
       </div>
 
-      <div class="modal" id="popup">
+      <div class="modal" id="popup-edit">
         <div class="modal-dialog modal-lg customed-modal modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
@@ -187,7 +194,7 @@
                     You can fill one or multiple inputs to edit this product.
                   </h6>
                   <form
-                    action=""
+          
                     class="edit-product-form"
                     id="edit-product-form"
                   >
@@ -196,8 +203,9 @@
                       <input
                         type="text"
                         class="form-control customised-input"
-                        id="name"
+                        id="name-edit"
                         name="name"
+                        required
                         placeholder="Enter the product name"
                       />
                     </div>
@@ -208,18 +216,34 @@
                       <input
                         type="text"
                         class="form-control customised-input"
-                        id="description"
+                        id="description-edit"
+                        required
                         name="description"
                         placeholder="Enter the product description"
                       />
                     </div>
+
+                    <!-- <div class="form-group mb-2">
+                      <label for="detail" class="mb-1 label-edit"
+                        >Detail:</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control customised-input"
+                        id="details-edit"
+                        name="details-edit"
+                        placeholder="Enter the product description"
+                      />
+                    </div> -->
+
                     <div class="form-group mb-2">
                       <label for="price" class="mb-1 label-edit">Price:</label>
                       <input
                         type="number"
                         class="form-control customised-input"
-                        id="price"
+                        id="price-edit"
                         name="price"
+                        required
                         placeholder="Enter the product price"
                       />
                     </div>
@@ -228,14 +252,18 @@
                       <input
                         type="url"
                         class="form-control customised-input"
-                        id="image"
+                        id="image-edit"
                         name="image"
+                        required
                         placeholder="Enter the image URL"
                       />
                     </div>
+
                     <div
                       class="button-wrapper d-flex justify-content-center mt-4"
                     >
+          
+                      <input type="hidden" name="operation" id="operation" value="Edit">
                       <button
                         type="submit"
                         class="btn btn-primary edit-confirm-button"

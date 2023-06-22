@@ -40,23 +40,6 @@ $(document).ready(function () {
 });
 
 // ------------- popup edit and delete------------
-$(document).ready(function () {
-  $(".open-edit-modal").click(function () {
-    $("#popup").fadeIn();
-  });
-
-  $("#btn-close").click(function () {
-    $("#popup").fadeOut();
-  });
-
-  $(".open-delete-modal").click(function () {
-    $("#popup-delete").fadeIn();
-  });
-
-  $("#btn-close-delete").click(function () {
-    $("#popup-delete").fadeOut();
-  });
-});
 
 // -------- validate form --------------------------------
 $(document).ready(function () {
@@ -124,3 +107,114 @@ $(document).ready(function () {
     );
   };
 });
+
+
+
+// Get the parameter of the url and send request to the database
+
+$(document).ready(function() {
+  var productId = getParameterById("id");
+  // var refresh = getParameterById("refresh");
+  // console.log(refresh);
+  var productDetailJson = getCookie('product_details');
+  console.log(productDetailJson);
+
+  var productDetail;
+  if (productDetailJson) {
+    productDetail = JSON.parse(productDetailJson);
+    setUpData(productDetail);
+  }else{
+    $.ajax({
+      url: "../admin/php/fetch_product_data.php?id=" + productId,
+      type: "GET",
+      dataType: "json",
+      success: function(response) {
+        productDetail = response;
+        console.log(response);
+        setUpData(response);
+      }
+    })
+  }
+
+  $(".open-edit-modal").click(function () {
+    $("#popup-edit").fadeIn();
+    $('#name-edit').val(productDetail['name']);
+    $('#description-edit').val(productDetail['description']);
+    $('#price-edit').val(productDetail['price']);
+    $('#image-edit').val(productDetail['image']);
+  });
+
+  $("#btn-close").click(function () {
+    $("#popup-edit").fadeOut();
+  });
+
+  $(".open-delete-modal").click(function () {
+    $("#popup-delete").fadeIn();
+  });
+
+  $("#btn-close-delete").click(function () {
+    $("#popup-delete").fadeOut();
+  });
+
+  // $('edit-button').click(function() {
+  //   $('#name-edit').val(productDetail['name']);
+  //   $('#description-edit').val(productDetail['description']);
+  //   $('#price-edit').val(productDetail['price']);
+  //   $('#image-edit').val(productDetail['image']);
+  // })
+  
+  $('#edit-product-form').on('submit', function(e) {
+    e.preventDefault();
+    var name = $('#name-edit').val();
+    var description = $('#description-edit').val();
+    var price = $('#price-edit').val();
+    var image = $('#image-edit').val();
+
+    var formData = new FormData(this);
+    console.log(formData);
+    formData.append("id", productId);
+    $.ajax({
+      url: "../admin/php/edit.php",
+      method: "POST",
+      data: formData,
+      contentType: false,
+      processData: false,
+      success: function(data){
+        alert(data);
+        location.reload();
+      }
+    })
+  });
+})
+
+function getParameterById(name){
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var url = window.location.href;
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+  console.log(results);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, " "))
+}
+
+function setUpData(response){
+  var img = $('#image-product');
+  img.attr('src', response['image']);
+
+  $('#product-name').html(`${response['name']}`);
+  $('#product-price').html(`${response['price']}`);
+  $('#product-description').html(`${response['description']}`);
+  $('#product-detail').html(`${response['details']}`)
+}
+
+function getCookie(name){
+  var cookies = document.cookie.split(';');
+  for (var i = 0; i < cookies.length; i++){
+    var cookie = cookies[i].trim();
+    if (cookie.startsWith(name + '=')){
+      return decodeURIComponent(cookie.substring(name.length + 1));
+    }
+  }
+  return '';
+}
