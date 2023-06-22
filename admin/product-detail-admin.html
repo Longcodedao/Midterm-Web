@@ -102,11 +102,15 @@
               class="img-fluid product-head-image"
             />
           </div>
-          <div class="col-md-6 mt-md-3 mt-sm-3 mt-3">
+          <div class="col-md-5 mt-md-3 mt-sm-3 mt-3">
             <h2 class="product-name">Product name</h2>
             <h4 class="price-header">
               $<span class="product-price">999</span>
             </h4>
+
+            <h5 class="times-purchase-header" style="color: rgb(2, 114, 26)">
+              Purchased: <span class="product-price">69</span> times
+            </h5>
 
             <p class="description-wrapper">
               Description:
@@ -115,9 +119,15 @@
                 animi!
               </span>
             </p>
-
-            <button class="btn btn-success open-edit-modal">Edit</button>
-            <button class="btn btn-danger open-delete-modal">Delete</button>
+            <div class="d-flex flex-column align-items-center mt-4">
+              <button class="btn btn-success open-edit-modal page-button">
+                Edit
+              </button>
+              <hr />
+              <button class="btn btn-danger open-delete-modal page-button">
+                Delete
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -130,6 +130,23 @@ nav {
   }
 }
 
+.page-button {
+  width: 200px;
+  max-width: 45%;
+}
+@media only screen and (max-width: 560px) {
+  .page-button {
+    font-size: 0.75rem;
+  }
+}
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 96%;
+  background-color: #ffff00;
+  height: 1px;
+}
 /* ====================================== popups ================================================= */
 #popup {
   display: none;
