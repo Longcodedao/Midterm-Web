@@ -97,36 +97,80 @@
 
       <!-- ----------------------------- body of the page ----------------------------- -->
 
-      <div class="container mt-4 mt-xxl-4">
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-5 mx-5">
+      <div class="container product-detail-wrapper">
+        <div class="row d-flex justify-content-between mx-1 my-2">
+          <div class="col-md-5">
             <img
               src="/images/climatemonitoring.jpg"
               alt=""
-              class="img-fluid product-head-image"
+              class="img-fluid product-head-image h-100"
             />
           </div>
-          <div class="col-md-5 mt-md-3 mt-sm-3 mt-3">
+          <div
+            class="col-md-6 mt-md-3 mt-sm-3 mt-3 info-wrapper d-flex flex-column ml-2"
+          >
             <h2 class="product-name">Product name</h2>
-            <h4 class="price-header">
+            <hr />
+            <h4 class="price-header mt-3">
               $<span class="product-price">999</span>
             </h4>
 
-            <p class="description-wrapper">
-              Description:
-              <span class="product-description">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
-                ipsum, dolorum iste ipsa consequatur temporibus error dolorem
-                minus eum quas, provident aperiam fugit. Dolore, quidem!
-              </span>
-            </p>
-
             <button
-              class="btn btn-success buy-button"
+              class="btn btn-success buy-button mt-3"
               onclick="window.location.href = 'Order-form.html'"
             >
-              Buy Now!
+              BUY NOW!
             </button>
+
+            <p class="text-center mt-2 shipping-text">
+              Nobody buys from us so still in stock
+            </p>
+            <hr />
+
+            <div class="row">
+              <div class="col-6 d-flex align-items-center pets">
+                <i class="fa-solid fa-shield-heart fa-fw icon-head"></i>
+                <div class="mx-1">Safe For Pets</div>
+              </div>
+              <div class="col-6 d-flex align-items-center return">
+                <i class="fa-solid fa-clock-rotate-left fa-fw icon-head"></i>
+                <div class="mx-1">Free Return</div>
+              </div>
+            </div>
+            <div class="row mt-4 mb-4">
+              <div class="col-6 d-flex align-items-center water">
+                <i class="fa-solid fa-droplet-slash fa-fw icon-head"></i>
+                <div class="mx-1">Waterproofed</div>
+              </div>
+              <div class="col-6 d-flex align-items-center eco">
+                <i class="fa-solid fa-tree fa-fw icon-head"></i>
+                <div class="mx-1">Ecofriendly</div>
+              </div>
+            </div>
+            <hr />
+
+            <div class="row mb-4 mt-3">
+              <div class="col-8 d-flex align-items-center warrenty">
+                <i class="fa-solid fa-rectangle-list fa-fw"></i>
+                <a
+                  class="mx-2"
+                  href="https://www.google.com/search?q=how+to+breathe"
+                  >Warrenty Policy</a
+                >
+              </div>
+            </div>
+          </div>
+          <hr class="mt-3 mt-xxl-5" />
+          <div class="container">
+            <h4 class="description-header">Description</h4>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+              placeat ad temporibus quas velit aliquid, labore mollitia illum.
+              Tempore voluptatum qui deleniti quidem, esse, quas minima, quos
+              officiis exercitationem quo dolorum veniam voluptas sit. Iusto
+              odit quas nisi rerum culpa, eius eaque, vel natus, fugit
+              voluptates at unde quo consectetur!
+            </p>
           </div>
         </div>
       </div>

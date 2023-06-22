@@ -108,6 +108,46 @@ p.description-wrapper {
 
 .price-header {
   color: rgb(0, 145, 43);
+  font-weight: 600 !important;
+}
+
+.product-detail-wrapper {
+  margin-top: 100px !important;
+}
+
+@media only screen and (max-width: 780px) {
+  .product-detail-wrapper {
+    margin-top: 50px !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .product-detail-wrapper {
+    margin-top: 30px !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .product-detail-wrapper {
+    margin-top: 25px !important;
+  }
+  h2.product-name {
+    font-size: 1.75rem;
+  }
+  .price-header {
+    font-size: 1.25rem;
+  }
+  p.description-wrapper {
+    color: rgb(45, 49, 46);
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .product-detail-wrapper {
+    margin-top: 15px !important;
+  }
+}
+
+hr {
+  margin-top: 0px !important;
 }
 
 .buy-button {
@@ -116,6 +156,8 @@ p.description-wrapper {
   background-color: rgb(78, 54, 1) !important;
   padding: 1rem 2rem !important;
   transition: background-color 450ms ease-in-out !important;
+  font-size: 1.25rem !important;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
 }
 
 .buy-button:hover {
@@ -123,6 +165,73 @@ p.description-wrapper {
   background-color: rgb(2, 168, 38) !important;
 }
 
+.shipping-text {
+  color: #747474;
+  font-size: 0.85rem;
+}
+
+.icon-head {
+  font-size: 1.75rem;
+}
+
+.pets,
+.return,
+.water,
+.eco {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #535353;
+}
+
+.pets > i,
+.pets > div {
+  color: rgb(214, 125, 8);
+}
+
+.return > i,
+.return > div {
+  color: rgb(206, 50, 141);
+}
+
+.water > i,
+.water > div {
+  color: rgb(60, 151, 212);
+}
+
+.eco > i,
+.eco > div {
+  color: green;
+}
+
+.warrenty {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #535353;
+}
+.warrenty > i {
+  color: rgb(95, 78, 0);
+  font-size: 1.75rem;
+}
+
+.warrenty > a {
+  color: rgb(95, 78, 0);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.warrenty > a:visited {
+  color: rgb(95, 78, 0);
+}
+
+.description-header {
+  font-weight: 600;
+  color: rgb(95, 78, 0);
+  font-size: 1.75rem;
+}
+
+.description {
+  color: rgb(117, 117, 117);
+}
 /* --------------------------- Footer(Reused from midterm) generated fro: https://svgwave.in/---------------------------------------- */
 
 .footer {
