@@ -303,6 +303,11 @@ a {
   margin-bottom: 10px;
 }
 
+.card-wrapper {
+  width: 24rem;
+  height: auto;
+}
+
 .card-wrapper:hover .product-wrapper {
   transform: translateY(-15px);
   transition: transform 0.3s;
