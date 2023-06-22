@@ -200,7 +200,8 @@ $(document).ready(function () {
 
     // ------------ activate pop up----------------
 
-    $(buyingButtons[i]).click(function () {
+    $(buyingButtons[i]).click(function (e) {
+      e.preventDefault();
       $("#popup-container").fadeIn();
     });
 
