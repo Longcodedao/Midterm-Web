@@ -165,10 +165,6 @@ $(document).ready(function() {
   
   $('#edit-product-form').on('submit', function(e) {
     e.preventDefault();
-    var name = $('#name-edit').val();
-    var description = $('#description-edit').val();
-    var price = $('#price-edit').val();
-    var image = $('#image-edit').val();
 
     var formData = new FormData(this);
     console.log(formData);
@@ -180,11 +176,31 @@ $(document).ready(function() {
       contentType: false,
       processData: false,
       success: function(data){
-        alert(data);
-        location.reload();
+        // alert(data);
+        window.location.href = "../admin/admin-listprod.html";
       }
     })
   });
+
+
+  $('#delete-product-form').on('submit', function(e) {
+    e.preventDefault();
+
+    var formData = new FormData(this);
+    formData.append("id", productId);
+    console.log(formData);
+    $.ajax({
+      url: "../admin/php/delete.php",
+      method: "POST",
+      data: formData,
+      contentType: false,
+      processData: false,
+      success: function(data){
+        // alert(data);
+        window.location.href = "../admin/admin-listprod.html";
+      }
+    })
+  })
 })
 
 function getParameterById(name){
