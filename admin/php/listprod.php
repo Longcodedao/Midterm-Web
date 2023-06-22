@@ -2,25 +2,43 @@
     require_once "databases.php";
     error_log("listprod.php :: initialized");
 
-    $products = array();
+    $query_1 = "SELECT * FROM products";
+    $result_1 = $conn -> query($query_1);
+    $total_rows = $result_1 -> num_rows;
+    // echo "Total rows: $total_rows<br>";
+
+
     $query = "SELECT * FROM products ";
+    // echo ("{$_POST['search']['value']}<br>");
 
-
-    if (isset($_POST["search"]["value"])){
-        $query .= 'WHERE name LIKE "%' . $_POST["search"]["value"] . '"% ';
-        $query .= 'OR description LIKE "%'. $_POST["search"]["value"] . '"% ';
-        $query .= 'OR details LIKE "%' . $_POST["search"]["value"]. '"% ';
+    if (isset($_POST["search"]["value"]) && ($_POST["search"]["value"] != "")){
+        // echo "Hello World<br>";
+        $query .= "WHERE name LIKE '%{$_POST["search"]["value"]}%' ";
+        $query .= "OR description LIKE '%{$_POST["search"]["value"]}%' ";
+        $query .= "OR details LIKE '%{$_POST["search"]["value"]}%' ";
     }
+    
+    // print_r("{$_POST['order'][0]}<br>");
+    // $length = count($_POST['order']);
+    // echo("{$length} <br>");
+    // echo("{$_POST['order'][0]['column']}<br>");
+    // echo("{$_POST['order'][0]['dir']}<br>");
 
     if (isset($_POST["order"])){
-        $query .= 'ORDER BY ' . $_POST['order']['0']['column']. ' '. $_POST['order'][0]['dir']. ' ';
-    }else{
-        $query .= 'ORDER BY id ASC ';
-    }
+        
+        // echo("Hello World<br>");
+        // echo("{$_POST['order']}<br>");
+        $column_id = $_POST['order'][0]['column'] + 1;
 
+        $query .= 'ORDER BY ' . $column_id. ' '. $_POST['order'][0]['dir']. ' ';
+    }else{
+        $query .= "ORDER BY id ASC";
+    }
+    // echo ("$query<br>");
     $result = $conn -> query($query);
     $data = array();
-    $filtered_rows = $result -> rowCount();
+    $filtered_rows = $result -> num_rows;
+    // echo "Num Rows: $filtered_rows";
 
     while($row = $result -> fetch_assoc()){
         $image = '';
@@ -40,36 +58,15 @@
         $sub_array[] = $image;
         $data[] = $sub_array;
     }
-    $products = array(
+
+    // echo ($data);
+    $response = array(
+        // "draw"              => intval($_POST["draw"]),
         "draw"              => intval($_POST["draw"]),
-        "recordsTotal"      => $filtered_rows,
-        "data"              => $data
+        "recordsTotal"      => $total_rows,
+        "recordsFiltered"   => $filtered_rows,
+        "data"              => $data,
     );
-
-
-
-    function submit_image(){
-        if (isset($_FILES["image"])){
-            $targetDir = "../../images/upload";
-
-            $image = $_FILES["image"];
-            $imagePath = $targetDir . basename($image["name"]);
-            error_log("The path is: $imagePath <br>");
-
-            $imageFileType = strtolower(pathinfo($imagePath, PATHINFO_EXTENSION));
-            $allowedExtensions = array("jpg", "jpeg", "png", "gif");
-
-            if (in_array($imageFileType, $allowedExtensions)) {
-                if (move_uploaded_file($image["tmp_name"], $imagePath)) {
-                    error_log("Image uploaded successfully <br>");
-                }else{
-                    error_log("Error moving the uploaded image <br>");
-                }
-            }else{
-                error_log("Invalid file format. Only JPG, JPEG, PNG, and GIF files are allowed. <br>");
-            }
-        }   
-
-    }
+    echo json_encode($response);
 
 ?>
