@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@500;800&family=Pacifico&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@500;800&family=Pacifico&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap");
+
+/* ------- NAVBAR (using bootstrap)---------- */
 * {
   margin: 0;
   padding: 0;
+  /* box-sizing: border-box; */
   font-family: "Poppins";
 }
 
@@ -92,146 +95,15 @@ nav {
   }
 }
 
-/* ------------ CUSTOMISE CSS CODE (AFTER ADDING BOOTSTRAP) -------------------------------- */
-h2.product-name {
-  color: rgb(1, 83, 26);
-  font-size: 2.5rem;
-}
-
-p.description-wrapper {
-  color: rgb(45, 49, 46);
-  font-size: 1rem;
-}
-.product-head-image {
+/* ================= customise ================= */
+.circle {
   border-radius: 1rem !important;
-}
-
-.price-header {
-  color: rgb(0, 145, 43);
-  font-weight: 600 !important;
-}
-
-.product-detail-wrapper {
-  margin-top: 100px !important;
-}
-
-@media only screen and (max-width: 780px) {
-  .product-detail-wrapper {
-    margin-top: 50px !important;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .product-detail-wrapper {
-    margin-top: 30px !important;
-  }
-}
-@media only screen and (max-width: 500px) {
-  .product-detail-wrapper {
-    margin-top: 25px !important;
-  }
-  h2.product-name {
-    font-size: 1.75rem;
-  }
-  .price-header {
-    font-size: 1.25rem;
-  }
-  p.description-wrapper {
-    color: rgb(45, 49, 46);
-    font-size: 0.9rem;
-  }
-}
-@media only screen and (max-width: 400px) {
-  .product-detail-wrapper {
-    margin-top: 15px !important;
-  }
 }
 
 hr {
-  margin-top: 0px !important;
+  margin-top: 0 !important;
 }
 
-.buy-button {
-  border: none !important;
-  border-radius: 1rem !important;
-  background-color: rgb(78, 54, 1) !important;
-  padding: 1rem 2rem !important;
-  transition: background-color 450ms ease-in-out !important;
-  font-size: 1.25rem !important;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
-}
-
-.buy-button:hover {
-  transition: background-color 450ms ease-in-out !important;
-  background-color: rgb(2, 168, 38) !important;
-}
-
-.shipping-text {
-  color: #747474;
-  font-size: 0.85rem;
-}
-
-.icon-head {
-  font-size: 1.75rem;
-}
-
-.pets,
-.return,
-.water,
-.eco {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #535353;
-}
-
-.pets > i,
-.pets > div {
-  color: rgb(214, 125, 8);
-}
-
-.return > i,
-.return > div {
-  color: rgb(206, 50, 141);
-}
-
-.water > i,
-.water > div {
-  color: rgb(60, 151, 212);
-}
-
-.eco > i,
-.eco > div {
-  color: green;
-}
-
-.warrenty {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #535353;
-}
-.warrenty > i {
-  color: rgb(95, 78, 0);
-  font-size: 1.75rem;
-}
-
-.warrenty > a {
-  color: rgb(95, 78, 0);
-  font-weight: 600;
-  text-decoration: underline;
-}
-
-.warrenty > a:visited {
-  color: rgb(95, 78, 0);
-}
-
-.description-header {
-  font-weight: 600;
-  color: rgb(95, 78, 0);
-  font-size: 1.75rem;
-}
-
-.description {
-  color: rgb(117, 117, 117);
-}
 /* --------------------------- Footer(Reused from midterm) generated fro: https://svgwave.in/---------------------------------------- */
 
 .footer {
@@ -328,6 +200,7 @@ hr {
   font-size: 16px;
   text-decoration: none;
 }
+
 /* ------------------- scroll to top and bottom button ------------------------ */
 #scrollToTopBtn,
 #scrollToBottomBtn {
