@@ -26,7 +26,7 @@ $('#createProduct').on('submit', function(e) {
     var price = $('#price').val();
 
     var formData = new FormData(this);
-    formData.append("details", detail);
+
     console.log(formData);
     console.log(image);
     // if (extension != ''){
