@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Listing</title>
-    <link rel="stylesheet" href="css/product-listing.css" />
+    <link rel="stylesheet" href="css/product-listing-4.css" />
     <script
       src="https://kit.fontawesome.com/57d08e8260.js"
       crossorigin="anonymous"
     ></script>
 
-    <script defer src="js/product-listing.js"></script>
+    <script defer src="js/product-listing1.js"></script>
 
     <!-- ---- IMPORTING JQUERY, JQUERYUI, BOOTSTRAP----- -->
     <script
@@ -40,23 +40,6 @@
   </head>
   <body>
     <div class="wrapper">
-      <!-- <div class="navigation-bar">
-        <nav id="topnav" class="topnav">
-          <a href="Homepage.html" class="logo" id="logo">SmartAgri</a>
-
-          <ul class="navbar" id="nav-option">
-            <li class="nav-opt"><a href="Homepage.html">Home</a></li>
-            <li class="nav-opt"><a href="about-us.html">About us</a></li>
-            <li class="nav-opt"><a href="contact-us.html">Contact</a></li>
-            <li class="nav-opt">
-              <a href="product-listing.html" class="anchor">Product</a>
-            </li>
-          </ul>
-        </nav>
-        <a href="javascript:void(0);" class="hamburger-icon" id="hamburger-icon"
-          ><i class="fa-solid fa-bars"></i
-        ></a>
-      </div> -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light pt-3 pb-3">
         <a class="navbar-brand ms-6 pt-2 pb-2 fs-2.5" id="logo" href="#"
           >SmartAgri</a
@@ -119,249 +102,12 @@
         <h1 class="text-center" id="product-header">Product listings</h1>
 
         <div class="row row-cols-auto d-flex justify-content-center">
-          <div class="col d-flex mb-4">
-            <a href="product-detail-customer.html">
-              <div class="card-wrapper">
-                <div class="card product-wrapper animate" id="first">
-                  <img
-                    src="./product-images/attena.jpg"
-                    alt="Item image"
-                    class="card-img-top"
-                  />
-                  <div class="card-body text-center">
-                    <h5 class="card-title">Random IoT product</h5>
-                    <p class="card-text">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Fugiat, iste?
-                    </p>
-                    <h6 class="card-subtitle mb-1">Price: $10.99</h6>
-                  </div>
-                  <div
-                    class="p-3 text-center text-white mt-1 buying-button cursor"
-                  >
-                    <span class="text-uppercase">BUY NOW</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
 
-          <div class="col d-flex mb-4">
-            <a href="product-detail-customer.html">
-              <div class="card-wrapper">
-                <div class="card product-wrapper animate" id="second">
-                  <img
-                    src="./product-images/arduino.jpg"
-                    alt="Item image"
-                    class="card-img-top"
-                  />
-                  <div class="card-body text-center">
-                    <h5 class="card-title">Random IoT product</h5>
-                    <p class="card-text">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Fugiat, iste?
-                    </p>
-                    <h6 class="card-subtitle price mb-1">Price: $10.99</h6>
-                  </div>
-                  <div
-                    class="p-3 text-center text-white mt-1 cursor buying-button"
-                  >
-                    <span class="text-uppercase">BUY NOW</span>
-                  </div>
-                </div>
-              </div></a
-            >
-          </div>
+          <?php
+            include_once("php/product-listing.php");
+          ?>
 
-          <div class="col d-flex mb-4">
-            <a href="product-detail-customer.html">
-              <div class="card-wrapper">
-                <div class="card product-wrapper animate" id="third">
-                  <img
-                    src="./product-images/cattlemonitoring.jpg"
-                    alt="Item image"
-                    class="card-img-top"
-                  />
-                  <div class="card-body text-center">
-                    <h5 class="card-title">Random IoT product</h5>
-                    <p class="card-text">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Fugiat, iste?
-                    </p>
-                    <h6 class="card-subtitle price mb-1">Price: $10.99</h6>
-                  </div>
-                  <div
-                    class="p-3 text-center text-white mt-1 cursor buying-button"
-                  >
-                    <span class="text-uppercase">BUY NOW</span>
-                  </div>
-                </div>
-              </div></a
-            >
-          </div>
-
-          <div class="col d-flex mb-4">
-            <a href="product-detail-customer.html">
-              <div class="card-wrapper">
-                <div class="card product-wrapper animate" id="fourth">
-                  <img
-                    src="./product-images/driverless-tractor.jpg"
-                    alt="Item image"
-                    class="card-img-top"
-                  />
-                  <div class="card-body text-center">
-                    <h5 class="card-title">Random IoT product</h5>
-                    <p class="card-text">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Fugiat, iste?
-                    </p>
-                    <h6 class="card-subtitle price mb-1">Price: $10.99</h6>
-                  </div>
-                  <div
-                    class="p-3 text-center text-white mt-1 cursor buying-button"
-                  >
-                    <span class="text-uppercase">BUY NOW</span>
-                  </div>
-                </div>
-              </div></a
-            >
-          </div>
-
-          <div class="col d-flex mb-4">
-            <a href="product-detail-customer.html">
-              <div class="card-wrapper">
-                <div class="card product-wrapper animate" id="fifth">
-                  <img
-                    src="./product-images/drone.jpg"
-                    alt="Item image"
-                    class="card-img-top"
-                  />
-                  <div class="card-body text-center">
-                    <h5 class="card-title">Random IoT product</h5>
-                    <p class="card-text">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Fugiat, iste?
-                    </p>
-                    <h6 class="card-subtitle price mb-1">Price: $10.99</h6>
-                  </div>
-                  <div
-                    class="p-3 text-center text-white mt-1 cursor buying-button"
-                  >
-                    <span class="text-uppercase">BUY NOW</span>
-                  </div>
-                </div>
-              </div></a
-            >
-          </div>
-
-          <div class="col d-flex mb-4">
-            <a href="product-detail-customer.html">
-              <div class="card-wrapper">
-                <div class="card product-wrapper animate" id="sixth">
-                  <img
-                    src="./product-images/esp8266.jpg"
-                    alt="Item image"
-                    class="card-img-top"
-                  />
-                  <div class="card-body text-center">
-                    <h5 class="card-title">Random IoT product</h5>
-                    <p class="card-text">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Fugiat, iste?
-                    </p>
-                    <h6 class="card-subtitle price mb-1">Price: $10.99</h6>
-                  </div>
-                  <div
-                    class="p-3 text-center text-white mt-1 cursor buying-button"
-                  >
-                    <span class="text-uppercase">BUY NOW</span>
-                  </div>
-                </div>
-              </div></a
-            >
-          </div>
-
-          <div class="col d-flex mb-4">
-            <a href="product-detail-customer.html">
-              <div class="card-wrapper">
-                <div class="card product-wrapper">
-                  <img
-                    src="./product-images/minicar.jpg"
-                    alt="Item image"
-                    class="card-img-top"
-                  />
-                  <div class="card-body text-center">
-                    <h5 class="card-title">Random IoT product</h5>
-                    <p class="card-text">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Fugiat, iste?
-                    </p>
-                    <h6 class="card-subtitle price mb-1">Price: $10.99</h6>
-                  </div>
-                  <div
-                    class="p-3 text-center text-white mt-1 cursor buying-button"
-                  >
-                    <span class="text-uppercase">BUY NOW</span>
-                  </div>
-                </div>
-              </div></a
-            >
-          </div>
-
-          <div class="col d-flex mb-4">
-            <a href="product-detail-customer.html">
-              <div class="card-wrapper">
-                <div class="card product-wrapper">
-                  <img
-                    src="./product-images/minicomputer.jpg"
-                    alt="Item image"
-                    class="card-img-top"
-                  />
-                  <div class="card-body text-center">
-                    <h5 class="card-title">Random IoT product</h5>
-                    <p class="card-text">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Fugiat, iste?
-                    </p>
-                    <h6 class="card-subtitle price mb-1">Price: $10.99</h6>
-                  </div>
-                  <div
-                    class="p-3 text-center text-white mt-1 cursor buying-button"
-                  >
-                    <span class="text-uppercase">BUY NOW</span>
-                  </div>
-                </div>
-              </div></a
-            >
-          </div>
-
-          <div class="col d-flex mb-4">
-            <a href="product-detail-customer.html">
-              <div class="card-wrapper">
-                <div class="card product-wrapper animate">
-                  <img
-                    src="./product-images/irrigation.jpg"
-                    alt="Item image"
-                    class="card-img-top"
-                  />
-                  <div class="card-body text-center">
-                    <h5 class="card-title">Random IoT product</h5>
-                    <p class="card-text">
-                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                      Fugiat, iste?
-                    </p>
-                    <h6 class="card-subtitle price mb-1">Price: $10.99</h6>
-                  </div>
-                  <div
-                    class="p-3 text-center text-white mt-1 cursor buying-button"
-                  >
-                    <span class="text-uppercase">BUY NOW</span>
-                  </div>
-                </div>
-              </div></a
-            >
-          </div>
-        </div>
+        </div> 
       </div>
 
       <div id="popup-container">

@@ -15,7 +15,7 @@
             echo $productJson;
 
             // Cookie expires in 30 seconds
-            // setcookie('product_details', $productJson, time() + 30, '/');
+            setcookie('product_details', $productJson, time() + 30, '/');
         }else{
             header('Content-Type: application/json');
             echo json_encode(array('error' => 'Product not found.'));

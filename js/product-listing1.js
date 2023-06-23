@@ -112,13 +112,15 @@ $(document).ready(function () {
         // console.log(directory[i]);
         let animation = $(productWrapper[i]).addClass("animation");
         let height = $(productWrapper[i]).css("height");
-        console.log(height);
+        let imgSource = $(productWrapper[i]).find("img").attr('src');
+
+        console.log(imgSource);
 
         animation.css({
           height: `${height}`,
           border: "none",
           cursor: "pointer",
-          backgroundImage: `linear-gradient(rgba(63, 100, 34, 0.5), rgba(51, 95, 18, 0.5)), url(${directory[i]})`,
+          backgroundImage: `linear-gradient(rgba(63, 100, 34, 0.5), rgba(51, 95, 18, 0.5)), url(${imgSource})`,
           backgroundSize: "cover",
           animation: "backgroundIMG 0.6s linear",
         });

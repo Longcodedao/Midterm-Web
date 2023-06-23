@@ -302,10 +302,11 @@ a {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
+.product-card-body {
+  height: 10.5rem;
+}
 .card-wrapper {
-  width: 24rem;
-  height: auto;
+  width: 25rem;
 }
 
 .card-wrapper:hover .product-wrapper {
@@ -328,7 +329,7 @@ a {
 
 /* ------------ body color--------------- */
 .wrapper {
-  background-color: #d5ffc2;
+  background-color: #a3ff79;
 }
 
 @keyframes backgroundIMG {
