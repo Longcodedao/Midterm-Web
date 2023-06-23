@@ -9,6 +9,7 @@ $(document).ready(function () {
       url: "../admin/php/listprod.php",
       type: "POST",
     },
+    // ------------ adding edit and delete buttons to dataTable ------
     columnDefs: [
       {
         targets: -2,
@@ -33,7 +34,7 @@ $(document).ready(function () {
     ],
   });
 
-  // -------- validate form --------------------------------
+  // -------- validate form using JQUERY VALIDATE--------------------------------
   $.validator.addMethod(
     "validUrl",
     function (value, element) {
@@ -52,44 +53,6 @@ $(document).ready(function () {
     "Please enter valid integer"
   );
 
-  $("#edit-product-form").validate({
-    rules: {
-      price: {
-        validInteger: true,
-      },
-      image: {
-        validUrl: true,
-      },
-    },
-    messages: {
-      price: {
-        validInteger: "Please enter a valid integer",
-      },
-      image: {
-        validUrl: "Please enter a valid URL",
-      },
-    },
-    submitHandler: function (form) {
-      var formData = {
-        name: $("#name").val(),
-        description: $("#description").val(),
-        price: $("#price").val(),
-        image: $("#image").val(),
-      };
-
-      // Handle null values
-      for (var key in formData) {
-        if (formData.hasOwnProperty(key) && formData[key] === "") {
-          formData[key] = null;
-        }
-      }
-
-      // Perform further processing or submit the form data
-      console.log(formData);
-      form.submit();
-    },
-  });
-
   // Update the URL regex pattern for more accurate validation
   $.validator.methods.url = function (value, element) {
     return (
@@ -98,9 +61,9 @@ $(document).ready(function () {
     );
   };
 
-  // ---- delete and edit popup ----
+  // ---- working with delete and edit popup ----
 
-  // ---------------- working with pop ups --------------------
+  // ---------------- working with delete pop up --------------------
   $("#products-table").on("click", ".delete-btn", function () {
     let id = $(this).attr("data-id");
     $("#popup-delete").fadeIn();
@@ -137,36 +100,50 @@ $(document).ready(function () {
     });
   });
 
-  //// fill the edit form with values
+  // ============ working with edit form =================
+  var productId; // Variable to store the product ID
 
+  // ---- fill the edit form with the product information
   $("#products-table").on("click", ".edit-btn", function () {
-    let id = $(this).data("id");
+    productId = $(this).data("id"); // Store the product ID in the productId variable
 
     // Fetch product details including the image URL
-
     let productDetail;
     $.ajax({
       type: "GET",
-      url: "../admin/php/fetch_product_data.php?id=" + id,
-      data: "data",
+      url: "../admin/php/fetch_product_data.php?id=" + productId,
       dataType: "json",
       success: function (response) {
         productDetail = response;
         console.log("successfully grabbed product detail");
         console.log(response);
+        // -------- fill out the edit form ----------
+        $("#name-edit").val(productDetail.name);
+        $("#description-edit").val(productDetail.description);
+        $("#price-edit").val(productDetail.price);
+        $("#image-edit").val(productDetail.image);
+
+        $("#popup-edit").fadeIn();
       },
       error: function (data) {
         console.log("failed to grab product details into the form");
         console.log(data);
       },
     });
+  });
 
-    $("#edit-product-form").on("submit", function (e) {
-      e.preventDefault();
+  // send it
+  $("#edit-product-form").on("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission
 
-      var formData = new FormData(this);
-      console.log(formData);
-      formData.append("id", id);
+    // Use the productId variable to access the stored ID
+    var id = productId;
+    console.log("the product id is: " + id);
+
+    var formData = new FormData(this);
+    formData.append("id", id);
+
+    if ($(this).valid()) {
       $.ajax({
         url: "../admin/php/edit.php",
         method: "POST",
@@ -174,19 +151,58 @@ $(document).ready(function () {
         contentType: false,
         processData: false,
         success: function (data) {
-          console.log(data);
-          console.log("deleted successfully");
+          console.log("edited successfully");
           dataTable.ajax.reload();
         },
         error: function (data) {
-          console.log(data);
-          console.log("failed to delete");
+          console.log("failed to edit");
         },
       });
 
       $("#popup-edit").fadeOut();
-    });
+    }
   });
+  // ---------------- addd validation so users cant submit with empty fields ----------------
+  $("#edit-product-form").validate({
+    rules: {
+      price: {
+        validInteger: true,
+      },
+      image: {
+        validUrl: true,
+      },
+    },
+    messages: {
+      price: {
+        validInteger: "Please enter a valid integer or DIE",
+      },
+      image: {
+        validUrl: "Please enter a valid Image URL or DIE",
+      },
+    },
+    submitHandler: function (form) {
+      // Manually trigger validation
+      if ($(form).valid()) {
+        var formData = {
+          name: $("#name-edit").val(),
+          description: $("#description-edit").val(),
+          price: $("#price-edit").val(),
+          image: $("#image-edit").val(),
+        };
+
+        // Handle null values
+        for (var key in formData) {
+          if (formData.hasOwnProperty(key) && formData[key] === "") {
+            formData[key] = null;
+          }
+        }
+
+        // Perform further processing or submit the form data
+        console.log(formData);
+      }
+    },
+  });
+
   // ---- close popups --------------------
 
   $("#btn-close-delete").click(function () {
@@ -196,47 +212,153 @@ $(document).ready(function () {
   $("#btn-close").click(function () {
     $("#popup-edit").fadeOut();
   });
-});
 
-// =========== ADDING PRODUCT popup =================
+  // =========== ADDING PRODUCT popup =================
 
-$("#createProduct").on("submit", function (e) {
-  e.preventDefault();
-  console.log("Has Confirmed");
-  var name = $("#name").val();
-  var description = $("#description").val();
-  // var detail = $('#details').val();
-  var image = $("#image").val();
-  // var extension = $('#image').val().split('.').pop().toLowerCase();
-  var price = $("#price").val();
+  // ---- validate create form --------------------------------
+  // $("#createProduct").validate({
+  //   rules: {
+  //     price: {
+  //       validInteger: true,
+  //     },
+  //     image: {
+  //       validUrl: true,
+  //     },
+  //   },
+  //   messages: {
+  //     price: {
+  //       validInteger: "Please enter a valid integer",
+  //     },
+  //     image: {
+  //       validUrl: "Please enter a valid Image URL",
+  //     },
+  //   },
+  //   submitHandler: function (form) {
+  //     if ($(form).valid()) {
+  //       var formData = {
+  //         name: $("#name").val(),
+  //         description: $("#description").val(),
+  //         price: $("#price").val(),
+  //         image: $("#image").val(),
+  //       };
 
-  var formData = new FormData(this);
+  //       // Handle null values
+  //       for (var key in formData) {
+  //         if (formData.hasOwnProperty(key) && formData[key] === "") {
+  //           formData[key] = null;
+  //         }
+  //       }
 
-  console.log(formData);
-  console.log(image);
-  // if (extension != ''){
-  //     if (jQuery.inArray(extension, ['gif', 'png', 'jpg', 'jpeg']) == -1){
-  //         alert("Wrong format of the image (Only accept gif, png, jpg, jpeg)");
-  //         return false;
+  //       // Perform further processing or submit the form data
+  //       console.log(formData);
   //     }
-  // }
+  //   },
+  // });
 
-  $.ajax({
-    url: "../admin/php/create.php",
-    method: "POST",
-    data: formData,
-    contentType: false,
-    processData: false,
-    success: function (data) {
-      // alert(data);
-      console.log($("#createProduct")[0]);
-      $("#createProduct")[0].reset();
-      $("#modalCreate").modal("hide");
-      location.reload(true);
+  // $("#createProduct").on("submit", function (e) {
+  //   e.preventDefault();
+  //   console.log("Has Confirmed");
+  //   var name = $("#name").val();
+  //   var description = $("#description").val();
+  //   // var detail = $('#details').val();
+  //   var image = $("#image").val();
+  //   // var extension = $('#image').val().split('.').pop().toLowerCase();
+  //   var price = $("#price").val();
+
+  //   var formData = new FormData(this);
+
+  //   console.log(formData);
+  //   console.log(image);
+  //   // if (extension != ''){
+  //   //     if (jQuery.inArray(extension, ['gif', 'png', 'jpg', 'jpeg']) == -1){
+  //   //         alert("Wrong format of the image (Only accept gif, png, jpg, jpeg)");
+  //   //         return false;
+  //   //     }
+  //   // }
+
+  //   $.ajax({
+  //     url: "../admin/php/create.php",
+  //     method: "POST",
+  //     data: formData,
+  //     contentType: false,
+  //     processData: false,
+  //     success: function (data) {
+  //       // alert(data);
+  //       console.log($("#createProduct")[0]);
+  //       $("#createProduct")[0].reset();
+  //       $("#modalCreate").modal("hide");
+  //       dataTable.ajax.reload(); // Reload the table data using Ajax
+  //     },
+  //   });
+  // });
+
+  // ------------ FORCE USER TO FILL OUT EVERY INPUTS TO CREATE NEW PRODUCT--------------
+
+  $("#createProduct").validate({
+    rules: {
+      price: {
+        validInteger: true,
+      },
+      image: {
+        validUrl: true,
+      },
+    },
+    messages: {
+      price: {
+        validInteger: "Enter a valid integer OR DIE",
+      },
+      image: {
+        validUrl: "Enter a valid Image URL OR DIE",
+      },
+    },
+    submitHandler: function (form) {
+      if ($(form).valid()) {
+        var formData = {
+          name: $("#name").val(),
+          description: $("#description").val(),
+          price: $("#price").val(),
+          image: $("#image").val(),
+        };
+
+        // Handle null values
+        for (var key in formData) {
+          if (formData.hasOwnProperty(key) && formData[key] === "") {
+            formData[key] = null;
+          }
+        }
+
+        // Perform further processing or submit the form data
+        console.log(formData);
+
+        // Add your additional validation logic here
+        var isFormValid = true; // Assume the form is valid
+
+        // Check if any required fields are empty
+        if ($("#name").val().trim() === "") {
+          isFormValid = false;
+        }
+        // Add similar checks for other required fields
+
+        if (isFormValid) {
+          // Submit the form
+          $.ajax({
+            url: "../admin/php/create.php",
+            method: "POST",
+            data: new FormData(form),
+            contentType: false,
+            processData: false,
+            success: function (data) {
+              console.log($("#createProduct")[0]);
+              $("#createProduct")[0].reset();
+              $("#modalCreate").modal("hide");
+              dataTable.ajax.reload(); // Reload the table data using Ajax
+            },
+          });
+        }
+      }
     },
   });
 });
-
 // --------------- JQUERY ANIMATE top to bottom scroll ------------------------------
 $(document).ready(function () {
   // Scroll to bottom button

@@ -78,7 +78,7 @@
               <a
                 class="nav-link d-flex justify-content-center list pt-1 pb-1"
                 href="admin-listorder.html"
-                >Contact</a
+                >Orders</a
               >
             </li>
 
@@ -110,29 +110,34 @@
             </h4>
 
             <h5 class="times-purchase-header" style="color: rgb(2, 114, 26)">
-              Purchased: <span class="product-price" id = "purchase-time"></span> times
+              Purchased:
+              <span class="product-price" id="purchase-time"></span> times
             </h5>
 
             <p class="description-wrapper">
               Description:
               <span class="product-description" id="product-description">
-                
               </span>
             </p>
-      
+
             <div class="d-flex flex-column align-items-center mt-4">
-              <button class="btn btn-success open-edit-modal page-button" id="edit-button">
+              <button
+                class="btn btn-success open-edit-modal page-button"
+                id="edit-button"
+              >
                 Edit
               </button>
               <hr />
-              <button class="btn btn-danger open-delete-modal page-button" id="delete-button">
+              <button
+                class="btn btn-danger open-delete-modal page-button"
+                id="delete-button"
+              >
                 Delete
               </button>
             </div>
           </div>
         </div>
       </div>
-
 
       <div class="modal" id="popup-delete">
         <div class="modal-dialog modal-md customed-modal modal-dialog-centered">
@@ -157,8 +162,12 @@
                       from the database.
                     </p>
                     <form class="form-group mb-2" id="delete-product-form">
-                    
-                      <input type="hidden" name = "delete-operate" id="delete-operate" value="Delete">
+                      <input
+                        type="hidden"
+                        name="delete-operate"
+                        id="delete-operate"
+                        value="Delete"
+                      />
                       <button
                         type="submit"
                         id="delete-product-button"
@@ -190,11 +199,7 @@
                   <h6 style="color: rgb(92, 42, 2)">
                     You can fill one or multiple inputs to edit this product.
                   </h6>
-                  <form
-          
-                    class="edit-product-form"
-                    id="edit-product-form"
-                  >
+                  <form class="edit-product-form" id="edit-product-form">
                     <div class="form-group mb-2">
                       <label for="name" class="mb-1 label-edit">Name:</label>
                       <input
@@ -259,8 +264,12 @@
                     <div
                       class="button-wrapper d-flex justify-content-center mt-4"
                     >
-          
-                      <input type="hidden" name="operation" id="operation" value="Edit">
+                      <input
+                        type="hidden"
+                        name="operation"
+                        id="operation"
+                        value="Edit"
+                      />
                       <button
                         type="submit"
                         class="btn btn-primary edit-confirm-button"
