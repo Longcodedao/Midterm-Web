@@ -1,10 +1,10 @@
 <?php
-    require_once("admin/php/databases.php");
-    $query = "SELECT * FROM products";
-    $result = $conn -> query ($query);
+require_once "admin/php/databases.php";
+$query = "SELECT * FROM products";
+$result = $conn->query($query);
 
-    while ($row = $result -> fetch_assoc()){
-        echo <<< _END
+while ($row = $result->fetch_assoc()) {
+    echo <<< _END
 
         <div class="col d-flex mb-4">
             <a href="product-detail-customer.html?id={$row['id']}">
@@ -33,7 +33,4 @@
           </div>
 
     _END;
-    }
-
-    
-?>
+}
