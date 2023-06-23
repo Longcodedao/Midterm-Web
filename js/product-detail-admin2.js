@@ -39,75 +39,6 @@ $(document).ready(function () {
   $(window).trigger("scroll");
 });
 
-// ------------- popup edit and delete------------
-
-// -------- validate form --------------------------------
-$(document).ready(function () {
-  $.validator.addMethod(
-    "validUrl",
-    function (value, element) {
-      var urlRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
-      return this.optional(element) || urlRegex.test(value);
-    },
-    "Please enter a valid URL"
-  );
-
-  $.validator.addMethod(
-    "validInteger",
-    function (value, element) {
-      var integerRegex = /^\d+$/;
-      return this.optional(element) || integerRegex.test(value);
-    },
-    "Please enter valid integer"
-  );
-
-  $("#edit-product-form").validate({
-    rules: {
-      price: {
-        validInteger: true,
-      },
-      image: {
-        validUrl: true,
-      },
-    },
-    messages: {
-      price: {
-        validInteger: "Please enter a valid integer",
-      },
-      image: {
-        validUrl: "Please enter a valid URL",
-      },
-    },
-    submitHandler: function (form) {
-      var formData = {
-        name: $("#name").val(),
-        description: $("#description").val(),
-        price: $("#price").val(),
-        image: $("#image").val(),
-      };
-
-      // Handle null values
-      for (var key in formData) {
-        if (formData.hasOwnProperty(key) && formData[key] === "") {
-          formData[key] = null;
-        }
-      }
-
-      // Perform further processing or submit the form data
-      console.log(formData);
-      form.submit();
-    },
-  });
-
-  // Update the URL regex pattern for more accurate validation
-  $.validator.methods.url = function (value, element) {
-    return (
-      this.optional(element) ||
-      /^(https?:\/\/)?([\w.-]+)\.([a-zA-Z]{2,})(\/\S*)?$/.test(value)
-    );
-  };
-});
-
 // Get the parameter of the url and send request to the database
 
 $(document).ready(function () {
@@ -147,6 +78,9 @@ $(document).ready(function () {
       },
     });
   }
+  // --------------- popup delete and edit --------------------------------
+
+  // -------- validate form --------------------------------
 
   $(".open-edit-modal").click(function () {
     $("#popup-edit").fadeIn();
@@ -175,23 +109,92 @@ $(document).ready(function () {
   //   $('#image-edit').val(productDetail['image']);
   // })
 
+  $(document).ready(function () {
+    $.validator.addMethod(
+      "validUrl",
+      function (value, element) {
+        var urlRegex = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+        return this.optional(element) || urlRegex.test(value);
+      },
+      "Please enter a valid URL"
+    );
+
+    $.validator.addMethod(
+      "validInteger",
+      function (value, element) {
+        var integerRegex = /^\d+$/;
+        return this.optional(element) || integerRegex.test(value);
+      },
+      "Please enter a valid integer"
+    );
+
+    $("#edit-product-form").validate({
+      rules: {
+        price: {
+          validInteger: true,
+        },
+        image: {
+          validUrl: true,
+        },
+      },
+      messages: {
+        price: {
+          validInteger: "Please enter a valid integer",
+        },
+        image: {
+          validUrl: "Please enter a valid URL",
+        },
+      },
+      submitHandler: function (form) {
+        var formData = {
+          name: $("#name").val(),
+          description: $("#description").val(),
+          price: $("#price").val(),
+          image: $("#image").val(),
+        };
+
+        // Handle null values
+        for (var key in formData) {
+          if (formData.hasOwnProperty(key) && formData[key] === "") {
+            formData[key] = null;
+          }
+        }
+
+        // Perform further processing or submit the form data
+        console.log(formData);
+        form.submit();
+      },
+    });
+
+    // Update the URL regex pattern for more accurate validation
+    $.validator.methods.url = function (value, element) {
+      return (
+        this.optional(element) ||
+        /^(https?:\/\/)?([\w.-]+)\.([a-zA-Z]{2,})(\/\S*)?$/.test(value)
+      );
+    };
+  });
+
   $("#edit-product-form").on("submit", function (e) {
     e.preventDefault();
 
     var formData = new FormData(this);
     console.log(formData);
     formData.append("id", productId);
-    $.ajax({
-      url: "../admin/php/edit.php",
-      method: "POST",
-      data: formData,
-      contentType: false,
-      processData: false,
-      success: function (data) {
-        // alert(data);
-        window.location.href = "../admin/admin-listprod.html";
-      },
-    });
+
+    if ($(this).valid()) {
+      $.ajax({
+        url: "../admin/php/edit.php",
+        method: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (data) {
+          // alert(data);
+          window.location.href = "../admin/admin-listprod.html";
+        },
+      });
+    }
   });
 
   $("#delete-product-form").on("submit", function (e) {
