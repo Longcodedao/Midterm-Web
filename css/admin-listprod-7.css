@@ -120,6 +120,12 @@ nav {
   height: 100vh;
 }
 /* ====================================== popups ================================================= */
+
+#products-table td,
+#products-table th {
+  text-transform: none !important;
+}
+
 #popup-edit {
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
