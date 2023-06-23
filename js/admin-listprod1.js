@@ -20,7 +20,7 @@ $('#createProduct').on('submit', function(e) {
     console.log('Has Confirmed');
     var name = $('#name').val();
     var description = $('#description').val();
-    var detail = $('#details').val();
+    // var detail = $('#details').val();
     var image = $('#image').val();
     // var extension = $('#image').val().split('.').pop().toLowerCase();
     var price = $('#price').val();

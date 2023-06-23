@@ -1,38 +1,5 @@
 // ------------- WORKING WITH FIXED NAVBAR(commented out because we use bootstrap for this) -------------------
 $(document).ready(function () {
-  // var NavBar = document.getElementById("topnav");
-  // var logo = document.getElementById("logo");
-  // var navigate_options = document.getElementById("nav-option");
-  // var sticky = NavBar.offsetTop;
-
-  // if ($(window).width() > 960) {
-  //   $(window).scroll(function () {
-  //     if ($(window).scrollTop() > sticky + 100) {
-  //       NavBar.classList.add("sticky");
-  //       logo.classList.add("white-background");
-  //       navigate_options.classList.add("white-background");
-  //     } else {
-  //       NavBar.classList.remove("sticky");
-  //       logo.classList.remove("white-background");
-  //       navigate_options.classList.remove("white-background");
-  //     }
-  //   });
-  // }
-
-  // $listNav = $("li.nav-opt");
-
-  // $("#hamburger-icon").on("click", function () {
-  //   var scrollPosition = $(window).scrollTop();
-  //   localStorage.setItem("scrollPosition", scrollPosition);
-  //   $listNav.slideToggle(200);
-  //   var storedScrollPosition = localStorage.getItem("scrollPosition");
-  //   $(window).scrollTop(storedScrollPosition);
-  //   console.log($(window).scrollTop());
-  // });
-
-  // if ($("window").width() > 600) {
-  //   $listNav.show();
-  // }
 
   // -------------GENERATE RANDOM FUNKY COLOR FOR THE BUYING BUTTON and price------------------
 
@@ -68,17 +35,6 @@ $(document).ready(function () {
     "#cac036",
   ];
 
-  var directory = [
-    "./product-images/attena.jpg",
-    "./product-images/arduino.jpg",
-    "./product-images/cattlemonitoring.jpg",
-    "./product-images/driverless-tractor.jpg",
-    "./product-images/drone.jpg",
-    "./product-images/esp8266.jpg",
-    "./product-images/minicar.jpg",
-    "./product-images/minicomputer.jpg",
-    "./product-images/irrigation.jpg",
-  ];
 
   let buyingButtons = $(".buying-button");
   let prices = $(".card-subtitle");
@@ -204,8 +160,22 @@ $(document).ready(function () {
 
     $(buyingButtons[i]).click(function (e) {
       e.preventDefault();
+      let id = $(buyingButtons[i]).find('span').attr("id");
+      console.log(id);
+      
+      $.ajax({
+          url: "admin/php/fetch_product_data.php?id=" + id,
+          type: "GET",
+          dataType: "json",
+          success: function(response) {
+            productDetail = response;
+            console.log(response);
+            setUpData(response);
+          }
+        });
+      
       $("#popup-container").fadeIn();
-    });
+      });
 
     $("#cancel-btn").click(function () {
       $("#popup-container").fadeOut();
@@ -253,3 +223,24 @@ $(document).ready(function () {
   // Check initial scroll position to show/hide the buttons
   $(window).trigger("scroll");
 });
+
+
+
+function setUpData(response){
+  $('#popup-image').attr("src", response['image']);
+  $('#popup-name').html(response['name']);
+  $('#popup-price').html(response['price']);
+  $('#popup-descrip').html(response['description']);
+  $('#order-btn').attr("href",  `Order-form.html?id=${response['id']}`);
+}
+
+function getCookie(name){
+  var cookies = document.cookie.split(';');
+  for (var i = 0; i < cookies.length; i++){
+    var cookie = cookies[i].trim();
+    if (cookie.startsWith(name + '=')){
+      return decodeURIComponent(cookie.substring(name.length + 1));
+    }
+  }
+  return '';
+}

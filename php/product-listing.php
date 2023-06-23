@@ -25,7 +25,7 @@
                   <div
                     class="p-3 text-center text-white mt-1 buying-button cursor"
                   >
-                    <span class="text-uppercase">BUY NOW</span>
+                    <span class="text-uppercase" id = {$row['id']}>BUY NOW</span>
                   </div>
                 </div>
               </div>

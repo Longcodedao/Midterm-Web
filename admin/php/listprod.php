@@ -54,7 +54,7 @@
         $sub_array[] = $row["id"];
         $sub_array[] = $row["name"];
         $sub_array[] = $row["description"];
-        $sub_array[] = $row["details"];
+        $sub_array[] = $row["purchasetime"];
         $sub_array[] = $row["price"];
         $sub_array[] = "<a href = {$navigation_link}> View Detail </a>";
         $data[] = $sub_array;

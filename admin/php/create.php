@@ -10,17 +10,17 @@
         // }
         $name = $_POST['name'];
         $description = $_POST['description'];
-        $detail = $_POST['details'];
+        // $detail = $_POST['details'];
         $price = $_POST['price'];
         $image = $_POST['image'];
 
-        echo("$name<br>");
-        echo("$description<br>");
-        echo("$detail<br>");
-        echo("$price<br>");
-        echo("$image<br>");
+        // echo("$name<br>");
+        // echo("$description<br>");
+        // echo("$detail<br>");
+        // echo("$price<br>");
+        // echo("$image<br>");
 
-        $query = "INSERT INTO products (name, description, details, price, image) VALUES('$name', '$description', '$detail', '$price', '$image')";
+        $query = "INSERT INTO products (name, description, price, image) VALUES('$name', '$description', '$price', '$image')";
         echo("$query<br>");
         $result = $conn -> query($query);
     }

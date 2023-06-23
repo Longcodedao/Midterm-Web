@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <script defer src="js/product-listing1.js"></script>
+    <script defer src="js/product-listing2.js"></script>
 
     <!-- ---- IMPORTING JQUERY, JQUERYUI, BOOTSTRAP----- -->
     <script
@@ -121,33 +121,31 @@
                       class="d-flex justify-content-between align-items-center text-center"
                     >
                       <div>
-                        <p class="text-muted mb-2">Product Popup Info</p>
+                        <p class="text-muted mb-1 fs-4">Product Popup Info</p>
                       </div>
-                      <div>
-                        <h6 class="mb-0"><a href="#">View Details</a></h6>
-                      </div>
+                
                     </div>
                   </div>
                   <div class="card-body p-4">
                     <div class="d-flex flex-row mb-0">
                       <div class="flex-fill" id="product-information">
-                        <h5 class="bold">Headphones Bose 35 II</h5>
-                        <p class="text-muted">Qt: 1 item</p>
+                        <h5 class="bold" id="popup-name"></h5>
+                      
                         <h4 class="mb-3">
-                          $ <span class="price">299</span>
-                          <span class="small text-muted"> via (COD) </span>
+                          $ <span class="price" id="popup-price"></span>
+                          <span class="small text-muted"> in USD </span>
                         </h4>
                         <p class="text-muted">
-                          Tracking Status on:
-                          <span class="text-body">11:30pm, Today</span>
+                          Description:
+                          <span class="text-body" id="popup-descrip"></span>
                         </p>
-                        <p class="text-muted m-0">Ordered Status: SHIPPED</p>
+        
                       </div>
                       <div>
                         <img
                           class="align-self-center img-fluid"
                           src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp"
-                          width="250"
+                          width="250" id="popup-image"
                         />
                       </div>
                     </div>

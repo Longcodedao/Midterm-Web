@@ -122,7 +122,22 @@ $(document).ready(function() {
   var productDetail;
   if (productDetailJson) {
     productDetail = JSON.parse(productDetailJson);
-    setUpData(productDetail);
+
+    if (productDetail['id'] == productId){
+      setUpData(productDetail);
+    } else {
+      $.ajax({
+        url: "../admin/php/fetch_product_data.php?id=" + productId,
+        type: "GET",
+        dataType: "json",
+        success: function(response) {
+          productDetail = response;
+          console.log(response);
+          setUpData(response);
+        }
+      })
+    }
+    
   }else{
     $.ajax({
       url: "../admin/php/fetch_product_data.php?id=" + productId,
@@ -217,11 +232,11 @@ function getParameterById(name){
 function setUpData(response){
   var img = $('#image-product');
   img.attr('src', response['image']);
-
+  $('#purchase-time').html(`${response['purchasetime']}`);
   $('#product-name').html(`${response['name']}`);
   $('#product-price').html(`${response['price']}`);
   $('#product-description').html(`${response['description']}`);
-  $('#product-detail').html(`${response['details']}`)
+
 }
 
 function getCookie(name){
