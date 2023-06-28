@@ -132,7 +132,7 @@ nav {
 
 .page-button {
   width: 200px;
-  max-width: 45%;
+  max-width: 70%;
 }
 @media only screen and (max-width: 560px) {
   .page-button {

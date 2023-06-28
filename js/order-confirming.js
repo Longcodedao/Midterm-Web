@@ -1,21 +1,20 @@
 $(document).ready(function () {
   //   ---------------------------- GENERATE RANDOM AND UNIQUE KEY-----------------------------
 
+  // // Get the order-key span element
+  // let orderKeySpan = $(".order-key");
 
-  // Get the order-key span element
-  let orderKeySpan = $(".order-key");
-
-  // Check if a key already exists in local storage
-  let storedKey = localStorage.getItem("orderKey");
-  if (storedKey) {
-    // Use the existing key
-    orderKeySpan.text(storedKey);
-  } else {
-    // Generate a new key and store it in local storage
-    var newKey = generateRandomKey();
-    localStorage.setItem("orderKey", newKey);
-    orderKeySpan.text(newKey);
-  }
+  // // Check if a key already exists in local storage
+  // let storedKey = localStorage.getItem("orderKey");
+  // if (storedKey) {
+  //   // Use the existing key
+  //   orderKeySpan.text(storedKey);
+  // } else {
+  //   // Generate a new key and store it in local storage
+  //   var newKey = generateRandomKey();
+  //   localStorage.setItem("orderKey", newKey);
+  //   orderKeySpan.text(newKey);
+  // }
 
   //   ------------------------ working with accordion --------------------------------
 
@@ -68,16 +67,16 @@ $(document).ready(function () {
   $(window).trigger("scroll");
 });
 
-function generateRandomKey() {
-  let keyLength = 10;
-  let characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  let key = "";
+// function generateRandomKey() {
+//   let keyLength = 10;
+//   let characters =
+//     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+//   let key = "";
 
-  for (var i = 0; i < keyLength; i++) {
-    var randomIndex = Math.floor(Math.random() * characters.length);
-    key += characters.charAt(randomIndex);
-  }
+//   for (var i = 0; i < keyLength; i++) {
+//     var randomIndex = Math.floor(Math.random() * characters.length);
+//     key += characters.charAt(randomIndex);
+//   }
 
-  return key;
-}
+//   return key;
+// }

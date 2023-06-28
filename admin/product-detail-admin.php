@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Detail</title>
 
-    <link rel="stylesheet" href="../css/product-detail-admin1.css" />
+    <link rel="stylesheet" href="../css/product-detail-admin2.css" />
     <script src="https://kit.fontawesome.com/57d08e8260.js" crossorigin="anonymous"></script>
 
     <script defer src="../js/product-detail-admin5.js"></script>
@@ -106,12 +106,18 @@ if (isset($_GET['id'])) {
                         <button class="btn btn-danger open-delete-modal page-button" id="delete-button">
                             Delete
                         </button>
+                        <hr />
+                        <button class="btn btn-primary page-button" id="back-button"
+                            onclick="location.href = '../admin/admin-listprod.html'">
+                            Back to product list!
+                        </button>
+
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="modal" id="popup-delete">
+        <div class=" modal" id="popup-delete">
             <div class="modal-dialog modal-md customed-modal modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
