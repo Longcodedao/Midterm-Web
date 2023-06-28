@@ -1,38 +1,8 @@
-// -------------------- Working with NAVBAR -------------------------------
-$(document).ready(function () {
-  // var NavBar = document.getElementById("topnav");
-  // var logo = document.getElementById("logo");
-  // var navigate_options = document.getElementById("nav-option");
-  // var sticky = NavBar.offsetTop;
-  // if ($(window).width() > 960) {
-  //     $(window).scroll(function () {
-  //     if ($(window).scrollTop() > sticky + 100) {
-  //         NavBar.classList.add("sticky");
-  //         logo.classList.add("white-background");
-  //         navigate_options.classList.add("white-background");
-  //     } else {
-  //     NavBar.classList.remove("sticky");
-  //     logo.classList.remove("white-background");
-  //     navigate_options.classList.remove("white-background");
-  //     }
-  // });
-  // }
-  // $listNav = $("li.nav-opt");
-  // $("#hamburger-icon").on("click", function () {
-  //     var scrollPosition = $(window).scrollTop();
-  //     localStorage.setItem("scrollPosition", scrollPosition);
-  //     $listNav.slideToggle(200);
-  //     var storedScrollPosition = localStorage.getItem("scrollPosition");
-  //     $(window).scrollTop(storedScrollPosition);
-  //     console.log($(window).scrollTop());
-  // });
-  // if ($("window").width() > 600) {
-  //     $listNav.show();
-  // }
-});
-
 // --------------- JQUERY ANIMATE top to bottom scroll ------------------------------
 $(document).ready(function () {
+
+  var productID;
+
   // Scroll to bottom button
   $("#scrollToBottomBtn").click(function (event) {
     event.preventDefault();
@@ -111,6 +81,30 @@ $(document).ready(function () {
   $("#btn-close").click(function () {
     $("#popup").fadeOut();
   });
+
+
+  $("#verify-order").click(function() {
+    var orderID = generateRandomKey();
+    var orderID_data = new FormData();
+    orderID_data.append('order_id', orderID);
+    $.ajax({
+      url: "php/session_data_orderid.php",
+      type: "POST",
+      data: orderID_data,
+      processData: false,
+      contentType: false,
+      success: function(response){
+        alert(response);
+      },
+      error: function(xhr, status, error) {
+        
+      }
+    })
+    var formData = createFormData(orderID);
+    console.log(productID);
+  })
+
+
 });
 
 function validateName() {
@@ -193,19 +187,16 @@ function validatePhone() {
 
 
 function getProductValue() {
-  var productId = "";
   $.ajax({
     url: "php/get_session_data.php",
     type: "GET",
     success: function(response){
       // alert(response);
-      productId = response;
-      console.log(productId);
-      retrieveProduct(productId);
+      productID = response;
+      console.log(productID);
+      retrieveProduct(productID);
     }
   })
-  
- 
 }
 
 function retrieveProduct(id) {
@@ -240,3 +231,51 @@ function setUpCustomerDetail(){
   $('#city-user').html(city);
   $('#phone-user').html(phone);
 }
+
+/* -------------------------  CREATE A FORM DATA ------------------------- */
+function createFormData(orderID) {
+  // console.log(orderID);
+  // console.log(productID);
+  var formData = new FormData();
+
+  formData.append('order_id', orderID);
+  formData.append('product_id', productID);
+  formData.append('name', $('#name-user').val());
+  formData.append('address', $('#address-user').val());
+  formData.append('city', $('#city-user').val());
+  formData.append('phone', $('#phone-user').val());
+
+  return formData;
+}
+
+
+function createOrder(orderID){
+  var formData = createFormData(orderID);
+  $.ajax({
+    url: 'php/input_customer_data',
+    type: 'POST',
+    data: formData,
+    processData: false,
+    contentType: false,
+    success: function(response){
+      window.location.href = ''
+    }
+  })
+}
+
+/* -------------------------  GENERATE THE ORDER ID ---------------------- */
+
+function generateRandomKey() {
+  let keyLength = 10;
+  let characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let key = "";
+
+  for (var i = 0; i < keyLength; i++) {
+    var randomIndex = Math.floor(Math.random() * characters.length);
+    key += characters.charAt(randomIndex);
+  }
+
+  return key;
+}
+

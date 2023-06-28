@@ -96,7 +96,7 @@ nav {
 /* -------------------------- Form Order ------------------------------- */
 
 .form-wrapper {
-  background-image: url("/images/background-order-form-2.png");
+  background-image: url("../images/background-order-form-2.png");
   background-size: 100% 90%;
   background-repeat: no-repeat;
   background-position: center;

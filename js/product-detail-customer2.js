@@ -68,7 +68,7 @@ $(document).ready(function() {
       processData: false,
       contentType: false,
       success: function(response){
-        alert(response);
+        // alert(response);
         window.location.href = 'Order-form.html';
       }
     })
