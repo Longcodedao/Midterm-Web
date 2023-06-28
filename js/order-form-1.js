@@ -83,9 +83,14 @@ $(document).ready(function () {
     validateAddress();
   });
 
+  $("#city").on("input", function(){
+    validateCity();
+  })
+
   $("#phone").on("input", function () {
     validatePhone();
   });
+
 
   $("#myForm").submit(function (event) {
     event.preventDefault();
@@ -94,8 +99,11 @@ $(document).ready(function () {
       validateName() &&
       validateEmail() &&
       validateAddress() &&
-      validatePhone()
+      validatePhone() &&
+      validateCity()
     ) {
+      getProductValue();
+      setUpCustomerDetail();
       $("#popup").fadeIn();
     }
   });
@@ -117,9 +125,21 @@ function validateName() {
   }
 }
 
+function validateCity(){
+  var city = $("#city").val();
+
+  if (city === "") {
+    $("#city-error").html("Please enter your city");
+    return false;
+  } else {
+    $("#city-error").html("");
+    return true;
+  }
+}
+
 function validateEmail() {
   var email = $("#email").val();
-  console.log(email.indexOf("@"));
+  // console.log(email.indexOf("@"));
 
   // if (email === '' ){
   //   $('#email-error').html("Please enter your email");
@@ -169,4 +189,54 @@ function validatePhone() {
     $("#phone-error").html("");
     return true;
   }
+}
+
+
+function getProductValue() {
+  var productId = "";
+  $.ajax({
+    url: "php/get_session_data.php",
+    type: "GET",
+    success: function(response){
+      // alert(response);
+      productId = response;
+      console.log(productId);
+      retrieveProduct(productId);
+    }
+  })
+  
+ 
+}
+
+function retrieveProduct(id) {
+  $.ajax({
+    url: "admin/php/fetch_product_data.php?id=" + id,
+    type: "GET",
+    dataType: "json",
+    success: function(response){
+      setUpData(response);
+    }
+  })
+}
+
+function setUpData(response){
+  var img = $('#product-img');
+  img.attr("src", response["image"]);
+  $("#product-name").html(`${response["name"]}`);
+  $("#product-price").html(`${response["price"]}`);
+  $("#product-description").html(`${response["description"]}`);
+}
+
+function setUpCustomerDetail(){
+  var name = $('#name').val();
+  var email = $('#email').val();
+  var address = $('#address').val();
+  var city = $('#city').val();
+  var phone = $('#phone').val();
+  
+  $('#name-user').html(name);
+  $('#email-user').html(email);
+  $('#address-user').html(address);
+  $('#city-user').html(city);
+  $('#phone-user').html(phone);
 }

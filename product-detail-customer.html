@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="css/product-detail-customer.css" />
-    <script defer src="js/product-detail-customer.js"></script>
+    <script defer src="js/product-detail-customer1.js"></script>
 
     <!-- ---- IMPORTING JQUERY, JQUERYUI, BOOTSTRAP----- -->
     <script
@@ -78,7 +78,7 @@
             >
               <a
                 class="nav-link d-flex justify-content-center list pt-1 pb-1"
-                href="product-listing.html"
+                href="product-listing-html.php"
                 >Products</a
               >
             </li>
@@ -101,23 +101,34 @@
         <div class="row d-flex justify-content-between mx-1 my-2">
           <div class="col-md-5">
             <img
-              src="/images/climatemonitoring.jpg"
+              src=""
               alt=""
-              class="img-fluid product-head-image h-100"
+              class="img-fluid product-head-image"
+              id = "image-product"
             />
           </div>
           <div
             class="col-md-6 mt-md-3 mt-sm-3 mt-3 info-wrapper d-flex flex-column"
           >
-            <h2 class="product-name">Product name</h2>
+            <h2 class="product-name" id="product-name"></h2>
             <hr />
             <h4 class="price-header mt-3">
-              $<span class="product-price">999</span>
+              $<span class="product-price" id="product-price"></span>
             </h4>
+
+            <p class="product-description" id="product-description">Hello World</p>
+
+            <!-- <button
+              class="btn btn-success buy-button mt-3"
+              id = "buy-now"
+              onclick="window.location.href = 'Order-form.html'"
+            >
+              BUY NOW!
+            </button> -->
 
             <button
               class="btn btn-success buy-button mt-3"
-              onclick="window.location.href = 'Order-form.html'"
+              id = "buy-now"
             >
               BUY NOW!
             </button>

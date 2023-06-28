@@ -10,7 +10,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <script defer src="./js/order-form.js"></script>
+    <script defer src="./js/order-form-1.js"></script>
 
     <!-- ---- IMPORTING JQUERY, JQUERYUI, BOOTSTRAP----- -->
 
@@ -74,7 +74,7 @@
             <li class="nav-item nav-element">
               <a
                 class="nav-link d-flex justify-content-center list pt-1 pb-1"
-                href="product-listing.html"
+                href="product-listing-html.php"
                 >Products</a
               >
             </li>
@@ -148,6 +148,19 @@
                     />
                     <span class="error" id="address-error"></span>
                   </div>
+
+                  <div class="form-outline mb-4">
+                    <label for="city" class="form-label fs-5 mb-3 text-col"
+                      >City</label>
+                    <input
+                      type="text"
+                      id="city"
+                      class="form-control fs-6 input-form"
+                      placeholder="City"
+                    />
+                    <span class="error" id="city-error"></span>
+                  </div>
+
                   <div class="form-outline mb-4">
                     <label for="phone" class="form-label fs-5 mb-3 text-col"
                       >Phone</label
@@ -160,6 +173,7 @@
                     />
                     <span class="error" id="phone-error"></span>
                   </div>
+
                   <div
                     class="submit-button-wrapper d-flex justify-content-center align-items-center"
                   >
@@ -187,31 +201,27 @@
             <div class="modal-body">
               <div class="product d-flex flex-row mx-2 pb-3 border-bottom">
                 <div class="flex-fill col-sm-12 col-md-12 col-lg-12">
-                  <h5 class="bold">Product IOT</h5>
-                  <p class="text-muted mb-2">
-                    Qty: <span id="quantity">1</span>
-                  </p>
-                  <h6 class="fst-italic">$123 USD</h6>
-                  <p class="product-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Tempora, iure omnis. Quis doloribus magni similique debitis.
+                  <h5 class="bold" id="product-name">Product IOT</h5>
+                  <h6 class="fst-italic">$<span id="product-price"></span> USD</h6>
+                  <p class="product-description" id="product-description">
                   </p>
                 </div>
                 <div class="d-flex justify-content-start align-items-center">
                   <img
                     class="align-self-center img-fluid"
-                    src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp"
+                    src=""
                     width="250"
+                    id = "product-img"
                   />
                 </div>
               </div>
               <div class="customer mt-2 pt-3">
                 <h6 class="mx-2">Name: <span id="name-user">ABCD</span></h6>
                 <h6 class="mx-2">
-                  Email: <span id="name-user">xyz@gmail.com</span>
+                  Email: <span id="email-user">xyz@gmail.com</span>
                 </h6>
                 <h6 class="mx-2">
-                  Address: <span id="email-user">21 ABC Street, New York</span>
+                  Address: <span id="address-user">21 ABC Street</span>, <span id="city-user">New York</span> 
                 </h6>
                 <h6 class="mx-2">
                   Phone: <span id="phone-user">0708021452</span>

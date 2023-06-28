@@ -36,19 +36,6 @@ $(document).ready(function () {
 
   //   ---------------------------- GENERATE RANDOM AND UNIQUE KEY-----------------------------
 
-  function generateRandomKey() {
-    let keyLength = 10;
-    let characters =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    let key = "";
-
-    for (var i = 0; i < keyLength; i++) {
-      var randomIndex = Math.floor(Math.random() * characters.length);
-      key += characters.charAt(randomIndex);
-    }
-
-    return key;
-  }
 
   // Get the order-key span element
   let orderKeySpan = $(".order-key");
@@ -115,3 +102,17 @@ $(document).ready(function () {
   // Check initial scroll position to show/hide the buttons
   $(window).trigger("scroll");
 });
+
+function generateRandomKey() {
+  let keyLength = 10;
+  let characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let key = "";
+
+  for (var i = 0; i < keyLength; i++) {
+    var randomIndex = Math.floor(Math.random() * characters.length);
+    key += characters.charAt(randomIndex);
+  }
+
+  return key;
+}
