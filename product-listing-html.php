@@ -85,7 +85,7 @@ include_once "php/product-listing.php";
                                             <h5 class="bold" id="popup-name"></h5>
 
                                             <h4 class="mb-3">
-                                                $ <span class="price" id="popup-price"></span>
+                                                $<span class="price" id="popup-price"></span>
                                                 <span class="small text-muted"> in USD </span>
                                             </h4>
                                             <p class="text-muted">

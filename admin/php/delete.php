@@ -1,20 +1,17 @@
 <?php
 
-    require_once('databases.php');
-    
-    if ($_POST['delete-operate'] == 'Delete') {
-        $id = $_POST['id'];
+require_once 'databases.php';
 
-        $query = "DELETE FROM products WHERE id = $id";
-        $result = $conn -> query($query);
+if ($_POST['delete-operate'] == 'Delete') {
+    $id = $_POST['id'];
 
-        echo "$query<br>";
-        echo "Row Deleted Successfully<br>";
+    $query = "DELETE FROM products WHERE id = $id";
+    $result = $conn->query($query);
 
-        // Set cookie to expires
-        // setcookie('product_details', '', time() - 100, '/');
-        
-        header("Location: ../product-detail-admin.html");
-        exit;
-    }
-?>
+    echo "$query<br>";
+    echo "Row Deleted Successfully<br>";
+
+    // Set cookie to expires
+    // setcookie('product_details', '', time() - 100, '/');
+
+}

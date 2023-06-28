@@ -1,4 +1,2 @@
 <?php
-    require_once ()
-
-?>
+require_once "admin/php/databases.php";

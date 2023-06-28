@@ -61,44 +61,6 @@ $(document).ready(function () {
     "Please enter valid integer"
   );
 
-  $("#edit-product-form").validate({
-    rules: {
-      price: {
-        validInteger: true,
-      },
-      image: {
-        validUrl: true,
-      },
-    },
-    messages: {
-      price: {
-        validInteger: "Please enter a valid integer",
-      },
-      image: {
-        validUrl: "Please enter a valid URL",
-      },
-    },
-    submitHandler: function (form) {
-      var formData = {
-        name: $("#name").val(),
-        description: $("#description").val(),
-        price: $("#price").val(),
-        image: $("#image").val(),
-      };
-
-      // Handle null values
-      for (var key in formData) {
-        if (formData.hasOwnProperty(key) && formData[key] === "") {
-          formData[key] = null;
-        }
-      }
-
-      // Perform further processing or submit the form data
-      console.log(formData);
-      form.submit();
-    },
-  });
-
   // Update the URL regex pattern for more accurate validation
   $.validator.methods.url = function (value, element) {
     return (
@@ -106,13 +68,11 @@ $(document).ready(function () {
       /^(https?:\/\/)?([\w.-]+)\.([a-zA-Z]{2,})(\/\S*)?$/.test(value)
     );
   };
-});
 
-// Get the parameter of the url and send request to the database
+  // Get the parameter of the url and send request to the database
 
-$(document).ready(function () {
   var urlParams = new URLSearchParams(window.location.search);
-  var productId = urlParams.get('id');
+  var productId = urlParams.get("id");
   // var refresh = getParameterById("refresh");
   // console.log(refresh);
 
@@ -151,40 +111,81 @@ $(document).ready(function () {
     $("#popup-delete").fadeOut();
   });
 
-  // $('edit-button').click(function() {
-  //   $('#name-edit').val(productDetail['name']);
-  //   $('#description-edit').val(productDetail['description']);
-  //   $('#price-edit').val(productDetail['price']);
-  //   $('#image-edit').val(productDetail['image']);
-  // })
-
   $("#edit-product-form").on("submit", function (e) {
-    productId = urlParams.get('id');
+    productId = urlParams.get("id");
     e.preventDefault();
 
     var formData = new FormData(this);
     console.log(formData);
     formData.append("id", productId);
-    $.ajax({
-      url: "../admin/php/edit-2.php",
-      method: "POST",
-      data: formData,
-      dataType: "json",
-      contentType: false,
-      processData: false,
-      success: function (data) {
-        // alert(productId);
-        // console.log(data['id']);
-        window.location.href = `../admin/product-detail-admin.php?id=${productId}`;
-        // window.location.href = `../admin/admin-listprod.html`;
+
+    if ($(this).valid()) {
+      $.ajax({
+        url: "../admin/php/edit-2.php",
+        method: "POST",
+        data: formData,
+        dataType: "json",
+        contentType: false,
+        processData: false,
+
+        success: function (data) {
+          // alert(productId);
+          // console.log(data['id']);
+          console.log("edited successfully");
+
+          // Reload the DataTable
+          var url = `../admin/product-detail-admin.php?id=${productId}&reloadTable=true`;
+          window.location.href = url;
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          // Code to be executed if the AJAX request encounters an error
+          alert("An error has occured");
+          console.log(textStatus, errorThrown); // Log the error details
+          window.location.href = `../admin/product-detail-admin.php?id=${productId}`;
+        },
+      });
+    }
+  });
+
+  // ---------------- addd validation so users cant submit with empty fields ----------------
+  $("#edit-product-form").validate({
+    rules: {
+      price: {
+        validInteger: true,
       },
-      error: function(jqXHR, textStatus, errorThrown) {
-        // Code to be executed if the AJAX request encounters an error
-        alert("An error has occured");
-        console.log(textStatus, errorThrown); // Log the error details
-        window.location.href = `../admin/product-detail-admin.php?id=${productId}`;
+      image: {
+        validUrl: true,
+      },
+    },
+    messages: {
+      price: {
+        validInteger: "Please enter a valid integer or DIE",
+      },
+      image: {
+        validUrl: "Please enter a valid Image URL or DIE",
+      },
+    },
+    submitHandler: function (form) {
+      // Manually trigger validation
+      if ($(form).valid()) {
+        var formData = {
+          name: $("#name-edit").val(),
+          description: $("#description-edit").val(),
+          price: $("#price-edit").val(),
+          image: $("#image-edit").val(),
+        };
+
+        // Handle null values
+        for (var key in formData) {
+          if (formData.hasOwnProperty(key) && formData[key] === "") {
+            formData[key] = null;
+          }
+        }
+
+        // Perform further processing or submit the form data
+        console.log(formData);
       }
-    });
+    },
   });
 
   $("#delete-product-form").on("submit", function (e) {
@@ -193,6 +194,7 @@ $(document).ready(function () {
     var formData = new FormData(this);
     formData.append("id", productId);
     console.log(formData);
+
     $.ajax({
       url: "../admin/php/delete.php",
       method: "POST",
@@ -202,6 +204,9 @@ $(document).ready(function () {
       success: function (data) {
         // alert(data);
         window.location.href = "../admin/admin-listprod.html";
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.log("failed to delete product");
       },
     });
   });
