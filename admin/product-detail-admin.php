@@ -12,7 +12,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <script defer src="../js/product-detail-admin2.js"></script>
+    <script defer src="../js/product-detail-admin5.js"></script>
 
     <!-- ---- IMPORTING JQUERY, JQUERYUI, BOOTSTRAP----- -->
     <script
@@ -42,6 +42,13 @@
     ></script>
   </head>
   <body>
+
+    <?php
+      if (isset($_GET['id'])){
+        $id = $_GET['id'];
+      }
+    ?>
+
     <div class="wrapper">
       <nav class="navbar navbar-expand-lg navbar-light bg-light pt-3 pb-3">
         <a class="navbar-brand ms-6 pt-2 pb-2 fs-2.5" id="logo" href="#"
@@ -199,7 +206,7 @@
                   <h6 style="color: rgb(92, 42, 2)">
                     You can fill one or multiple inputs to edit this product.
                   </h6>
-                  <form class="edit-product-form" id="edit-product-form">
+                  <form class="edit-product-form" id="edit-product-form" method="POST">
                     <div class="form-group mb-2">
                       <label for="name" class="mb-1 label-edit">Name:</label>
                       <input

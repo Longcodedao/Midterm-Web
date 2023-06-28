@@ -8,23 +8,31 @@
         $price = $_POST['price'];
         $image = $_POST['image'];
 
-        echo("$id<br>");
-        echo("$name<br>");
-        echo("$description<br>");
-        echo("$price<br>");
-        echo("$image<br>");
 
         $query = "UPDATE products SET name = '$name', 
                     description = '$description',
                     price = '$price',
                     image = '$image' WHERE id = '$id'";
-        echo("$query<br>");
+        // echo("$query<br>");
         $result = $conn -> query($query);
 
         // Set cookie to expires
-        setcookie('product_details', '', time() - 100, '/');
+        // setcookie('product_details', '', time() - 100, '/');
 
-        header("Location: ../product-detail-admin.html");
-        exit;
+        if ($result) {
+            $array_encode = array(
+                'id' => $id,
+            );
+            echo json_encode($array_encode);
+        } else{
+            $response = array(
+                'error' => 'Database update failed'
+            );
+            echo json_encode($response);
+        }
+        
+        $conn -> close();
+        // header("Location: ../product-detail-admin.html?id={$id}");
+        // exit;
     }
 ?>

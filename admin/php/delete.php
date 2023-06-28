@@ -12,7 +12,7 @@
         echo "Row Deleted Successfully<br>";
 
         // Set cookie to expires
-        setcookie('product_details', '', time() - 100, '/');
+        // setcookie('product_details', '', time() - 100, '/');
         
         header("Location: ../product-detail-admin.html");
         exit;
