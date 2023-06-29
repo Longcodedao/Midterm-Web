@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/product-listing-6.css" />
     <script src="https://kit.fontawesome.com/57d08e8260.js" crossorigin="anonymous"></script>
 
-    <script defer src="js/product-listing2.js"></script>
+    <script defer src="js/product-listing3.js"></script>
 
     <!-- ---- IMPORTING JQUERY, JQUERYUI, BOOTSTRAP----- -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
@@ -43,7 +43,7 @@
                     </li>
                     <li class="nav-item nav-element mb-lg-0 mb-xxl-0 mb-md-3 mb-sm-4 mb-xs-4">
                         <a class="nav-link d-flex justify-content-center list pt-1 pb-1"
-                            href="product-listing.html">Products</a>
+                            href="product-listing-html.php">Products</a>
                     </li>
                     <li class="nav-item nav-element mb-lg-0 mb-xxl-0 mb-md-3 mb-sm-4 mb-xs-4">
                         <a class="nav-link d-flex justify-content-center list pt-1 pb-1"
@@ -103,11 +103,11 @@ include_once "php/product-listing.php";
                                 </div>
                                 <div class="card-footer p-0 custom-height">
                                     <div class="d-flex justify-content-around custom-height">
-                                        <a href="Order-form.html"
+                                        <button 
                                             class="card-body text-center bg-primary text-white round-left-border m-0"
                                             id="order-btn">
                                             <h5>Order</h5>
-                                        </a>
+                                        </button>
 
                                         <a href="#"
                                             class="card-body text-center bg-danger text-white round-right-border m-0"

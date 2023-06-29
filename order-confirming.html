@@ -132,7 +132,7 @@
                 class="d-flex justify-content-center align-items-center mt-4"
               >
                 <div id="my-accordion">
-                  <h3>Order key: <span class="order-key"></span></h3>
+                  <h3>Order key: <span class="order-key" id="order-key"></span></h3>
                   <div class="row">
                     <div class="col-sm-7">
                       <h6>
@@ -143,7 +143,7 @@
                       </h6>
                       <h6>
                         Order value:
-                        <span class="price" id="product-price">Lorem, ipsum..</span>
+                        <span class="price" id="product-price">Lorem, ipsum..</span> USD
                       </h6>
                       <h6>
                         Your name:
@@ -151,8 +151,8 @@
                       </h6>
                       <h6>
                         Address:
-                        <span class="address" id="customer-address">Lorem ipsum dolor sit amet, </span>
-                        <span class="city" id="customer-city">ABC</span>
+                        <span class="address" id="customer-address">Lorem ipsum dolor sit amet</span>, 
+                         <span class="city" id="customer-city">ABC</span>
                       </h6>
                       <h6>
                         Your phone number:
@@ -174,9 +174,11 @@
                         src="./product-images/arduino.jpg"
                         alt="Image of that order"
                         class="img-fluid img-thumbnail order-product-image"
+                        id = "productImage"
                       />
                       <span
                         class="product-name order-product-image-name mt-sm-1"
+                        id = "name-product"
                         >Lorem ipsum dolor sit.</span
                       >
                     </div>

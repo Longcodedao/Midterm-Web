@@ -33,7 +33,7 @@
 
     function add_customer($conn, $name, $email, $address, $city, $phone){
         $query = "INSERT INTO customers (Name, Address, City, Email, Phone)
-                    VALUES('$name', '$email', '$address', '$city', '$phone')";
+                    VALUES('$name', '$address', '$city', '$email', '$phone')";
         echo("$query<br>");
         $result = $conn -> query($query);
         $new_query = "SELECT * FROM customers WHERE Name = '$name'";

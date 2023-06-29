@@ -2,7 +2,7 @@
 $(document).ready(function () {
 
   // -------------GENERATE RANDOM FUNKY COLOR FOR THE BUYING BUTTON and price------------------
-
+  var id;
   var colors = [
     "#2c3e50",
     "#d42b6a",
@@ -160,7 +160,7 @@ $(document).ready(function () {
 
     $(buyingButtons[i]).click(function (e) {
       e.preventDefault();
-      let id = $(buyingButtons[i]).find('span').attr("id");
+      id = $(buyingButtons[i]).find('span').attr("id");
       console.log(id);
       
       $.ajax({
@@ -176,14 +176,36 @@ $(document).ready(function () {
       
       $("#popup-container").fadeIn();
       });
+    
+      
+    $("#order-btn").click(function(){
+      var formData = new FormData();
+      formData.append('id', id);
+
+      $.ajax({
+        url: "php/session_data.php",
+        type: "POST",
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(response){
+          // alert(response);
+          window.location.href = 'Order-form.html';
+        }
+      })
+    });
 
     $("#cancel-btn").click(function () {
       $("#popup-container").fadeOut();
     });
+
+
+
   }
 });
 
 // --------------- JQUERY ANIMATE top to bottom scroll ------------------------------
+
 $(document).ready(function () {
   // Scroll to bottom button
   $("#scrollToBottomBtn").click(function (event) {
@@ -231,7 +253,7 @@ function setUpData(response){
   $('#popup-name').html(response['name']);
   $('#popup-price').html(response['price']);
   $('#popup-descrip').html(response['description']);
-  $('#order-btn').attr("href",  `Order-form.html?id=${response['id']}`);
+  // $('#order-btn').attr("href",  `Order-form.html?id=${response['id']}`);
 }
 
 function getCookie(name){

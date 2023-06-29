@@ -71,21 +71,21 @@ $(document).ready(function () {
   var urlParams = new URLSearchParams(window.location.search);
   var orderID = urlParams.get('orderId');
   retreiveInformation(orderID);
+
+
+  $(window).on('beforeunload', function() {
+    // return 'Are you sure you want to leave the page';
+    $.ajax({
+      url : "php/delete_session.php",
+      type: "POST",
+      success: function(response){
+        // alert(response);
+      }
+    })
+  })
 });
 
-// function generateRandomKey() {
-//   let keyLength = 10;
-//   let characters =
-//     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-//   let key = "";
 
-//   for (var i = 0; i < keyLength; i++) {
-//     var randomIndex = Math.floor(Math.random() * characters.length);
-//     key += characters.charAt(randomIndex);
-//   }
-
-//   return key;
-// }
 function retreiveInformation(orderID){
   var formData = new FormData();
   formData.append("order_id", orderID);
@@ -94,12 +94,27 @@ function retreiveInformation(orderID){
     url: "php/retrieve_order.php",
     type: "POST",
     data: formData,
+    dataType: "json",
     processData: false,
     contentType: false,
     success: function(response) {
-      alert(response);
+      // alert(response);
+      displayInformation(response);
     }
   })
 }
 
-// function displayInformation(order)
+function displayInformation(order){
+  // console.log(order['OrderID']);
+  $('#order-key').html(`${order['OrderID']}`);
+  $('#product-name').html(`${order['name']}`);
+  $('#product-price').html(`${order['price']}`);
+  $('#customer-name').html(`${order['Name']}`);
+  $('#customer-address').html(`${order['Address']}`);
+  $('#customer-city').html(`${order['City']}`);
+  $('#customer-phone').html(`${order['Phone']}`);
+  $('#customer-email').html(`${order['Email']}`);
+  $('#customer-date').html(`${order['Date']}`);
+  $('#productImage').attr("src", order['image']);
+  $('#name-product').html(order['name']);
+}
