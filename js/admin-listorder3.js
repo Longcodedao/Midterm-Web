@@ -2,18 +2,18 @@ $(document).ready(function () {
   console.log("wassup");
 
   let dataTable = $("#orders-table").DataTable({
-    processing: true,
-    serverSide: true,
-    searching: true,
-    ordering: true,
+    // processing: true,
+    // serverSide: true,
+    // searching: true,
+    // ordering: true,
 
     ajax: {
       url: "../admin/php/listorder.php",
       type: "POST",
-      success: function (response) {
-        console.log(response); // Check the response data
-        console.log(response.data); // Check the data array
-      },
+      // success: function (response) {
+      //   console.log(response); // Check the response data
+      //   console.log(response.data); // Check the data array
+      // },
     },
 
     columns: [
