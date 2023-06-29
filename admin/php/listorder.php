@@ -18,10 +18,12 @@ if ($result) {
         $orderDetailLink = "<a href='admin-order-detail.php?orderID=$orderID'>View Details</a>";
         $row['ViewDetails'] = $orderDetailLink;
         $data[] = $row;
+        error_log("listorder.php :: Data added: " . json_encode($row));
+
     }
 
     error_log(json_encode($data));
-    echo json_encode($data);
+    echo json_encode(array("data" => $data));
 } else {
     echo json_encode(array("error" => "Failed to retrieve data from the database."));
 }

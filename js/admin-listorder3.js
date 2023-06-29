@@ -11,9 +11,28 @@ $(document).ready(function () {
       url: "../admin/php/listorder.php",
       type: "POST",
       success: function (response) {
-        console.log(response);
+        console.log(response); // Check the response data
+        console.log(response.data); // Check the data array
       },
     },
+
+    columns: [
+      { data: "OrderID" },
+      { data: "Date" },
+      { data: "name" },
+      { data: "price" },
+      { data: "Name" },
+      { data: "Phone" },
+      { data: "Email" },
+      { data: "Address" },
+      { data: "City" },
+      {
+        data: "ViewDetails",
+        render: function (data, type, row) {
+          return data; // Ensure HTML is not escaped
+        },
+      },
+    ],
   });
 });
 
