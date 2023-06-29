@@ -115,7 +115,7 @@ $conn->close();
                     <img src="<?php echo $productImage; ?>" alt="" class="img-fluid product-head-image h-100 circle" />
                 </div>
 
-                <div class="col-md-5 mt-md-3 mt-sm-3 mt-4 d-flex flex-column">
+                <div class="col-md-5 mt-md-3 mt-sm-3 mt-4 d-flex flex-column mx-4">
                     <h4 class="order-id-wrapper">
                         Order ID: <span class="order-id"><?php echo $orderID; ?></span>
                     </h4>
