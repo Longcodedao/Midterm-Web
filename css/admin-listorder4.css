@@ -102,7 +102,26 @@ nav {
     padding-bottom: 1rem;
   }
 }
+/* ------------------- custom csss ------------------------ */
+.fa-circle-info {
+  font-size: 1.5rem !important;
+  color: rgb(149, 202, 100);
+}
 
+.detail-btn {
+  background-color: rgb(88, 60, 0) !important;
+  border: none !important;
+}
+
+.detail-btn:hover {
+  background-color: rgb(2, 99, 39) !important;
+  transition: background-color 0.5s ease-in-out !important;
+}
+
+.detail-btn:hover .fa-circle-info {
+  color: rgb(245, 222, 92) !important;
+  transition: color 0.5s ease-in-out !important;
+}
 /* --------------------- Footer reused ------------------------ */
 .footer {
   margin-top: 30px;

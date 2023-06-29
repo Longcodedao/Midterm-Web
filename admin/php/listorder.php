@@ -15,7 +15,7 @@ if ($result) {
 
     while ($row = $result->fetch_assoc()) {
         $orderID = $row['OrderID'];
-        $orderDetailLink = "<a href='admin-order-detail.php?orderID=$orderID'>View Details</a>";
+        $orderDetailLink = "<button class='btn btn-warning detail-btn' onclick=\"window.location.href='admin-order-detail.php?orderID=$orderID'\"><i class=\"fa-solid fa-circle-info\"></i></button>";
         $row['ViewDetails'] = $orderDetailLink;
         $data[] = $row;
         error_log("listorder.php :: Data added: " . json_encode($row));
