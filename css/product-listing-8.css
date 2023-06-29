@@ -124,6 +124,9 @@ a {
   text-decoration: none !important;
 }
 
+#order-btn {
+  border: none;
+}
 #order-btn:hover {
   background-color: #0056b3 !important;
   transition: background-color 0.3s ease;

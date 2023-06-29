@@ -15,7 +15,6 @@ $(document).ready(function () {
       data: formData,
       dataType: "json",
       success: function (response) {
-        console.log("success");
         console.log(response);
 
         if (response.status === "success") {
@@ -27,6 +26,13 @@ $(document).ready(function () {
           $(".user-input").removeClass("error");
 
           // Perform any additional actions upon successful login, such as redirecting to a dashboard page
+
+          setTimeout(function () {
+            $("#message-container").text("Redirecting...");
+            setTimeout(function () {
+              window.location.href = "../admin/admin-dashboard.html";
+            }, 750);
+          }, 750);
         } else {
           $("#message-container")
             .text("Invalid username or password")

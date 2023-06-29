@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Listing</title>
-    <link rel="stylesheet" href="css/product-listing-6.css" />
+    <link rel="stylesheet" href="css/product-listing-8.css" />
     <script src="https://kit.fontawesome.com/57d08e8260.js" crossorigin="anonymous"></script>
 
     <script defer src="js/product-listing3.js"></script>
@@ -103,7 +103,7 @@ include_once "php/product-listing.php";
                                 </div>
                                 <div class="card-footer p-0 custom-height">
                                     <div class="d-flex justify-content-around custom-height">
-                                        <button 
+                                        <button
                                             class="card-body text-center bg-primary text-white round-left-border m-0"
                                             id="order-btn">
                                             <h5>Order</h5>
