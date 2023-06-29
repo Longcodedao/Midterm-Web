@@ -94,13 +94,15 @@ $(document).ready(function () {
       processData: false,
       contentType: false,
       success: function(response){
-        alert(response);
+        // alert(response);
+        // var formData = createFormData(orderID);
+        createOrder(orderID);
       },
       error: function(xhr, status, error) {
         
       }
     })
-    var formData = createFormData(orderID);
+    
     console.log(productID);
   })
 
@@ -240,11 +242,14 @@ function createFormData(orderID) {
 
   formData.append('order_id', orderID);
   formData.append('product_id', productID);
-  formData.append('name', $('#name-user').val());
-  formData.append('address', $('#address-user').val());
-  formData.append('city', $('#city-user').val());
-  formData.append('phone', $('#phone-user').val());
+  formData.append('name', $('#name-user').html());
+  formData.append('email', $('#email-user').html());
+  formData.append('address', $('#address-user').html());
+  formData.append('city', $('#city-user').html());
+  formData.append('phone', $('#phone-user').html());
+  formData.append('user_data', 'Create');
 
+  console.log(formData);
   return formData;
 }
 
@@ -252,13 +257,14 @@ function createFormData(orderID) {
 function createOrder(orderID){
   var formData = createFormData(orderID);
   $.ajax({
-    url: 'php/input_customer_data',
+    url: 'php/input_customer_data.php',
     type: 'POST',
     data: formData,
     processData: false,
     contentType: false,
     success: function(response){
-      window.location.href = ''
+      alert(response);
+      window.location.href = 'order-confirming.html?orderId=' + orderID;
     }
   })
 }
