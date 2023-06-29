@@ -65,6 +65,12 @@ $(document).ready(function () {
 
   // Check initial scroll position to show/hide the buttons
   $(window).trigger("scroll");
+
+
+  /* ---------------------- GET ORDER ID ------------------------ */
+  var urlParams = new URLSearchParams(window.location.search);
+  var orderID = urlParams.get('orderId');
+  retreiveInformation(orderID);
 });
 
 // function generateRandomKey() {
@@ -80,3 +86,20 @@ $(document).ready(function () {
 
 //   return key;
 // }
+function retreiveInformation(orderID){
+  var formData = new FormData();
+  formData.append("order_id", orderID);
+
+  $.ajax({
+    url: "php/retrieve_order.php",
+    type: "POST",
+    data: formData,
+    processData: false,
+    contentType: false,
+    success: function(response) {
+      alert(response);
+    }
+  })
+}
+
+// function displayInformation(order)

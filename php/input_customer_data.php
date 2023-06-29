@@ -1,4 +1,7 @@
 <?php
+
+    session_start();
+
     require_once("../admin/php/databases.php");
 
     if ($_POST['user_data'] == 'Create'){
@@ -10,13 +13,13 @@
         $city = $_POST['city'];
         $phone = $_POST['phone'];
 
-        echo("$order_id<br>");
-        echo("$product_id<br>");
-        echo("$name<br>");
-        echo("$email<br>");
-        echo("$address<br>");
-        echo("$city<br>");
-        echo("$phone<br>");
+        // echo("$order_id<br>");
+        // echo("$product_id<br>");
+        // echo("$name<br>");
+        // echo("$email<br>");
+        // echo("$address<br>");
+        // echo("$city<br>");
+        // echo("$phone<br>");
 
         $customer_id = check_condtion($conn, $name, $email, $address, $city, $phone);
         if ($customer_id == ""){
@@ -63,7 +66,7 @@
         $currentDate = date('Y-m-d');
 
         $query = "INSERT INTO orders (OrderID, ProductID, CustomerID, Date)
-                        VALUES ('$order_id', '$customer_id', '$product_id', '$currentDate')";
+                        VALUES ('$order_id', '$product_id', '$customer_id', '$currentDate')";
         $result = $conn -> query($query);
     }
 ?>
