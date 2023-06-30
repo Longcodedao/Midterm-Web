@@ -38,9 +38,17 @@
 <body>
 
     <?php
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-}
+
+        session_start();
+
+        if (!isset($_SESSION['user'])){
+            header('Location: admin-login.html');
+        exit;
+        }
+
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+        }
 ?>
 
     <div class="wrapper">
@@ -54,21 +62,21 @@ if (isset($_GET['id'])) {
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item active nav-element">
                         <a class="nav-link d-flex justify-content-center list pt-1 pb-1"
-                            href="admin-dashboard.html">Dashboard</a>
+                            href="admin-dashboard.php">Dashboard</a>
                     </li>
 
                     <li class="nav-item nav-element">
                         <a class="nav-link d-flex justify-content-center list pt-1 pb-1"
-                            href="admin-listprod.html">Products</a>
+                            href="admin-listprod.php">Products</a>
                     </li>
 
                     <li class="nav-item nav-element">
                         <a class="nav-link d-flex justify-content-center list pt-1 pb-1"
-                            href="admin-listorder.html">Orders</a>
+                            href="admin-listorder.php">Orders</a>
                     </li>
 
                     <li class="nav-item nav-element d-flex justify-content-center customed-logout">
-                        <button type="button" class="btn btn-primary px-3">
+                        <button type="button" class="btn btn-primary px-3" id="log-out">
                             Log out
                         </button>
                     </li>

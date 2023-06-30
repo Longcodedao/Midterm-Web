@@ -263,7 +263,7 @@ function createOrder(orderID){
     processData: false,
     contentType: false,
     success: function(response){
-      alert(response);
+      // alert(response);
       window.location.href = 'order-confirming.html?orderId=' + orderID;
     }
   })

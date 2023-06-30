@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin List Product</title>
-    <link rel="stylesheet" href="../css/admin-listprod-7.css" />
+
+    <link rel="stylesheet" href="../css/admin-listorder4.css" />
 
     <script
       src="https://kit.fontawesome.com/57d08e8260.js"
       crossorigin="anonymous"
     ></script>
-    <script defer src="../js/admin-listprod-7.js"></script>
+
+    <script defer src="../js/admin-listorder5.js"></script>
 
     <!-- ---- IMPORTING JQUERY, JQUERYUI, BOOTSTRAP----- -->
     <script
@@ -46,8 +47,20 @@
       href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css"
     />
     <script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+    <title>Order List</title>
   </head>
   <body>
+
+  <?php
+      session_start();
+
+      if (!isset($_SESSION['user'])){
+        header('Location: admin-login.html');
+        exit;
+      }
+    ?>
+
     <div class="wrapper">
       <nav class="navbar navbar-expand-lg navbar-light bg-light pt-3 pb-3">
         <a class="navbar-brand ms-6 pt-2 pb-2 fs-2.5" id="logo" href="#"
@@ -67,7 +80,7 @@
             <li class="nav-item active nav-element">
               <a
                 class="nav-link d-flex justify-content-center list pt-1 pb-1"
-                href="admin-dashboard.html"
+                href="admin-dashboard.php"
                 >Dashboard</a
               >
             </li>
@@ -75,7 +88,7 @@
             <li class="nav-item nav-element">
               <a
                 class="nav-link d-flex justify-content-center list pt-1 pb-1"
-                href="admin-listprod.html"
+                href="admin-listprod.php"
                 >Products</a
               >
             </li>
@@ -83,7 +96,7 @@
             <li class="nav-item nav-element">
               <a
                 class="nav-link d-flex justify-content-center list pt-1 pb-1"
-                href="admin-listorder.html"
+                href="admin-listorder.php"
                 >Orders</a
               >
             </li>
@@ -91,7 +104,7 @@
             <li
               class="nav-item nav-element d-flex justify-content-center customed-logout"
             >
-              <button type="button" class="btn btn-primary px-3">
+              <button type="button" class="btn btn-primary px-3" id="log-out">
                 Log out
               </button>
             </li>
@@ -99,275 +112,28 @@
         </div>
       </nav>
 
-      <div
-        class="d-flex column-flex justify-content-start align-items-center mt-5 title vh-100"
-      >
+      <div class="justify-content-start mt-5 title vh-100">
         <div class="row">
-          <h1 class="display-3">List of Products</h1>
+          <h1 class="display-3 text-center">List of Orders</h1>
         </div>
-
-        <div
-          class="mt-2 col-lg-2 offset-lg-8 col-md-2 offset-md-8 col-sm-2 offset-sm-8 mb-4"
-        >
-          <div class="text-center">
-            <button
-              type="button"
-              class="btn btn-primary w-100"
-              data-bs-toggle="modal"
-              data-bs-target="#modalCreate"
-              id="buttonCreate"
-            >
-              Create
-            </button>
-          </div>
-        </div>
-
-        <div class="table-responsive mt-2 col-md-10 col-sm-10 col-10">
-          <table id="products-table" class="table table-bordered table-striped">
-            <thead>
-              <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Time Purchase</th>
-                <th>Price</th>
-
-                <th>View Detail</th>
-                <th>Edit</th>
-                <th>Delete</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-
-        <!-- -------------- POPUP DELETE -------------------------------- -->
-        <div class="modal" id="popup-delete">
-          <div
-            class="modal-dialog modal-md customed-modal modal-dialog-centered"
-          >
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title" style="color: rgb(121, 3, 3)">
-                  Delete your product
-                </h4>
-                <button
-                  type="button"
-                  class="btn-close"
-                  id="btn-close-delete"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <div class="d-flex flex-row mx-2">
-                  <div class="flex-fill">
-                    <div class="justify-content-center text-center">
-                      <i class="fa-solid fa-circle-xmark cross-icon mb-3"></i>
-                      <p style="color: rgb(92, 42, 2)">
-                        By clicking the red button, you will delete the product
-                        from the database.
-                      </p>
-                      <form class="form-group mb-2" id="delete-product-form">
-                        <input
-                          type="hidden"
-                          name="delete-operate"
-                          id="delete-operate"
-                          value="Delete"
-                        />
-                        <button
-                          type="submit"
-                          id="delete-product-button"
-                          class="btn btn-danger"
-                        >
-                          Confirm Delete
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ----- edit pop up -------------- -->
-        <div class="modal" id="popup-edit">
-          <div
-            class="modal-dialog modal-lg customed-modal modal-dialog-centered"
-          >
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title" style="color: rgb(41, 18, 0)">
-                  Edit your product information
-                </h4>
-                <button type="button" class="btn-close" id="btn-close"></button>
-              </div>
-              <div class="modal-body">
-                <div class="edit-form d-flex flex-row mx-2">
-                  <div class="flex-fill">
-                    <h6 style="color: rgb(92, 42, 2)">
-                      You can fill one or multiple inputs to edit this product.
-                    </h6>
-                    <form class="edit-product-form" id="edit-product-form">
-                      <div class="form-group mb-2">
-                        <label for="name" class="mb-1 label-edit">Name:</label>
-                        <input
-                          type="text"
-                          class="form-control customised-input"
-                          id="name-edit"
-                          name="name"
-                          required
-                          placeholder="Enter the product name"
-                        />
-                      </div>
-                      <div class="form-group mb-2">
-                        <label for="description" class="mb-1 label-edit"
-                          >Description:</label
-                        >
-                        <input
-                          type="text"
-                          class="form-control customised-input"
-                          id="description-edit"
-                          required
-                          name="description"
-                          placeholder="Enter the product description"
-                        />
-                      </div>
-
-                      <div class="form-group mb-2">
-                        <label for="price" class="mb-1 label-edit"
-                          >Price:</label
-                        >
-                        <input
-                          type="number"
-                          class="form-control customised-input"
-                          id="price-edit"
-                          name="price"
-                          required
-                          placeholder="Enter the product price"
-                        />
-                      </div>
-                      <div class="form-group">
-                        <label for="image" class="mb-1 label-edit"
-                          >Image:</label
-                        >
-                        <input
-                          type="url"
-                          class="form-control customised-input"
-                          id="image-edit"
-                          name="image"
-                          required
-                          placeholder="Enter the image URL"
-                        />
-                      </div>
-
-                      <div
-                        class="button-wrapper d-flex justify-content-center mt-4"
-                      >
-                        <input
-                          type="hidden"
-                          name="operation"
-                          id="operation"
-                          value="Edit"
-                        />
-                        <button
-                          type="submit"
-                          class="btn btn-primary edit-confirm-button"
-                        >
-                          Confirm
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Modal CREATE -->
-        <div
-          class="modal fade"
-          id="modalCreate"
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-customed">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">
-                  Create Product
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <form
-                method="POST"
-                id="createProduct"
-                enctype="multipart/form-data"
-              >
-                <div class="modal-body px-4">
-                  <label for="name" class="modal-label mb-2">Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    class="form-control"
-                    required
-                  />
-                  <br />
-
-                  <label for="description" class="modal-label mb-2"
-                    >Description</label
-                  >
-                  <input
-                    type="text"
-                    name="description"
-                    id="description"
-                    class="form-control"
-                    required
-                  />
-                  <br />
-
-                  <label for="price" class="modal-label mb-2">Price</label>
-                  <input
-                    type="number"
-                    name="price"
-                    id="price"
-                    class="form-control"
-                    required
-                  />
-                  <br />
-
-                  <label for="image" class="modal-label mb-2">Image</label>
-                  <!-- <input type="file" name="image" id ="image" class="form-control"> -->
-                  <input
-                    type="text"
-                    name="image"
-                    id="image"
-                    class="form-control"
-                    required
-                  />
-                  <br />
-                </div>
-
-                <div class="modal-footer">
-                  <input
-                    type="hidden"
-                    name="operation"
-                    id="operation"
-                    value="Create"
-                  />
-                  <input
-                    type="submit"
-                    class="btn btn-success col-md-3 col-sm-3"
-                    value="Submit"
-                  />
-                </div>
-              </form>
-            </div>
+        <div class="row justify-content-center">
+          <div class="table-responsive mt-2 col-md-11 col-sm-11 col-11">
+            <table id="orders-table" class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Date Of Order</th>
+                  <th>Product</th>
+                  <th>Order Value</th>
+                  <th>Buyer Name</th>
+                  <th>Buyer Phone</th>
+                  <th>Buyer Email</th>
+                  <th>Buyer Address</th>
+                  <th>Buyer City</th>
+                  <th>View Details</th>
+                </tr>
+              </thead>
+            </table>
           </div>
         </div>
       </div>

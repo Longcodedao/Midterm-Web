@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="../css/admin-order-detail1.css" />
 
-    <script defer src="../js/admin-order-detail.js"></script>
+    <script defer src="../js/admin-order-detail1.js"></script>
 
     <!-- ---- IMPORTING JQUERY, JQUERYUI, BOOTSTRAP----- -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
@@ -30,6 +30,16 @@
 </head>
 
 <body>
+
+    <?php
+      session_start();
+
+      if (!isset($_SESSION['user'])){
+        header('Location: admin-login.html');
+        exit;
+      }
+    ?>
+
     <div class="wrapper">
         <!-- ================================================ NAVBAR ================================================= -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light pt-3 pb-3">
@@ -42,21 +52,21 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item active nav-element">
                         <a class="nav-link d-flex justify-content-center list pt-1 pb-1"
-                            href="admin-dashboard.html">Dashboard</a>
+                            href="admin-dashboard.php">Dashboard</a>
                     </li>
 
                     <li class="nav-item nav-element">
                         <a class="nav-link d-flex justify-content-center list pt-1 pb-1"
-                            href="admin-listprod.html">Products</a>
+                            href="admin-listprod.php">Products</a>
                     </li>
 
                     <li class="nav-item nav-element">
                         <a class="nav-link d-flex justify-content-center list pt-1 pb-1"
-                            href="admin-listorder.html">Orders</a>
+                            href="admin-listorder.php">Orders</a>
                     </li>
 
                     <li class="nav-item nav-element d-flex justify-content-center customed-logout">
-                        <button type="button" class="btn btn-primary px-3">
+                        <button type="button" class="btn btn-primary px-3" id="log-out">
                             Log out
                         </button>
                     </li>

@@ -6,7 +6,11 @@ $(document).ready(function () {
   $("#login-form").submit(function (event) {
     event.preventDefault();
 
-    let formData = $(this).serialize();
+    // let formData = $(this).serialize();
+    let formData = new FormData(this);
+    let userID = generateUserId();
+    console.log(userID)
+    formData.append("user_id", userID);
 
     // send the ajax object
     $.ajax({
@@ -14,6 +18,8 @@ $(document).ready(function () {
       url: "php/login.php",
       data: formData,
       dataType: "json",
+      processData: false,
+      contentType: false,
       success: function (response) {
         console.log(response);
 
@@ -30,7 +36,7 @@ $(document).ready(function () {
           setTimeout(function () {
             $("#message-container").text("Redirecting...");
             setTimeout(function () {
-              window.location.href = "../admin/admin-dashboard.html";
+              window.location.href = "../admin/admin-dashboard.php";
             }, 750);
           }, 750);
         } else {
@@ -58,3 +64,10 @@ $(document).ready(function () {
     });
   });
 });
+
+function generateUserId(){
+  var currentDate = new Date().getTime().toString();
+  var randomString = Math.random().toString(36).substring(2, 15);
+  var userId = currentDate + randomString;
+  return userId;
+}

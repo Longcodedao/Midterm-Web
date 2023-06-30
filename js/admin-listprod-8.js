@@ -398,4 +398,16 @@ $(document).ready(function () {
 
   // Check initial scroll position to show/hide the buttons
   $(window).trigger("scroll");
+
+  $('#log-out').click(function() {
+    $.ajax({
+        url: "php/delete-session.php",
+        type: "POST",
+        processData: false,
+        contentType: false,
+        success: function(response) {
+            window.location.href = 'admin-login.html';
+        }
+    })
+  })
 });

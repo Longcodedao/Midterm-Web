@@ -10,7 +10,7 @@
       src="https://kit.fontawesome.com/57d08e8260.js"
       crossorigin="anonymous"
     ></script>
-    <script defer src="../js/admin-dashboard.js"></script>
+    <script defer src="../js/admin-dashboard2.js"></script>
 
     <!-- ---- IMPORTING JQUERY, JQUERYUI, BOOTSTRAP----- -->
     <script
@@ -39,6 +39,16 @@
   </head>
 
   <body>
+
+  <?php
+      session_start();
+
+      if (!isset($_SESSION['user'])){
+        header('Location: admin-login.html');
+        exit;
+      }
+    ?>
+
     <div class="wrapper">
       <nav class="navbar navbar-expand-lg navbar-light bg-light pt-3 pb-3">
         <a class="navbar-brand ms-6 pt-2 pb-2 fs-2.5" id="logo" href="#"
@@ -58,7 +68,7 @@
             <li class="nav-item active nav-element">
               <a
                 class="nav-link d-flex justify-content-center list pt-1 pb-1"
-                href="admin-dashboard.html"
+                href="admin-dashboard.php"
                 >Dashboard</a
               >
             </li>
@@ -66,7 +76,7 @@
             <li class="nav-item nav-element">
               <a
                 class="nav-link d-flex justify-content-center list pt-1 pb-1"
-                href="admin-listprod.html"
+                href="admin-listprod.php"
                 >Products</a
               >
             </li>
@@ -74,7 +84,7 @@
             <li class="nav-item nav-element">
               <a
                 class="nav-link d-flex justify-content-center list pt-1 pb-1"
-                href="admin-listorder.html"
+                href="admin-listorder.php"
                 >Orders</a
               >
             </li>
@@ -82,7 +92,7 @@
             <li
               class="nav-item nav-element d-flex justify-content-center customed-logout"
             >
-              <button type="button" class="btn btn-warning px-3">
+              <button type="button" class="btn btn-warning px-3" id="log-out">
                 Log out
               </button>
             </li>

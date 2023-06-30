@@ -6,6 +6,7 @@ error_log("login.php: initialised");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
+    $user_id  = $_POST["user_id"];
 
     $sql = "SELECT * FROM adminusers WHERE username = '$username' AND password = '$password'";
 
@@ -23,6 +24,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "status" => "success",
             "message" => "Login successful!",
         );
+
+        session_start();
+
+        $_SESSION['user'] = $user_id;
+        
     } else {
         // Failed login
         $response = array(
@@ -30,6 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "message" => "Invalid username or password",
         );
     }
+
 
     // Return the response as JSON
     header('Content-Type: application/json');

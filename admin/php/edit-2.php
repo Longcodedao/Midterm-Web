@@ -1,7 +1,7 @@
 <?php
     require_once("databases.php");
 
-    if ($_POST['operation'] == "Edit") {
+    if ($_POST['edit-operation'] == "Edit") {
         $id  = $_POST['id'];
         $name = $_POST['name'];
         $description = $_POST['description'];

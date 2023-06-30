@@ -28,7 +28,7 @@
         echo($customer_id);
         
         add_order($conn, $order_id, $customer_id, $product_id);
-        
+        change_product_values($conn, $product_id);
     }   
 
     function add_customer($conn, $name, $email, $address, $city, $phone){
@@ -68,5 +68,12 @@
         $query = "INSERT INTO orders (OrderID, ProductID, CustomerID, Date)
                         VALUES ('$order_id', '$product_id', '$customer_id', '$currentDate')";
         $result = $conn -> query($query);
+    }
+
+    function change_product_values($conn, $product_id){
+        $query = "UPDATE products SET purchasetime = purchasetime + 1 
+                    WHERE id = $product_id";
+
+        $update = $conn -> query($query);
     }
 ?>
