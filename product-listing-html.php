@@ -96,8 +96,7 @@ include_once "php/product-listing.php";
                                         </div>
                                         <div class='ml-2 ml-sm-3'>
                                             <img class="align-self-center img-fluid"
-                                                alt="image of that product inside the popup"
-                                                src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp"
+                                                alt="image of that product inside the popup" src="random.png"
                                                 width="250" id="popup-image" />
                                         </div>
                                     </div>
