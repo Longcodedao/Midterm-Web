@@ -36,7 +36,7 @@
             <div class="collapse navbar-collapse" id="btn">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item active nav-element mb-lg-0 mb-xxl-0 mb-md-3 mb-sm-4 mb-xs-4">
-                        <a class="nav-link d-flex justify-content-center list pt-1 pb-1" href="Homepage.html">Home</a>
+                        <a class="nav-link d-flex justify-content-center list pt-1 pb-1" href="index.html">Home</a>
                     </li>
                     <li class="nav-item nav-element mb-lg-0 mb-xxl-0 mb-md-3 mb-sm-4 mb-xs-4">
                         <a class="nav-link d-flex justify-content-center list pt-1 pb-1" href="about-us.html">About</a>

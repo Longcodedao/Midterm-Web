@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    header('Location: admin-login.html');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,14 +41,7 @@
 
 <body>
 
-    <?php
-session_start();
 
-if (!isset($_SESSION['user'])) {
-    header('Location: admin-login.html');
-    exit;
-}
-?>
 
     <div class="wrapper">
         <nav class="navbar navbar-expand-lg navbar-light bg-light pt-3 pb-3">

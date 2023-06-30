@@ -1,3 +1,18 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    header('Location: admin-login.html');
+    exit;
+}
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,20 +51,6 @@
 </head>
 
 <body>
-
-    <?php
-
-        session_start();
-
-        if (!isset($_SESSION['user'])){
-            header('Location: admin-login.html');
-        exit;
-        }
-
-        if (isset($_GET['id'])) {
-            $id = $_GET['id'];
-        }
-?>
 
     <div class="wrapper">
         <nav class="navbar navbar-expand-lg navbar-light bg-light pt-3 pb-3">
