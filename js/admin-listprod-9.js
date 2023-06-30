@@ -3,7 +3,7 @@ $(document).ready(function () {
   var dataTable = $("#products-table").DataTable({
     processing: true,
     serverSide: true,
-    searching: true,
+    searching: false,
     ordering: true,
     ajax: {
       url: "../admin/php/listprod.php",
@@ -399,15 +399,15 @@ $(document).ready(function () {
   // Check initial scroll position to show/hide the buttons
   $(window).trigger("scroll");
 
-  $('#log-out').click(function() {
+  $("#log-out").click(function () {
     $.ajax({
-        url: "php/delete-session.php",
-        type: "POST",
-        processData: false,
-        contentType: false,
-        success: function(response) {
-            window.location.href = 'admin-login.html';
-        }
-    })
-  })
+      url: "php/delete-session.php",
+      type: "POST",
+      processData: false,
+      contentType: false,
+      success: function (response) {
+        window.location.href = "admin-login.html";
+      },
+    });
+  });
 });

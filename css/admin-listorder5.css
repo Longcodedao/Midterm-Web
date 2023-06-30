@@ -102,78 +102,58 @@ nav {
     padding-bottom: 1rem;
   }
 }
-
-/* -------------------- Body -------------------------------- */
-
-.title {
-  text-transform: uppercase;
+/* ------------------- custom csss ------------------------ */
+.fa-circle-info {
+  font-size: 1.5rem !important;
+  color: rgb(149, 202, 100);
 }
 
-.column-flex {
-  flex-direction: column;
-}
-
-.modal-customed {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-/* ====================================== popups ================================================= */
-
-#products-table td,
-#products-table th {
-  text-transform: none !important;
-}
-
-#popup-edit {
-  display: none;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-@media only screen and (max-width: 560px) {
-  .customed-modal {
-    max-width: 95% !important;
-  }
-}
-
-.customised-input {
-  border: 2px rgb(82, 63, 0) solid !important;
-  border-radius: 1rem !important;
-}
-
-.edit-confirm-button {
-  border-radius: 1rem;
-  padding: 12px 8px !important;
-  width: 100%;
-  background-color: rgb(82, 63, 0) !important;
-  transition: background-color 250ms ease-in-out !important;
+.detail-btn {
+  background-color: rgb(88, 60, 0) !important;
   border: none !important;
 }
 
-.edit-confirm-button:hover {
-  background-color: rgb(0, 145, 43) !important;
-  transition: background-color 250ms ease-in-out !important;
-}
-.label-edit {
-  color: rgb(1, 128, 1);
-}
-.error {
-  color: red !important;
+.detail-btn:hover {
+  background-color: rgb(2, 99, 39) !important;
+  transition: background-color 0.5s ease-in-out !important;
 }
 
-/* ----- popup delete ---- */
-
-#popup-delete {
-  display: none;
-  background-color: rgba(12, 11, 11, 0.5);
+.detail-btn:hover .fa-circle-info {
+  color: rgb(245, 222, 92) !important;
+  transition: color 0.5s ease-in-out !important;
 }
 
-.cross-icon {
-  color: rgb(184, 0, 0);
-  font-size: 5rem;
+/* ====================== CUSTOMISE DATATABLE ========================= */
+#orders-table_filter {
+  margin-bottom: 15px;
+}
+#orders-table thead > tr > th {
+  background-color: rgb(126, 102, 22) !important;
+  color: rgb(250, 242, 136) !important;
+  border: 1px solid rgb(1, 65, 20) !important;
 }
 
+#orders-table tbody > tr.odd > td {
+  background-color: rgb(226, 231, 151) !important;
+  color: rgb(90, 69, 0) !important;
+}
+
+#orders-table tbody > tr.even > td {
+  background-color: rgb(226, 252, 181) !important;
+  color: rgb(1, 78, 1) !important;
+}
+
+#orders-table tbody > tr > td {
+  border: 1px solid rgb(1, 65, 20) !important;
+}
+
+#orders-table tbody > tr > td > a:visited {
+  color: rgb(126, 86, 0);
+}
+
+#orders-table tbody > tr > td > a:hover {
+  color: rgb(7, 151, 7);
+}
 /* --------------------- Footer reused ------------------------ */
 .footer {
   margin-top: 30px;

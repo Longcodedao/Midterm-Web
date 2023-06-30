@@ -15,7 +15,7 @@ body {
 /* ----------------- Navigation Bar --------------- */
 
 .nav-element {
-  margin-right: 50px;
+  margin-right: 70px;
 }
 
 /* ---- hamburger icon ---------------- */
@@ -69,10 +69,6 @@ nav {
   .nav-element {
     margin-bottom: 10px;
   }
-
-  .nav-link {
-    font-size: 20px !important;
-  }
   .active {
     margin-top: 12px;
   }
@@ -96,33 +92,161 @@ nav {
   .nav-element {
     margin-right: 30px;
   }
-
-  .customed-logout {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
 }
-/* ------------------- custom csss ------------------------ */
-.fa-circle-info {
-  font-size: 1.5rem !important;
-  color: rgb(149, 202, 100);
+/* -------------------------- Form Order ------------------------------- */
+
+.form-wrapper {
+  background-image: url("../images/background-order-form-2.png");
+  background-size: 100% 90%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.detail-btn {
-  background-color: rgb(88, 60, 0) !important;
+.text-order {
+  color: rgb(18, 124, 41);
+  font-weight: bold !important;
+  letter-spacing: 2px !important;
+}
+
+.text-col {
+  color: rgb(18, 124, 41);
+}
+
+.customized {
+  border: 2px solid rgb(18, 124, 41);
+  border-radius: 30px;
+  max-width: 93%;
+  background-color: white;
+  z-index: 1000;
+  opacity: 95%;
+  transition: 400ms ease-in-out;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.form-title {
+  letter-spacing: 1.5px !important;
+  font-weight: bold;
+}
+
+.input-form {
+  border: 2px solid rgb(36, 36, 36) !important;
+  background-color: white;
+  border-radius: 15px !important;
+  padding-left: 15px !important;
+}
+
+.submit-button {
+  font-weight: 600 !important;
+  margin-top: 20px;
+  padding: 15px 0px !important;
+  border-radius: 15px !important;
+  font-size: 18px !important;
+  background-color: rgb(4, 201, 4) !important;
+  width: 100%;
+  transition: 500ms ease-in-out !important;
   border: none !important;
 }
 
-.detail-btn:hover {
-  background-color: rgb(2, 99, 39) !important;
-  transition: background-color 0.5s ease-in-out !important;
+.submit-button:hover {
+  transition: 500ms ease-in-out !important;
+  background-color: rgb(1, 109, 1) !important;
 }
 
-.detail-btn:hover .fa-circle-info {
-  color: rgb(245, 222, 92) !important;
-  transition: color 0.5s ease-in-out !important;
+/* ------------------- Warning ----------------------------------------------*/
+
+.error {
+  color: red;
+  font-size: 12px;
 }
-/* --------------------- Footer reused ------------------------ */
+
+/* --------------------- Popup ---------------------------------------- */
+
+#popup {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.price {
+  color: green;
+}
+@media only screen and (max-width: 560px) {
+  .customed-modal {
+    max-width: 95% !important;
+    justify-content: center;
+    /* height: 60vh !important; */
+  }
+}
+.modal-title {
+  color: rgb(0, 73, 0) !important;
+}
+#product-img {
+  margin-left: 1rem !important;
+}
+@media only screen and (max-width: 500px) {
+  #product-name {
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  #product-description {
+    font-size: 0.8rem;
+  }
+  .customer > p {
+    font-size: 0.85rem;
+  }
+}
+/* ------------------- scroll to top and bottom button ------------------------ */
+#scrollToTopBtn,
+#scrollToBottomBtn {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 4rem;
+  height: 4rem;
+  opacity: 0;
+  border-radius: 50%;
+  background-color: #008800;
+  color: rgb(255, 255, 255);
+  font-size: 26px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  z-index: 1000000000000000000;
+  display: none;
+  justify-content: center;
+  text-align: center;
+}
+
+#scrollToTopBtn.active,
+#scrollToBottomBtn.active {
+  opacity: 1;
+  display: block;
+}
+
+@media only screen and (max-width: 600px) {
+  #scrollToTopBtn,
+  #scrollToBottomBtn {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #scrollToTopBtn,
+  #scrollToBottomBtn {
+    right: 1rem;
+    bottom: 1rem;
+    font-size: 1.25rem;
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
+/* ----------------------------Footer Reused ------------------------------ */
+
 .footer {
   margin-top: 30px;
 }
@@ -219,52 +343,4 @@ nav {
   color: #4042ad;
   font-size: 16px;
   text-decoration: none;
-}
-
-/* ------------------- scroll to top and bottom button ------------------------ */
-#scrollToTopBtn,
-#scrollToBottomBtn {
-  position: fixed;
-  right: 2rem;
-  bottom: 2rem;
-  width: 4rem;
-  height: 4rem;
-  opacity: 0;
-  border-radius: 50%;
-  background-color: #008800;
-  color: rgb(255, 255, 255);
-  font-size: 26px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: opacity 0.3s;
-  z-index: 1000000000000000000;
-  display: none;
-  justify-content: center;
-  text-align: center;
-}
-
-#scrollToTopBtn.active,
-#scrollToBottomBtn.active {
-  opacity: 1;
-  display: block;
-}
-
-@media only screen and (max-width: 600px) {
-  #scrollToTopBtn,
-  #scrollToBottomBtn {
-    right: 1rem;
-    bottom: 1rem;
-  }
-}
-
-@media only screen and (max-width: 450px) {
-  #scrollToTopBtn,
-  #scrollToBottomBtn {
-    right: 1rem;
-    bottom: 1rem;
-    font-size: 1.25rem;
-    width: 2.75rem;
-    height: 2.75rem;
-  }
 }
