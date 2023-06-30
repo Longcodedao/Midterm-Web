@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Listing</title>
-    <link rel="stylesheet" href="css/product-listing-8.css" />
+    <link rel="stylesheet" href="css/product-listing-10.css" />
     <script src="https://kit.fontawesome.com/57d08e8260.js" crossorigin="anonymous"></script>
 
     <script defer src="js/product-listing3.js"></script>
@@ -69,7 +69,7 @@ include_once "php/product-listing.php";
             <section class="vh-100 gradient-custom-2">
                 <div class="container py-5 h-100">
                     <div class="d-flex align-items-center justify-content-center h-100">
-                        <div class="col-md-10 col-lg-8 col-xl-6 mx-auto col-10">
+                        <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6 mx-auto col-10">
                             <div class="card card-stepper" style="border-radius: 16px">
                                 <div class="card-header p-4">
                                     <div class="d-flex justify-content-between align-items-center text-center">
@@ -81,7 +81,7 @@ include_once "php/product-listing.php";
                                 </div>
                                 <div class="card-body p-4">
                                     <div class="d-flex flex-row mb-0">
-                                        <div class="flex-fill" id="product-information">
+                                        <div class="flex-fill mr-2 mr-sm-3" id="product-information">
                                             <h5 class="bold" id="popup-name"></h5>
 
                                             <h4 class="mb-3">
@@ -94,7 +94,7 @@ include_once "php/product-listing.php";
                                             </p>
 
                                         </div>
-                                        <div>
+                                        <div class='ml-2 ml-sm-3'>
                                             <img class="align-self-center img-fluid"
                                                 src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp"
                                                 width="250" id="popup-image" />

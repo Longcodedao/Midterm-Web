@@ -183,6 +183,22 @@ hr {
   color: #535353;
 }
 
+@media only screen and (max-width: 380px) {
+  .pets,
+  .return,
+  .water,
+  .eco {
+    font-size: 0.8rem;
+  }
+
+  .pets > i,
+  .return > i,
+  .water > i,
+  .eco > i {
+    font-size: 1.5rem;
+  }
+}
+
 .pets > i,
 .pets > div {
   color: rgb(214, 125, 8);
@@ -232,6 +248,7 @@ hr {
 .description {
   color: rgb(117, 117, 117);
 }
+
 /* --------------------------- Footer(Reused from midterm) generated fro: https://svgwave.in/---------------------------------------- */
 
 .footer {
