@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/product-detail-admin2.css" />
     <script src="https://kit.fontawesome.com/57d08e8260.js" crossorigin="anonymous"></script>
 
-    <script defer src="../js/product-detail-admin5.js"></script>
+    <script defer src="../js/product-detail-admin7.js"></script>
 
     <!-- ---- IMPORTING JQUERY, JQUERYUI, BOOTSTRAP----- -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
@@ -116,7 +116,7 @@
                         </button>
                         <hr />
                         <button class="btn btn-primary page-button" id="back-button"
-                            onclick="location.href = '../admin/admin-listprod.html'">
+                            onclick="location.href = '../admin/admin-listprod.php'">
                             Back to product list!
                         </button>
 
@@ -196,7 +196,7 @@
                                     </div>
 
                                     <div class="button-wrapper d-flex justify-content-center mt-4">
-                                        <input type="hidden" name="operation" id="operation" value="Edit" />
+                                        <input type="hidden" name="edit-operation" id="operation" value="Edit" />
                                         <button type="submit" class="btn btn-primary edit-confirm-button">
                                             Confirm
                                         </button>

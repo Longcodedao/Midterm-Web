@@ -145,7 +145,7 @@ $(document).ready(function () {
 
     if ($(this).valid()) {
       $.ajax({
-        url: "../admin/php/edit-2.php",
+        url: "../admin/php/edit-3.php",
         method: "POST",
         data: formData,
         contentType: false,

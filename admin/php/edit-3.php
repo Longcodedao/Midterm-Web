@@ -19,20 +19,22 @@
         // Set cookie to expires
         // setcookie('product_details', '', time() - 100, '/');
 
-        if ($result) {
-            $array_encode = array(
-                'id' => $id,
-            );
-            echo json_encode($array_encode);
-        } else{
-            $response = array(
-                'error' => 'Database update failed'
-            );
-            echo json_encode($response);
-        }
+        // if ($result) {
+        //     $array_encode = array(
+        //         'id' => $id,
+        //     );
+        //     // echo json_encode($array_encode);
+        // } else{
+        //     $response = array(
+        //         'error' => 'Database update failed'
+        //     );
+        //     // echo json_encode($response);
+        // }
         
-        $conn -> close();
+        // $conn -> close();
         // header("Location: ../product-detail-admin.html?id={$id}");
         // exit;
     }
+
+    // echo $_POST['edit-operation'];
 ?>

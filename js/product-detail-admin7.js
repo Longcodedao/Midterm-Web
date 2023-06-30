@@ -116,15 +116,14 @@ $(document).ready(function () {
     e.preventDefault();
 
     var formData = new FormData(this);
-    console.log(formData);
+    // console.log(formData);
     formData.append("id", productId);
 
     if ($(this).valid()) {
       $.ajax({
-        url: "../admin/php/edit-2.php",
+        url: "../admin/php/edit-3.php",
         method: "POST",
         data: formData,
-        dataType: "json",
         contentType: false,
         processData: false,
 
@@ -139,8 +138,8 @@ $(document).ready(function () {
         },
         error: function (jqXHR, textStatus, errorThrown) {
           // Code to be executed if the AJAX request encounters an error
-          alert("An error has occured");
           console.log(textStatus, errorThrown); // Log the error details
+          alert("An error has occured");
           window.location.href = `../admin/product-detail-admin.php?id=${productId}`;
         },
       });
@@ -183,7 +182,7 @@ $(document).ready(function () {
         }
 
         // Perform further processing or submit the form data
-        console.log(formData);
+        // console.log(formData);
       }
     },
   });

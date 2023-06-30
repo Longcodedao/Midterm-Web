@@ -274,7 +274,7 @@
                       >
                         <input
                           type="hidden"
-                          name="operation"
+                          name="edit-operation"
                           id="edit-operation"
                           value="Edit"
                         />
