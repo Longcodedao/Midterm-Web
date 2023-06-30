@@ -108,6 +108,18 @@ nav {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 19000000000000000000;
 }
+
+#popup-image {
+  margin-left: 12px !important;
+}
+
+#product-information {
+  max-width: 55%;
+}
+
+.popup-image-wrapper {
+  max-width: 40%;
+}
 .custom-height {
   height: 60px;
 }
@@ -133,6 +145,12 @@ a {
   background-color: #1f8d26 !important;
 
   cursor: pointer;
+}
+
+@media only screen and (max-width: 520px) {
+  .card-stepper {
+    width: 95vw !important;
+  }
 }
 
 #cancel-btn:hover {
