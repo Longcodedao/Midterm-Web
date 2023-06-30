@@ -1,6 +1,5 @@
 // --------------- JQUERY ANIMATE top to bottom scroll ------------------------------
 $(document).ready(function () {
-
   var productID;
 
   // Scroll to bottom button
@@ -53,14 +52,15 @@ $(document).ready(function () {
     validateAddress();
   });
 
-  $("#city").on("input", function(){
+  $("#city").on("input", function () {
     validateCity();
-  })
+  });
 
   $("#phone").on("input", function () {
     validatePhone();
   });
 
+  getProductValue();
 
   $("#myForm").submit(function (event) {
     event.preventDefault();
@@ -72,7 +72,6 @@ $(document).ready(function () {
       validatePhone() &&
       validateCity()
     ) {
-      getProductValue();
       setUpCustomerDetail();
       $("#popup").fadeIn();
     }
@@ -82,31 +81,26 @@ $(document).ready(function () {
     $("#popup").fadeOut();
   });
 
-
-  $("#verify-order").click(function() {
+  $("#verify-order").click(function () {
     var orderID = generateRandomKey();
     var orderID_data = new FormData();
-    orderID_data.append('order_id', orderID);
+    orderID_data.append("order_id", orderID);
     $.ajax({
       url: "php/session_data_orderid.php",
       type: "POST",
       data: orderID_data,
       processData: false,
       contentType: false,
-      success: function(response){
+      success: function (response) {
         // alert(response);
         // var formData = createFormData(orderID);
         createOrder(orderID);
       },
-      error: function(xhr, status, error) {
-        
-      }
-    })
-    
+      error: function (xhr, status, error) {},
+    });
+
     console.log(productID);
-  })
-
-
+  });
 });
 
 function validateName() {
@@ -121,7 +115,7 @@ function validateName() {
   }
 }
 
-function validateCity(){
+function validateCity() {
   var city = $("#city").val();
 
   if (city === "") {
@@ -187,18 +181,17 @@ function validatePhone() {
   }
 }
 
-
 function getProductValue() {
   $.ajax({
     url: "php/get_session_data.php",
     type: "GET",
-    success: function(response){
+    success: function (response) {
       // alert(response);
       productID = response;
       console.log(productID);
       retrieveProduct(productID);
-    }
-  })
+    },
+  });
 }
 
 function retrieveProduct(id) {
@@ -206,32 +199,32 @@ function retrieveProduct(id) {
     url: "admin/php/fetch_product_data.php?id=" + id,
     type: "GET",
     dataType: "json",
-    success: function(response){
+    success: function (response) {
       setUpData(response);
-    }
-  })
+    },
+  });
 }
 
-function setUpData(response){
-  var img = $('#product-img');
+function setUpData(response) {
+  var img = $("#product-img");
   img.attr("src", response["image"]);
   $("#product-name").html(`${response["name"]}`);
   $("#product-price").html(`${response["price"]}`);
   $("#product-description").html(`${response["description"]}`);
 }
 
-function setUpCustomerDetail(){
-  var name = $('#name').val();
-  var email = $('#email').val();
-  var address = $('#address').val();
-  var city = $('#city').val();
-  var phone = $('#phone').val();
-  
-  $('#name-user').html(name);
-  $('#email-user').html(email);
-  $('#address-user').html(address);
-  $('#city-user').html(city);
-  $('#phone-user').html(phone);
+function setUpCustomerDetail() {
+  var name = $("#name").val();
+  var email = $("#email").val();
+  var address = $("#address").val();
+  var city = $("#city").val();
+  var phone = $("#phone").val();
+
+  $("#name-user").html(name);
+  $("#email-user").html(email);
+  $("#address-user").html(address);
+  $("#city-user").html(city);
+  $("#phone-user").html(phone);
 }
 
 /* -------------------------  CREATE A FORM DATA ------------------------- */
@@ -240,33 +233,32 @@ function createFormData(orderID) {
   // console.log(productID);
   var formData = new FormData();
 
-  formData.append('order_id', orderID);
-  formData.append('product_id', productID);
-  formData.append('name', $('#name-user').html());
-  formData.append('email', $('#email-user').html());
-  formData.append('address', $('#address-user').html());
-  formData.append('city', $('#city-user').html());
-  formData.append('phone', $('#phone-user').html());
-  formData.append('user_data', 'Create');
+  formData.append("order_id", orderID);
+  formData.append("product_id", productID);
+  formData.append("name", $("#name-user").html());
+  formData.append("email", $("#email-user").html());
+  formData.append("address", $("#address-user").html());
+  formData.append("city", $("#city-user").html());
+  formData.append("phone", $("#phone-user").html());
+  formData.append("user_data", "Create");
 
   console.log(formData);
   return formData;
 }
 
-
-function createOrder(orderID){
+function createOrder(orderID) {
   var formData = createFormData(orderID);
   $.ajax({
-    url: 'php/input_customer_data.php',
-    type: 'POST',
+    url: "php/input_customer_data.php",
+    type: "POST",
     data: formData,
     processData: false,
     contentType: false,
-    success: function(response){
+    success: function (response) {
       // alert(response);
-      window.location.href = 'order-confirming.html?orderId=' + orderID;
-    }
-  })
+      window.location.href = "order-confirming.html?orderId=" + orderID;
+    },
+  });
 }
 
 /* -------------------------  GENERATE THE ORDER ID ---------------------- */
@@ -284,4 +276,3 @@ function generateRandomKey() {
 
   return key;
 }
-
