@@ -126,10 +126,12 @@ a {
 
 #order-btn {
   border: none;
+  background-color: #02af0a !important;
 }
 #order-btn:hover {
-  background-color: #016906 !important;
   transition: background-color 0.3s ease;
+  background-color: #1f8d26 !important;
+
   cursor: pointer;
 }
 

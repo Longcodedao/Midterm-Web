@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Listing</title>
-    <link rel="stylesheet" href="css/product-listing-10.css" />
+    <link rel="stylesheet" href="css/product-listing-11.css" />
     <script src="https://kit.fontawesome.com/57d08e8260.js" crossorigin="anonymous"></script>
 
     <script defer src="js/product-listing3.js"></script>
@@ -96,6 +96,7 @@ include_once "php/product-listing.php";
                                         </div>
                                         <div class='ml-2 ml-sm-3'>
                                             <img class="align-self-center img-fluid"
+                                                alt="image of that product inside the popup"
                                                 src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/6.webp"
                                                 width="250" id="popup-image" />
                                         </div>
@@ -106,13 +107,13 @@ include_once "php/product-listing.php";
                                         <button
                                             class="card-body text-center bg-primary text-white round-left-border m-0"
                                             id="order-btn">
-                                            <h5>Order</h5>
+                                            <span>Order</span>
                                         </button>
 
                                         <a href="#"
                                             class="card-body text-center bg-danger text-white round-right-border m-0"
                                             id="cancel-btn">
-                                            <h5>Cancel</h5>
+                                            <span>Cancel</span>
                                         </a>
                                     </div>
                                 </div>

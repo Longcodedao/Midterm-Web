@@ -1,9 +1,14 @@
 <?php
 
-$servername = "fdb1030.awardspace.net";
-$username = "4332767_witterwither";
-$database = "4332767_witterwither";
-$password = "dinhchinh123";
+// $servername = "fdb1030.awardspace.net";
+// $username = "4332767_witterwither";
+// $database = "4332767_witterwither";
+// $password = "dinhchinh123";
+
+$servername = "localhost";
+$username = "root";
+$database = "test";
+$password = "";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
