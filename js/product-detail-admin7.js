@@ -21,7 +21,7 @@ var urlParams = new URLSearchParams(window.location.search);
 });
 
 
-$(document).ready(function () {
+$(window).on("load", function () {
   // Scroll to bottom button
   $("#scrollToBottomBtn").click(function (event) {
     event.preventDefault();
@@ -64,7 +64,7 @@ $(document).ready(function () {
 // ------------- popup edit and delete------------
 
 // -------- validate form --------------------------------
-$(document).ready(function () {
+$(window).on("load", function () {
   $.validator.addMethod(
     "validUrl",
     function (value, element) {
