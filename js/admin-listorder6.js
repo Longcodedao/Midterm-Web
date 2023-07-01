@@ -18,8 +18,22 @@ $(document).ready(function () {
 
     columns: [
       { data: "OrderID" },
-      { data: "Date" },
-      { data: "name" },
+      {
+        data: "Date",
+      },
+      {
+        data: "name",
+        render: function (data, type, row) {
+          let productDetailURL = row.id;
+          return (
+            '<a href="../admin/product-detail-admin.php?id=' +
+            productDetailURL +
+            '">' +
+            data +
+            "</a>"
+          );
+        },
+      },
       { data: "price" },
       { data: "Name" },
       { data: "Phone" },
@@ -76,15 +90,15 @@ $(document).ready(function () {
   // Check initial scroll position to show/hide the buttons
   $(window).trigger("scroll");
 
-  $('#log-out').click(function() {
+  $("#log-out").click(function () {
     $.ajax({
-        url: "php/delete-session.php",
-        type: "POST",
-        processData: false,
-        contentType: false,
-        success: function(response) {
-            window.location.href = 'admin-login.html';
-        }
-    })
-  })
+      url: "php/delete-session.php",
+      type: "POST",
+      processData: false,
+      contentType: false,
+      success: function (response) {
+        window.location.href = "admin-login.html";
+      },
+    });
+  });
 });
