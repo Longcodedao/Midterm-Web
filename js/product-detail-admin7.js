@@ -1,4 +1,26 @@
 // --------------- JQUERY ANIMATE top to bottom scroll ------------------------------
+var urlParams = new URLSearchParams(window.location.search);
+  var productId = urlParams.get("id");
+  // var refresh = getParameterById("refresh");
+  // console.log(refresh);
+
+  console.log(productId);
+  // var productDetailJson = getCookie("product_details");
+  // console.log(productDetailJson);
+
+  $.ajax({
+    url: "../admin/php/fetch_product_data.php?id=" + productId,
+    type: "GET",
+    dataType: "json",
+    success: function (response) {
+      productDetail = response;
+      console.log(response);
+      setUpData(response);
+      
+    },
+});
+
+
 $(document).ready(function () {
   // Scroll to bottom button
   $("#scrollToBottomBtn").click(function (event) {
@@ -71,25 +93,26 @@ $(document).ready(function () {
 
   // Get the parameter of the url and send request to the database
 
-  var urlParams = new URLSearchParams(window.location.search);
-  var productId = urlParams.get("id");
-  // var refresh = getParameterById("refresh");
-  // console.log(refresh);
+  // var urlParams = new URLSearchParams(window.location.search);
+  // var productId = urlParams.get("id");
+  // // var refresh = getParameterById("refresh");
+  // // console.log(refresh);
 
-  console.log(productId);
-  // var productDetailJson = getCookie("product_details");
-  // console.log(productDetailJson);
+  // console.log(productId);
+  // // var productDetailJson = getCookie("product_details");
+  // // console.log(productDetailJson);
 
-  $.ajax({
-    url: "../admin/php/fetch_product_data.php?id=" + productId,
-    type: "GET",
-    dataType: "json",
-    success: function (response) {
-      productDetail = response;
-      console.log(response);
-      setUpData(response);
-    },
-  });
+  // $.ajax({
+  //   url: "../admin/php/fetch_product_data.php?id=" + productId,
+  //   type: "GET",
+  //   dataType: "json",
+  //   success: function (response) {
+  //     productDetail = response;
+  //     console.log(response);
+  //     setUpData(response);
+      
+  //   },
+  // });
 
   $(".open-edit-modal").click(function () {
     $("#popup-edit").fadeIn();
