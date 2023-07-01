@@ -104,6 +104,19 @@ hr {
   margin-top: 0 !important;
 }
 
+#back-to-order-button {
+  padding: 15px 25px !important;
+  border-radius: 1rem !important;
+  background-color: rgb(100, 60, 8) !important;
+  transition: background-color 0.5s ease-in-out;
+  border: none !important;
+}
+
+#back-to-order-button:hover {
+  background-color: rgb(31, 150, 31) !important;
+  transition: background-color 0.5s ease-in-out;
+}
+
 /* --------------------------- Footer(Reused from midterm) generated fro: https://svgwave.in/---------------------------------------- */
 
 .footer {

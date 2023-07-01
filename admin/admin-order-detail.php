@@ -16,7 +16,7 @@ if (!isset($_SESSION['user'])) {
 
     <script src="https://kit.fontawesome.com/57d08e8260.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="../css/admin-order-detail1.css" />
+    <link rel="stylesheet" href="../css/admin-order-detail2.css" />
 
 
     <?php
@@ -163,6 +163,10 @@ $conn->close();
                     <p class="customer-address-wrapper">
                         Address: <span class="customer-address"><?php echo $customerAddress; ?></span>
                     </p>
+
+                    <button id="back-to-order-button" class="btn btn-success mt-3"
+                        onclick="location.href = 'admin-listprod.php'">Back to order
+                        list!</button>
                 </div>
             </div>
         </div>
