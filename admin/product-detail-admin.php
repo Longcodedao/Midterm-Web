@@ -25,7 +25,39 @@ if (isset($_GET['id'])) {
     <link rel="stylesheet" href="../css/product-detail-admin2.css" />
     <script src="https://kit.fontawesome.com/57d08e8260.js" crossorigin="anonymous"></script>
 
-    <script defer src="../js/product-detail-admin7.js"></script>
+    <?php
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+} else {
+    // Handle the case when orderID is not provided in the URL
+    echo "OrderID is missing.";
+    exit;
+}
+
+require_once "php/databases.php";
+
+$query = "SELECT * FROM products";
+
+$result = $conn->query($query);
+
+if ($result && $result->num_rows > 0) {
+    $product = $result->fetch_assoc();
+
+    $productName = $product["name"];
+    $productDescription = $product["description"];
+    $productPrice = $product["price"];
+    $productImage = $product["image"];
+    $productPurchaseTime = $product["purchasetime"];
+} else {
+    echo "Product not found";
+    exit;
+}
+
+$conn->close();
+
+?>
+
+
 
     <!-- ---- IMPORTING JQUERY, JQUERYUI, BOOTSTRAP----- -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
@@ -85,25 +117,30 @@ if (isset($_GET['id'])) {
             </div>
         </nav>
 
+
+
+
         <div class="container mt-3 mt-xxl-4">
             <div class="row d-flex justify-content-center">
                 <div class="col-md-5 mx-5">
-                    <img src="" alt="" class="img-fluid product-head-image" id="image-product" />
+                    <img src="<?php echo $productImage; ?>" alt="an image of a product"
+                        class="img-fluid product-head-image" id="image-product" />
                 </div>
                 <div class="col-md-5 mt-md-3 mt-sm-3 mt-3">
-                    <h2 class="product-name" id="product-name">Product name</h2>
+                    <h2 class="product-name" id="product-name"><?php echo $productName ?></h2>
                     <h4 class="price-header">
-                        $<span class="product-price" id="product-price"></span>
+                        $<span class="product-price" id="product-price"> <?php echo $productPrice ?>
+                        </span>
                     </h4>
 
                     <h5 class="times-purchase-header" style="color: rgb(2, 114, 26)">
                         Purchased:
-                        <span class="product-price" id="purchase-time"></span> times
+                        <span class="product-price" id="purchase-time"><?php echo $productPurchaseTime ?></span> times
                     </h5>
 
                     <p class="description-wrapper">
                         Description:
-                        <span class="product-description" id="product-description">
+                        <span class="product-description" id="product-description"> <?php echo $productDescription ?>
                         </span>
                     </p>
 
@@ -126,7 +163,7 @@ if (isset($_GET['id'])) {
             </div>
         </div>
 
-        <div class=" modal" id="popup-delete">
+        <div class="modal" id="popup-delete">
             <div class="modal-dialog modal-md customed-modal modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -175,25 +212,30 @@ if (isset($_GET['id'])) {
                                 </h6>
                                 <form class="edit-product-form" id="edit-product-form" method="POST">
                                     <div class="form-group mb-2">
-                                        <label for="name" class="mb-1 label-edit">Name:</label>
+                                        <label for="name" class="mb-1 label-edit">Name:
+                                        </label>
                                         <input type="text" class="form-control customised-input" id="name-edit"
-                                            name="name" required placeholder="Enter the product name" />
+                                            value="<?php echo $productName ?>" name="name" required
+                                            placeholder="Enter the product name" />
                                     </div>
                                     <div class="form-group mb-2">
                                         <label for="description" class="mb-1 label-edit">Description:</label>
                                         <input type="text" class="form-control customised-input" id="description-edit"
-                                            required name="description" placeholder="Enter the product description" />
+                                            required name="description" placeholder="Enter the product description"
+                                            value="<?php echo $productDescription ?>" />
                                     </div>
 
                                     <div class="form-group mb-2">
                                         <label for="price" class="mb-1 label-edit">Price:</label>
                                         <input type="number" class="form-control customised-input" id="price-edit"
-                                            name="price" required placeholder="Enter the product price" />
+                                            name="price" required placeholder="Enter the product price"
+                                            value="<?php echo $productPrice ?>" />
                                     </div>
                                     <div class="form-group">
                                         <label for="image" class="mb-1 label-edit">Image:</label>
                                         <input type="url" class="form-control customised-input" id="image-edit"
-                                            name="image" required placeholder="Enter the image URL" />
+                                            name="image" required placeholder="Enter the image URL"
+                                            value="<?php echo $productImage ?>" />
                                     </div>
 
                                     <div class="button-wrapper d-flex justify-content-center mt-4">
@@ -360,6 +402,8 @@ if (isset($_GET['id'])) {
             </div>
         </div>
     </div>
+    <script src="../js/product-detail-admin9.js"></script>
+
 </body>
 
 </html>
