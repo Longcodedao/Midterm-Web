@@ -86,7 +86,7 @@ $conn->close();
 
     <div class="wrapper">
         <nav class="navbar navbar-expand-lg navbar-light bg-light pt-3 pb-3">
-            <a class="navbar-brand ms-6 pt-2 pb-2 fs-2.5" id="logo" href="#">SmartAgri</a>
+            <a class="navbar-brand ms-6 pt-2 pb-2 fs-2.5" id="logo" href="index.php">SmartAgri</a>
             <button id="toggle" class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse"
                 data-bs-target="#btn">
                 <i class="fa-solid fa-bars hamburger-icon"></i>
