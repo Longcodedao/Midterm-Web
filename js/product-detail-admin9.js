@@ -9,43 +9,7 @@ console.log(productId);
 // var productDetailJson = getCookie("product_details");
 // console.log(productDetailJson);
 
-$(document).ready(function (){
-  var urlParams = new URLSearchParams(window.location.search);
-  var productId = urlParams.get("id");
-  // var refresh = getParameterById("refresh");
-  // console.log(refresh);
-
-  console.log(productId);
-  // var productDetailJson = getCookie("product_details");
-  // console.log(productDetailJson);
-
-  $.ajax({
-    url: "../admin/php/fetch_product_data.php?id=" + productId,
-    type: "GET",
-    dataType: "json",
-    success: function (response) {
-      productDetail = response;
-      console.log(response);
-      setUpData(response);
-      
-    },
-  });
-})
-
-
-
-
-// $.ajax({
-//   url: "../admin/php/fetch_product_data.php?id=" + productId,
-//   type: "GET",
-//   dataType: "json",
-//   success: function (response) {
-//     productDetail = response;
-//     console.log(response);
-//     setUpData(response);
-//   },
-// });
-
+// ======================== SCROLL TO TOP AND BOTTOM BUTTON =============================
 $(window).on("load", function () {
   // Scroll to bottom button
   $("#scrollToBottomBtn").click(function (event) {
@@ -141,10 +105,10 @@ $(window).on("load", function () {
 
   $(".open-edit-modal").click(function () {
     $("#popup-edit").fadeIn();
-    $("#name-edit").val(productDetail["name"]);
-    $("#description-edit").val(productDetail["description"]);
-    $("#price-edit").val(productDetail["price"]);
-    $("#image-edit").val(productDetail["image"]);
+    $("#name-edit").val($("#product-name").val);
+    $("#description-edit").val($("#product-description").val);
+    $("#price-edit").val($("#product-price").val);
+    $("#image-edit").val($("#image-product").attr("src"));
   });
 
   $("#btn-close").click(function () {
