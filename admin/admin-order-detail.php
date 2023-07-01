@@ -59,7 +59,7 @@ if ($result && $result->num_rows > 0) {
 $conn->close();
 
 ?>
-    <title>OrderID: <?php echo $orderID ?></title>
+    <title>Order ID: <?php echo $orderID ?></title>
 
 
     <script defer src="../js/admin-order-detail1.js"></script>
