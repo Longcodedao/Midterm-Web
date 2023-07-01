@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/product-listing-13.css" />
     <script src="https://kit.fontawesome.com/57d08e8260.js" crossorigin="anonymous"></script>
 
-    <script defer src="js/product-listing3.js"></script>
+    <script defer src="js/product-listing4.js"></script>
 
     <!-- ---- IMPORTING JQUERY, JQUERYUI, BOOTSTRAP----- -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"

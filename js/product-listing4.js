@@ -171,10 +171,9 @@ $(document).ready(function () {
             productDetail = response;
             console.log(response);
             setUpData(response);
+            $("#popup-container").fadeIn();
           }
         });
-      
-      $("#popup-container").fadeIn();
       });
     
       
