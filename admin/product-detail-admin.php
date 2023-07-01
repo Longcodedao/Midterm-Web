@@ -20,7 +20,6 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Detail</title>
 
     <link rel="stylesheet" href="../css/product-detail-admin2.css" />
     <script src="https://kit.fontawesome.com/57d08e8260.js" crossorigin="anonymous"></script>
@@ -57,6 +56,7 @@ $conn->close();
 
 ?>
 
+    <title><?php echo $productName ?></title>
 
 
     <!-- ---- IMPORTING JQUERY, JQUERYUI, BOOTSTRAP----- -->

@@ -13,11 +13,54 @@ if (!isset($_SESSION['user'])) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Order Detail</title>
 
     <script src="https://kit.fontawesome.com/57d08e8260.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../css/admin-order-detail1.css" />
+
+
+    <?php
+// Retrieve the orderID from the URL parameter
+if (isset($_GET['orderID'])) {
+    $orderID = $_GET['orderID'];
+} else {
+    // Handle the case when orderID is not provided in the URL
+    echo "OrderID is missing.";
+    exit;
+}
+
+require_once "php/databases.php";
+
+// Fetch the order info from the orderID
+$query = "SELECT o.OrderID, o.Date, p.name AS ProductName, p.price AS TotalValue,
+ c.Name AS CustomerName, c.Phone AS CustomerPhone, c.Email AS CustomerEmail, c.Address AS CustomerAddress, p.image as ProductImage
+FROM orders AS o INNER JOIN customers AS c ON o.CustomerID = c.ID
+INNER JOIN products AS p ON o.ProductID = p.id WHERE o.OrderID = '$orderID'";
+
+$result = $conn->query($query);
+
+if ($result && $result->num_rows > 0) {
+    $order = $result->fetch_assoc();
+    $orderDate = $order['Date'];
+    $productName = $order['ProductName'];
+    $totalValue = $order['TotalValue'];
+    $customerName = $order['CustomerName'];
+    $customerPhone = $order['CustomerPhone'];
+    $customerEmail = $order['CustomerEmail'];
+    $customerAddress = $order['CustomerAddress'];
+    $productImage = $order['ProductImage'];
+} else {
+    // Handle the case when the order is not found in the database
+    echo "Order not found.";
+    exit;
+}
+
+// Close the database connection
+$conn->close();
+
+?>
+    <title>OrderID: <?php echo $orderID ?></title>
+
 
     <script defer src="../js/admin-order-detail1.js"></script>
 
@@ -77,46 +120,6 @@ if (!isset($_SESSION['user'])) {
 
         <!-- -------------------- body -------------------- -->
 
-        <?php
-// Retrieve the orderID from the URL parameter
-if (isset($_GET['orderID'])) {
-    $orderID = $_GET['orderID'];
-} else {
-    // Handle the case when orderID is not provided in the URL
-    echo "OrderID is missing.";
-    exit;
-}
-
-require_once "php/databases.php";
-
-// Fetch the order info from the orderID
-$query = "SELECT o.OrderID, o.Date, p.name AS ProductName, p.price AS TotalValue,
- c.Name AS CustomerName, c.Phone AS CustomerPhone, c.Email AS CustomerEmail, c.Address AS CustomerAddress, p.image as ProductImage
-FROM orders AS o INNER JOIN customers AS c ON o.CustomerID = c.ID
-INNER JOIN products AS p ON o.ProductID = p.id WHERE o.OrderID = '$orderID'";
-
-$result = $conn->query($query);
-
-if ($result && $result->num_rows > 0) {
-    $order = $result->fetch_assoc();
-    $orderDate = $order['Date'];
-    $productName = $order['ProductName'];
-    $totalValue = $order['TotalValue'];
-    $customerName = $order['CustomerName'];
-    $customerPhone = $order['CustomerPhone'];
-    $customerEmail = $order['CustomerEmail'];
-    $customerAddress = $order['CustomerAddress'];
-    $productImage = $order['ProductImage'];
-} else {
-    // Handle the case when the order is not found in the database
-    echo "Order not found.";
-    exit;
-}
-
-// Close the database connection
-$conn->close();
-
-?>
 
 
         <div class="container mt-3">
