@@ -1,4 +1,4 @@
-# Midterm Project - Web Design and Development
+# Project - Web Design and Development
 ### Hello, before reading this README.md file, we are going to show you a picture of some cute cats to lighten up your day.
 <picture>
  <source media="(prefers-color-scheme: dark)" srcset="https://i.etsystatic.com/9688790/r/il/ed645e/3544142573/il_570xN.3544142573_c89c.jpg">
