@@ -36,7 +36,7 @@ if (isset($_GET['id'])) {
 
 require_once "php/databases.php";
 
-$query = "SELECT * FROM products";
+$query = "SELECT * FROM products WHERE id = '$id'";
 
 $result = $conn->query($query);
 
