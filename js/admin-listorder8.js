@@ -34,7 +34,7 @@ $(document).ready(function () {
           );
         },
       },
-      { data: "price" },
+      { data: "OrderValue" },
       { data: "Name" },
       { data: "Phone" },
       { data: "Email" },

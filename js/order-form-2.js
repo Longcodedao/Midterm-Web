@@ -255,9 +255,15 @@ function createOrder(orderID) {
     processData: false,
     contentType: false,
     success: function (response) {
-      // alert(response);
+      alert(response);
       window.location.href = "order-confirming.html?orderId=" + orderID;
-    },
+    },error: function(xhr, status, error) {
+      // Handle error
+      alert('Error Has occured');
+      console.log('Ajax request error:');
+      console.log('Status: ' + status);
+      console.log('Error: ' + error);
+    }
   });
 }
 

@@ -32,7 +32,7 @@ if (isset($_GET['orderID'])) {
 require_once "php/databases.php";
 
 // Fetch the order info from the orderID
-$query = "SELECT o.OrderID, o.Date, p.name AS ProductName, p.price AS TotalValue,
+$query = "SELECT o.OrderID, o.Date, p.name AS ProductName, o.OrderValue AS TotalValue,
  c.Name AS CustomerName, c.Phone AS CustomerPhone, c.Email AS CustomerEmail, c.Address AS CustomerAddress, p.image as ProductImage
 FROM orders AS o INNER JOIN customers AS c ON o.CustomerID = c.ID
 INNER JOIN products AS p ON o.ProductID = p.id WHERE o.OrderID = '$orderID'";

@@ -18,7 +18,7 @@ $(document).ready(function () {
 
   //   ------------------------ working with accordion --------------------------------
 
-  
+  console.log("Hello World");
 });
 
 /// no need to add scroll up down to this page because its not long
@@ -106,7 +106,13 @@ function retreiveInformation(orderID){
         collapsible: true,
         active: false,
       });
+    }, error: function(xhr, status, error) {
+      // Handle error
+      console.log('Ajax request error:');
+      console.log('Status: ' + status);
+      console.log('Error: ' + error);
     }
+    
   })
 }
 

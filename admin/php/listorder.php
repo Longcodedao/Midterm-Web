@@ -3,7 +3,7 @@
 require_once "databases.php";
 error_log("listorder.php :: initialized");
 
-$query = "SELECT o.OrderID, o.Date, p.id, p.name, p.price, c.Name, c.Phone, c.Email, c.Address, c.City
+$query = "SELECT o.OrderID, o.Date, p.id, p.name, o.OrderValue, c.Name, c.Phone, c.Email, c.Address, c.City
           FROM orders AS o
           INNER JOIN products AS p ON o.ProductID = p.id
           INNER JOIN customers AS c ON o.CustomerID = c.ID";

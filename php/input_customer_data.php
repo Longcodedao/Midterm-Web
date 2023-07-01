@@ -12,7 +12,7 @@
         $address = $_POST['address'];
         $city = $_POST['city'];
         $phone = $_POST['phone'];
-
+        $order_value = get_product_value($conn, $product_id);
         // echo("$order_id<br>");
         // echo("$product_id<br>");
         // echo("$name<br>");
@@ -27,7 +27,7 @@
         }
         echo($customer_id);
         
-        add_order($conn, $order_id, $customer_id, $product_id);
+        add_order($conn, $order_id, $customer_id, $product_id, $order_value);
         change_product_values($conn, $product_id);
     }   
 
@@ -62,12 +62,21 @@
 
     }
 
-    function add_order($conn, $order_id, $customer_id, $product_id){
-        $currentDate = date('Y-m-d');
+    function add_order($conn, $order_id, $customer_id, $product_id, $order_value){
+        $currentDate = date('Y-m-d H:i:s');
 
-        $query = "INSERT INTO orders (OrderID, ProductID, CustomerID, Date)
-                        VALUES ('$order_id', '$product_id', '$customer_id', '$currentDate')";
+        $query = "INSERT INTO orders (OrderID, ProductID, CustomerID, Date, OrderValue)
+                        VALUES ('$order_id', '$product_id', '$customer_id', '$currentDate', '$order_value')";
         $result = $conn -> query($query);
+
+    }
+    function get_product_value($conn, $product_id){
+        $query = "SELECT price from products WHERE id = $product_id";
+
+        $update = $conn -> query($query);
+        $row = $update -> fetch_assoc();
+
+        return $row['price'];
     }
 
     function change_product_values($conn, $product_id){
