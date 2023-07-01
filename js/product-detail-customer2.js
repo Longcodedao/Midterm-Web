@@ -40,26 +40,23 @@ $(document).ready(function () {
 });
 
 // -------------- RELOAD THE DATA FROM AJAX -------------------------------------
-$(document).ready(function() {
+$(document).ready(function () {
   var urlParams = new URLSearchParams(window.location.search);
-  var productID = urlParams.get('id');
+  var productID = urlParams.get("id");
   // console.log(productID);
 
-  $.ajax({
-    url: "admin/php/fetch_product_data.php?id=" + productID,
-    type: "GET",
-    dataType: "json",
-    success: function(response){
-      setUpData(response);
-    }
-  })
+  // $.ajax({
+  //   url: "admin/php/fetch_product_data.php?id=" + productID,
+  //   type: "GET",
+  //   dataType: "json",
+  //   success: function(response){
+  //     setUpData(response);
+  //   }
+  // })
 
-
-  $('#buy-now').click(function(){
-
+  $("#buy-now").click(function () {
     var formData = new FormData();
-    formData.append('id', productID);
-
+    formData.append("id", productID);
 
     $.ajax({
       url: "php/session_data.php",
@@ -67,14 +64,13 @@ $(document).ready(function() {
       data: formData,
       processData: false,
       contentType: false,
-      success: function(response){
+      success: function (response) {
         // alert(response);
-        window.location.href = 'Order-form.html';
-      }
-    })
-  })
-})
-
+        window.location.href = "Order-form.html";
+      },
+    });
+  });
+});
 
 function setUpData(response) {
   var img = $("#image-product");

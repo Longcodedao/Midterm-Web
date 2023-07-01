@@ -7,7 +7,7 @@ while ($row = $result->fetch_assoc()) {
     echo <<< _END
 
         <div class="col d-flex mb-4">
-            <a href="product-detail-customer.html?id={$row['id']}">
+            <a href="product-detail-customer-html.php?id={$row['id']}">
               <div class="card-wrapper">
                 <div class="card product-wrapper animate">
                   <img

@@ -5,11 +5,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Product Listing</title>
-    <link rel="stylesheet" href="css/product-listing-13.css" />
-    <script src="https://kit.fontawesome.com/57d08e8260.js" crossorigin="anonymous"></script>
+    <title>Product detail</title>
 
-    <script defer src="js/product-listing4.js"></script>
+    <script src="https://kit.fontawesome.com/57d08e8260.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/product-detail-customer1.css" />
+
+    <?php
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+} else {
+    // Handle the case when orderID is not provided in the URL
+    echo "product is missing.";
+    exit;
+}
+
+require_once "admin/php/databases.php";
+
+$query = "SELECT * FROM products WHERE id = '$id'";
+
+$result = $conn->query($query);
+
+if ($result && $result->num_rows > 0) {
+    $product = $result->fetch_assoc();
+
+    $productName = $product["name"];
+    $productDescription = $product["description"];
+    $productPrice = $product["price"];
+    $productImage = $product["image"];
+} else {
+    echo "Product not found";
+    exit;
+}
+
+$conn->close();
+
+?>
+
 
     <!-- ---- IMPORTING JQUERY, JQUERYUI, BOOTSTRAP----- -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
@@ -53,74 +84,73 @@
             </div>
         </nav>
 
-        <div class="container justify-content-center align-items-center mt-5" id="product-container">
-            <h1 class="text-center" id="product-header">Product listings</h1>
+        <!-- ----------------------------- body of the page ----------------------------- -->
 
-            <div class="row row-cols-auto d-flex justify-content-center">
+        <div class="container product-detail-wrapper">
+            <div class="row d-flex justify-content-between mx-1 my-2">
+                <div class="col-md-5">
+                    <img src="<?php echo $productImage; ?>" alt="an image of the product"
+                        class="img-fluid product-head-image" id="image-product" />
+                </div>
+                <div class="col-md-6 mt-md-3 mt-sm-3 mt-3 info-wrapper d-flex flex-column">
+                    <h2 class="product-name" id="product-name"><?php echo $productName ?></h2>
+                    <hr />
+                    <h4 class="price-header mt-3">
+                        $<span class="product-price" id="product-price"><?php echo $productPrice ?></span>
+                    </h4>
 
-                <?php
-include_once "php/product-listing.php";
-?>
+                    <!-- <button
+              class="btn btn-success buy-button mt-3"
+              id = "buy-now"
+              onclick="window.location.href = 'Order-form.html'"
+            >
+              BUY NOW!
+            </button> -->
 
-            </div>
-        </div>
+                    <button class="btn btn-success buy-button mt-3" id="buy-now">
+                        BUY NOW!
+                    </button>
 
-        <div id="popup-container">
-            <section class="vh-100 gradient-custom-2">
-                <div class="container py-5 h-100">
-                    <div class="d-flex align-items-center justify-content-center h-100">
-                        <div class="col-sm-12 col-md-10 col-lg-8 col-xl-7">
-                            <div class="card card-stepper" style="border-radius: 16px">
-                                <div class="card-header p-4">
-                                    <div class="d-flex justify-content-between align-items-center text-center">
-                                        <div>
-                                            <p class="text-muted mb-1 fs-4">Product Popup Info</p>
-                                        </div>
+                    <p class="text-center mt-2 shipping-text">
+                        Nobody buys from us so still in stock
+                    </p>
+                    <hr />
 
-                                    </div>
-                                </div>
-                                <div class="card-body p-4">
-                                    <div class="d-flex flex-row mb-0 justify-content-between">
-                                        <div class="flex-fill mr-2 mr-sm-3" id="product-information">
-                                            <h5 class="bold" id="popup-name"></h5>
+                    <div class="row">
+                        <div class="col-6 d-flex align-items-center pets">
+                            <i class="fa-solid fa-shield-heart fa-fw icon-head"></i>
+                            <div class="mx-1">Safe For Pets</div>
+                        </div>
+                        <div class="col-6 d-flex align-items-center return">
+                            <i class="fa-solid fa-clock-rotate-left fa-fw icon-head"></i>
+                            <div class="mx-1">Free Return</div>
+                        </div>
+                    </div>
+                    <div class="row mt-4 mb-4">
+                        <div class="col-6 d-flex align-items-center water">
+                            <i class="fa-solid fa-droplet-slash fa-fw icon-head"></i>
+                            <div class="mx-1">Waterproofed</div>
+                        </div>
+                        <div class="col-6 d-flex align-items-center eco">
+                            <i class="fa-solid fa-tree fa-fw icon-head"></i>
+                            <div class="mx-1">Ecofriendly</div>
+                        </div>
+                    </div>
+                    <hr />
 
-                                            <h4 class="mb-3">
-                                                $<span class="price" id="popup-price"></span>
-                                                <span class="small text-muted"> in USD </span>
-                                            </h4>
-                                            <p class="text-muted">
-                                                Description:
-                                                <span class="text-body" id="popup-descrip"></span>
-                                            </p>
-
-                                        </div>
-                                        <div class="ml-2 ml-sm-3 popup-image-wrapper">
-                                            <img class="align-self-center img-fluid"
-                                                alt="image of that product inside the popup" src="random.png"
-                                                width="250" id="popup-image" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer p-0 custom-height">
-                                    <div class="d-flex justify-content-around custom-height">
-                                        <button
-                                            class="card-body text-center bg-primary text-white round-left-border m-0"
-                                            id="order-btn">
-                                            <span>Order</span>
-                                        </button>
-
-                                        <a href="#"
-                                            class="card-body text-center bg-danger text-white round-right-border m-0"
-                                            id="cancel-btn">
-                                            <span>Cancel</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="row mb-4 mt-3">
+                        <div class="col-8 d-flex align-items-center warrenty">
+                            <i class="fa-solid fa-rectangle-list fa-fw"></i>
+                            <a class="mx-2" href="https://www.google.com/search?q=how+to+breathe">Warrenty Policy</a>
                         </div>
                     </div>
                 </div>
-            </section>
+                <hr class="mt-3 mt-xxl-5" />
+                <div class="container">
+                    <h4 class="description-header">Description</h4>
+                    <p class="description" id="product-description"><?php echo $productDescription ?></p>
+                </div>
+            </div>
         </div>
 
         <!-- ------- scroll to top and bottom button ------------------------------------------------ -->
@@ -274,6 +304,9 @@ include_once "php/product-listing.php";
             </div>
         </div>
     </div>
+
+    <script src="js/product-detail-customer2.js"></script>
+
 </body>
 
 </html>
