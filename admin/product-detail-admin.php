@@ -94,8 +94,7 @@ $conn->close();
             <div class="collapse navbar-collapse" id="btn">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item active nav-element">
-                        <a class="nav-link d-flex justify-content-center list pt-1 pb-1"
-                            href="admin-dashboard.php">Dashboard</a>
+                        <a class="nav-link d-flex justify-content-center list pt-1 pb-1" href="index.php">Dashboard</a>
                     </li>
 
                     <li class="nav-item nav-element">
