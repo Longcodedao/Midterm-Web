@@ -1,4 +1,5 @@
 // --------------- JQUERY ANIMATE top to bottom scroll ------------------------------
+
 var urlParams = new URLSearchParams(window.location.search);
 var productId = urlParams.get("id");
 // var refresh = getParameterById("refresh");
@@ -7,6 +8,32 @@ var productId = urlParams.get("id");
 console.log(productId);
 // var productDetailJson = getCookie("product_details");
 // console.log(productDetailJson);
+
+$(document).ready(function (){
+  var urlParams = new URLSearchParams(window.location.search);
+  var productId = urlParams.get("id");
+  // var refresh = getParameterById("refresh");
+  // console.log(refresh);
+
+  console.log(productId);
+  // var productDetailJson = getCookie("product_details");
+  // console.log(productDetailJson);
+
+  $.ajax({
+    url: "../admin/php/fetch_product_data.php?id=" + productId,
+    type: "GET",
+    dataType: "json",
+    success: function (response) {
+      productDetail = response;
+      console.log(response);
+      setUpData(response);
+      
+    },
+  });
+})
+
+
+
 
 // $.ajax({
 //   url: "../admin/php/fetch_product_data.php?id=" + productId,

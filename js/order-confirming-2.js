@@ -18,11 +18,7 @@ $(document).ready(function () {
 
   //   ------------------------ working with accordion --------------------------------
 
-  $("#my-accordion").accordion({
-    // do this so we can collapse the accordion with just one section, for the sake of having implemenented one jqueryui element
-    collapsible: true,
-    active: false,
-  });
+  
 });
 
 /// no need to add scroll up down to this page because its not long
@@ -80,6 +76,7 @@ $(document).ready(function () {
       type: "POST",
       success: function(response){
         // alert(response);
+      
       }
     })
   })
@@ -100,6 +97,15 @@ function retreiveInformation(orderID){
     success: function(response) {
       // alert(response);
       displayInformation(response);
+      $("#showing-content").show();
+      
+      $('#loading-content').attr('style', 'display: none !important');
+
+      $("#my-accordion").accordion({
+        // do this so we can collapse the accordion with just one section, for the sake of having implemenented one jqueryui element
+        collapsible: true,
+        active: false,
+      });
     }
   })
 }
