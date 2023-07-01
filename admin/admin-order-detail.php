@@ -123,7 +123,8 @@ $conn->close();
             <div class="row d-flex justify-content-center mx-1 my-3">
                 <h1 class="text-center display-4 my-3 mb-5">Order Detail</h1>
                 <div class="col-md-5 text-center mx-4">
-                    <img src="<?php echo $productImage; ?>" alt="" class="img-fluid product-head-image h-100 circle" />
+                    <img src="<?php echo $productImage; ?>" alt="an image product of that order"
+                        class="img-fluid product-head-image h-100 circle" />
                 </div>
 
                 <div class="col-md-5 mt-md-3 mt-sm-3 mt-4 d-flex flex-column mx-4">

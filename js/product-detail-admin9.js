@@ -1,25 +1,23 @@
 // --------------- JQUERY ANIMATE top to bottom scroll ------------------------------
 var urlParams = new URLSearchParams(window.location.search);
-  var productId = urlParams.get("id");
-  // var refresh = getParameterById("refresh");
-  // console.log(refresh);
+var productId = urlParams.get("id");
+// var refresh = getParameterById("refresh");
+// console.log(refresh);
 
-  console.log(productId);
-  // var productDetailJson = getCookie("product_details");
-  // console.log(productDetailJson);
+console.log(productId);
+// var productDetailJson = getCookie("product_details");
+// console.log(productDetailJson);
 
-  $.ajax({
-    url: "../admin/php/fetch_product_data.php?id=" + productId,
-    type: "GET",
-    dataType: "json",
-    success: function (response) {
-      productDetail = response;
-      console.log(response);
-      setUpData(response);
-      
-    },
-});
-
+// $.ajax({
+//   url: "../admin/php/fetch_product_data.php?id=" + productId,
+//   type: "GET",
+//   dataType: "json",
+//   success: function (response) {
+//     productDetail = response;
+//     console.log(response);
+//     setUpData(response);
+//   },
+// });
 
 $(window).on("load", function () {
   // Scroll to bottom button
@@ -110,7 +108,7 @@ $(window).on("load", function () {
   //     productDetail = response;
   //     console.log(response);
   //     setUpData(response);
-      
+
   //   },
   // });
 
@@ -225,7 +223,7 @@ $(window).on("load", function () {
       processData: false,
       success: function (data) {
         // alert(data);
-        window.location.href = "../admin/admin-listprod.html";
+        window.location.href = "../admin/admin-listprod.php";
       },
       error: function (jqXHR, textStatus, errorThrown) {
         console.log("failed to delete product");
@@ -233,19 +231,17 @@ $(window).on("load", function () {
     });
   });
 
-
-  $('#log-out').click(function() {
+  $("#log-out").click(function () {
     $.ajax({
-        url: "php/delete-session.php",
-        type: "POST",
-        processData: false,
-        contentType: false,
-        success: function(response) {
-            window.location.href = 'admin-login.html';
-        }
-    })
-  })
-
+      url: "php/delete-session.php",
+      type: "POST",
+      processData: false,
+      contentType: false,
+      success: function (response) {
+        window.location.href = "admin-login.html";
+      },
+    });
+  });
 });
 
 function getParameterById(name) {
