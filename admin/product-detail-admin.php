@@ -29,7 +29,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 } else {
     // Handle the case when orderID is not provided in the URL
-    echo "OrderID is missing.";
+    echo "Product not found";
     exit;
 }
 
