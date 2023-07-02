@@ -22,7 +22,7 @@ $(document).ready(function () {
         data: "Date",
       },
       {
-        data: "name",
+        data: "OrderProductName",
         render: function (data, type, row) {
           let productDetailURL = row.id;
           return (

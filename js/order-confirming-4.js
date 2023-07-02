@@ -120,7 +120,7 @@ function displayInformation(order){
   // console.log(order['OrderID']);
   $('#order-key').html(`${order['OrderID']}`);
   $('#product-name').html(`${order['name']}`);
-  $('#product-price').html(`${order['price']}`);
+  $('#product-price').html(`${order['OrderValue']}`);
   $('#customer-name').html(`${order['Name']}`);
   $('#customer-address').html(`${order['Address']}`);
   $('#customer-city').html(`${order['City']}`);

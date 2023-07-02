@@ -12,7 +12,11 @@
         $address = $_POST['address'];
         $city = $_POST['city'];
         $phone = $_POST['phone'];
-        $order_value = get_product_value($conn, $product_id);
+        $values = get_product_value($conn, $product_id);
+
+        $price = $values['price'];
+        $ordername = $values['prod-name'];
+        $orderimage = $values['prod-image'];
         // echo("$order_id<br>");
         // echo("$product_id<br>");
         // echo("$name<br>");
@@ -27,7 +31,8 @@
         }
         echo($customer_id);
         
-        add_order($conn, $order_id, $customer_id, $product_id, $order_value);
+        add_order($conn, $order_id, $customer_id, $product_id, $price, 
+                            $ordername, $orderimage);
         change_product_values($conn, $product_id);
     }   
 
@@ -62,21 +67,32 @@
 
     }
 
-    function add_order($conn, $order_id, $customer_id, $product_id, $order_value){
+    function add_order($conn, $order_id, $customer_id, $product_id, 
+                                    $order_value, $ordername, $orderimage){
         $currentDate = date('Y-m-d H:i:s');
 
-        $query = "INSERT INTO orders (OrderID, ProductID, CustomerID, Date, OrderValue)
-                        VALUES ('$order_id', '$product_id', '$customer_id', '$currentDate', '$order_value')";
+        $query = "INSERT INTO orders (OrderID, ProductID, CustomerID, Date, 
+                    OrderValue, OrderProductName, OrderProductImage)
+                        VALUES ('$order_id', '$product_id', '$customer_id', 
+                        '$currentDate', '$order_value', '$ordername', '$orderimage')";
+        echo ($query);
         $result = $conn -> query($query);
+
 
     }
     function get_product_value($conn, $product_id){
-        $query = "SELECT price from products WHERE id = $product_id";
+        $query = "SELECT * from products WHERE id = $product_id";
 
         $update = $conn -> query($query);
         $row = $update -> fetch_assoc();
 
-        return $row['price'];
+        $result = array(
+            'price' => $row['price'],
+            'prod-name' => $row['name'],
+            'prod-image' => $row['image']
+        );
+
+        return $result;
     }
 
     function change_product_values($conn, $product_id){
