@@ -164,7 +164,7 @@ $conn->close();
                     </p>
 
                     <button id="back-to-order-button" class="btn btn-success mt-3"
-                        onclick="location.href = 'admin-listprod.php'">Back to order
+                        onclick="location.href = 'admin-listorder.php'">Back to order
                         list!</button>
                 </div>
             </div>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Listing</title>
-    <link rel="stylesheet" href="css/product-listing-13.css" />
+    <link rel="stylesheet" href="css/product-listing-15.css" />
     <script src="https://kit.fontawesome.com/57d08e8260.js" crossorigin="anonymous"></script>
 
     <script defer src="js/product-listing4.js"></script>
