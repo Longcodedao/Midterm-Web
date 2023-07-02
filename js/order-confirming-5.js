@@ -108,6 +108,8 @@ function retreiveInformation(orderID){
       });
     }, error: function(xhr, status, error) {
       // Handle error
+      $('#loading-content').attr('style', 'display: none !important');
+      $('#error-cont').show();
       console.log('Ajax request error:');
       console.log('Status: ' + status);
       console.log('Error: ' + error);
@@ -119,7 +121,7 @@ function retreiveInformation(orderID){
 function displayInformation(order){
   // console.log(order['OrderID']);
   $('#order-key').html(`${order['OrderID']}`);
-  $('#product-name').html(`${order['name']}`);
+  $('#product-name').html(`${order['OrderProductName']}`);
   $('#product-price').html(`${order['OrderValue']}`);
   $('#customer-name').html(`${order['Name']}`);
   $('#customer-address').html(`${order['Address']}`);
@@ -127,6 +129,6 @@ function displayInformation(order){
   $('#customer-phone').html(`${order['Phone']}`);
   $('#customer-email').html(`${order['Email']}`);
   $('#customer-date').html(`${order['Date']}`);
-  $('#productImage').attr("src", order['image']);
+  $('#productImage').attr("src", order['OrderProductImage']);
   $('#name-product').html(order['name']);
 }

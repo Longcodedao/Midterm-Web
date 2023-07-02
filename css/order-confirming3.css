@@ -63,6 +63,12 @@ nav {
   height: 50vh;
 }
 
+#error-content{
+  height: 50vh;
+  color: red;
+  font-weight: 600!important;
+}
+
 @media only screen and (max-width: 560px) {
   #logo {
     font-size: 28px;

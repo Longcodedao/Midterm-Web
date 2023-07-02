@@ -4,7 +4,7 @@
     if (isset($_POST['order_id'])){
         $orderID = $_POST['order_id'];
         // echo("$orderID <br>");
-        $sql = "SELECT o.OrderID, p.name, o.OrderValue, p.image, c.Name, c.Address, c.City, c.Phone, c.Email, o.Date
+        $sql = "SELECT o.OrderID, o.OrderProductName, o.OrderValue, o.OrderProductImage, c.Name, c.Address, c.City, c.Phone, c.Email, o.Date
                     FROM orders o
                     JOIN customers c ON o.CustomerID = c.ID
                     JOIN products p ON p.id = o.ProductID
