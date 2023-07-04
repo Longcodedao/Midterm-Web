@@ -27,3 +27,8 @@ This is a simple 3-page responsive website that showcases an IOT agriculture com
 ## Instruction to view the project
 - View the website here [Our Website](https://longcodedao.github.io/Midterm-Web/Homepage.html).
 - View our slides here [Our Slides](https://www.canva.com/design/DAFgLnGXvp4/_XSzwBAkhBh6FkTNi_4Cuw/edit?utm_content=DAFgLnGXvp4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
+
+- Final slide: [Here](https://www.canva.com/design/DAFnY_jDflc/cwUatG0Ra0L-Uf-VU7bYfQ/edit?utm_content=DAFnY_jDflc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
+- Final Website, customer site [Our Customer Site](http://coolkidsintheblock.atwebpages.com/).
+- Final Website, admin site [Our Admin Site](http://coolkidsintheblock.atwebpages.com/admin/).
+
